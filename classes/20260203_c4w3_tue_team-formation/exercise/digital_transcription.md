@@ -1,6 +1,6 @@
 # Post-It Transcriptions — Team Formation Exercise
 
-*Transcribed from photos taken 2026-02-03. Please review and correct as needed.*
+*Transcribed from photos taken 2026-02-03. AI-generated & Human-reviewed.*
 
 ---
 
