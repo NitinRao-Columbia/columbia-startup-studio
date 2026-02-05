@@ -66,7 +66,7 @@ A high-level view of what you'll accomplish each phase:
 - Integration of feedback
 - Feature freeze prep
 
-### PITCH (Weeks 12-13)
+### SHIP (Weeks 12-13)
 > Tell your story. Demo Day.
 
 - Build presentations and pitches
