@@ -6,7 +6,7 @@
 
 **Interviewer:** Gautam Agarwal
 **Date:** 16th February
-**Interview #:** ___ of ___
+**Interview #:** 1 of 2
 
 ---
 
