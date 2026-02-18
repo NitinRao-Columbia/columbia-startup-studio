@@ -1,0 +1,31 @@
+### What was learned:
+- Who: 
+	- 2nd year PhD candidate in Sociology
+- Problem confirmed: 
+	- Yes. He is a qualitative researcher by training, who is looking to bring quantitative methods into his research. He is highly interested in network analysis for this. Additionally, version control is also a big problem for him, data and document wise."
+- Key quotes:
+	- Mixed-Methods:
+		- "Different methodologies can capture different layers of the social world, and with the help of AI these days individual researchers can do much more than what they could do in the past and I feel like there are some very exciting chances to mix them together".
+	- Version Control:
+		- "I am poor at it."... "I wish I could be better at it."
+	- Biggest frustrations in current process:
+        - "The biggest challenge is how to manage all those pipelines"   
+		- "For example with this project where I am trying to combine thousands of experts with hundreds of millions of publications, that involves API requests, and since I am not that familiar with the coding itself, I rely too much on GPT to code it, so I paste the code to R console and run it and the API hits some limit and it becomes slower, and I am just waiting at the terminal and do not know what to do and sometimes... Thats the time consuming part, but the frustrating part is I might get errors and I do not have the capacity to figure it out myself, just to copy and paste it again to GPT to just correct the error for me. So it is frustrating to wait for the machine but I do not have the expertise to know how to code those myself for some complicated task, but I am also doing work that was unthinkable for me now in the AI era."
+- Emotional intensity: 
+	- Mostly flat, but 7/8 on main pain point
+- Current solution: 
+	- LLM’s for quantitative analysis and some software tasks / data collection via API's and scraping, he has some knowledge of R. He uses Microsoft Office, Word & Excel for qualitative analysis and writing reports. 
+- Money spent:
+	- LLM subscriptions.
+### Reaction + Commitments
+- Solution reaction: 
+	- I did not pitch a “solution”, I listened. I identified some direct crossover between his problems and the current implementation. 
+- Biggest concern: 
+	- N/A
+- Referral: 
+	- Forgot to ask
+- Follow-up: 
+	- Yes
+- Surprises: 
+	- He works alone for most projects, other than sending up material progress for advisor feedback/guidance. Has not used Nvivo/Atlas.ti etc but is aware. 
+- Signal: Green 
