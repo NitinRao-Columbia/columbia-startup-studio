@@ -1,6 +1,6 @@
 # Submission: Product Brief, Brand Position & Synthetic User Testing
 
-**Due:** Thursday, February 19, 2026
+**Due:** Tuesday, February 24, 2026
 **Submit via:** GitHub (public repo)
 
 ---
