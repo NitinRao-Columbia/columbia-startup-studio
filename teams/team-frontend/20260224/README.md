@@ -6,7 +6,7 @@
 ---
 
 ## Deployed Landing Page
-**URL:** TBD 
+**URL:** https://nitinsprao.github.io/freeweight/ 
 
 ---
 
