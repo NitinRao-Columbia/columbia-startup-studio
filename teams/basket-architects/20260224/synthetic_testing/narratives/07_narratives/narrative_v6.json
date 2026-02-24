@@ -1,0 +1,18 @@
+{
+  "version": "V6",
+  "researchers_stance": "V6 is a pure re-run of V5 (same copy, different random seed). The results confirm convergence: resonance 85% (\u00b13pp from V5), intent 70% (\u00b13pp), conversion 73% (+6pp from V5, -4pp from V4). The 3-run V4-V6 average establishes the true steady-state: 72% conversion, 83% resonance, 70% intent, 7% dealbreakers. The study is complete.",
+  "exec_summary": "Pure convergence re-run. Same copy as V5, different random seed. All core metrics within expected noise bands. 3-run average (V4-V6) confirms true steady-state: 72% conversion, 83% resonance, 7% dealbreakers. Study complete.",
+  "findings": "<ul><li><strong>Convergence confirmed</strong>: V4-V6 three-run average provides the reliable steady-state estimate: 72% conversion.</li><li><strong>Per-bucket averages stabilize</strong>: city_explorer 89%, fomo_scroller 81%, social_connector 72%, taste_curator 64%, journal_graveyard 56%.</li><li><strong>Dealbreakers at 10%</strong>: Slightly above V5's 3% \u2014 within noise band. 3-run average: 7%.</li><li><strong>All stopping criteria met</strong>: Conversion >50%, minimum 5 rounds, qualitative convergence, diminishing returns.</li></ul>",
+  "recommendations": "<ol><li><strong>Finalize copy as V5</strong>: No further iteration needed.</li><li><strong>Generate final report</strong>: Full cross-version history, per-bucket deep dives, recommendations.</li><li><strong>Transition to Google Ads campaign planning</strong>: Prioritize city_explorer and fomo_scroller as Tier 1-2 segments.</li><li><strong>Share unresolved objections with product team</strong>: Passive tracking, community discovery, interface screenshots.</li></ol>",
+  "qualitative_themes": "<ul><li><strong>Total convergence</strong>: Every persona confirms 'same reaction as last round.' No new themes.</li><li><strong>'Confirmed: ship it'</strong> (all buckets): The qualitative signal is as converged as the quantitative signal.</li></ul>",
+  "clarity_notes": "100% nailed_it. Maintained across all rounds since V2.",
+  "invalidated_segments": [],
+  "appendix_notes": "V6 is a pure re-run. No copy changes from V5. Results validate V4-V5 as the steady-state, not anomalies.",
+  "bucket_deep_dives": {
+    "taste_curator": "<h4>75% conversion (V4-V6 avg: 64%)</h4><p>9/12 converting. Recovered from V5's variance dip. 3-run average of 64% represents the true copy ceiling for this segment.</p>",
+    "social_connector": "<h4>75% conversion (V4-V6 avg: 72%)</h4><p>9/12 converting. 0% dealbreakers. 3-run average of 72%. Copy ceiling reached.</p>",
+    "journal_graveyard": "<h4>50% conversion (V4-V6 avg: 56%)</h4><p>6/12 converting. 4 dealbreakers \u2014 highest in this round. Structural ceiling confirmed at ~56%. Remaining blockers require product changes.</p>",
+    "fomo_scroller": "<h4>67% conversion (V4-V6 avg: 81%)</h4><p>8/12 converting \u2014 down from V5's 11/12 but within noise. 3-run average of 81% reflects the true steady-state for the study's most-improved bucket.</p>",
+    "city_explorer": "<h4>100% conversion (V4-V6 avg: 89%)</h4><p>12/12 converting. Perfect round. 0% dealbreakers \u2014 'local trending' fully resolved the community discovery concern. 3-run average of 89%.</p>"
+  }
+}

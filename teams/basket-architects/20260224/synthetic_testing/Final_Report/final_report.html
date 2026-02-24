@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience Architects — Synthetic User Testing Report</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+    --bg: #fafaf9;
+    --surface: #ffffff;
+    --text: #1c1917;
+    --text-secondary: #57534e;
+    --text-muted: #a8a29e;
+    --border: #e7e5e4;
+    --accent: #2563eb;
+    --accent-light: #dbeafe;
+    --green: #059669;
+    --green-light: #d1fae5;
+    --red: #dc2626;
+    --red-light: #fee2e2;
+    --amber: #d97706;
+    --amber-light: #fef3c7;
+    --purple: #7c3aed;
+    --purple-light: #ede9fe;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+.report {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+}
+
+/* ── Header ── */
+.report-header {
+    text-align: center;
+    padding: 60px 0 48px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+}
+.report-header h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    color: var(--text);
+}
+.report-header .subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+.report-header .meta {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+.report-header .meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* ── Sections ── */
+.section {
+    margin-bottom: 48px;
+}
+.section-title {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--text);
+    display: inline-block;
+}
+.section-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 24px 0 12px;
+    color: var(--text);
+}
+.section p, .section li {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+.section ul, .section ol {
+    padding-left: 20px;
+}
+
+/* ── Cards ── */
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+}
+.card-header {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Metric Grid ── */
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.metric-card .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+}
+.metric-card .label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-weight: 500;
+}
+.metric-card .delta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+.metric-card .delta.up { color: var(--green); }
+.metric-card .delta.down { color: var(--red); }
+
+/* ── Tables ── */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+}
+th, td {
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+th {
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    background: #f5f5f4;
+}
+td {
+    color: var(--text-secondary);
+}
+td.num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    text-align: center;
+}
+td.highlight {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* ── Bucket badges ── */
+.bucket-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.bucket-taste_curator { background: var(--purple-light); color: var(--purple); }
+.bucket-social_connector { background: var(--accent-light); color: var(--accent); }
+.bucket-journal_graveyard { background: var(--amber-light); color: var(--amber); }
+.bucket-fomo_scroller { background: var(--red-light); color: var(--red); }
+.bucket-city_explorer { background: var(--green-light); color: var(--green); }
+
+/* ── Strongest lines ── */
+.line-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+.line-item:last-child { border-bottom: none; }
+.line-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    min-width: 36px;
+    text-align: center;
+}
+.line-text {
+    font-size: 15px;
+    color: var(--text);
+    font-style: italic;
+}
+
+/* ── Chart containers ── */
+.chart-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* ── Copy display ── */
+.copy-display {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+.copy-display .copy-h1 { font-family: 'Instrument Serif', serif; font-size: 22px; margin: 20px 0 8px; }
+.copy-display .copy-h2 { font-size: 16px; font-weight: 600; margin: 20px 0 8px; color: var(--accent); }
+.copy-display .copy-bold { font-weight: 600; }
+.copy-display .copy-hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+.copy-display p { margin-bottom: 8px; color: var(--text-secondary); }
+.copy-display strong { color: var(--text); }
+
+/* ── Persona cards ── */
+.persona-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+.persona-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 13px;
+}
+.persona-card .name {
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+.persona-card .demo {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.persona-card .voice {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+.persona-card .stats {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+.persona-card .stat {
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: #f5f5f4;
+}
+
+/* ── Decision log ── */
+.changelog {
+    background: #f5f5f4;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 12px 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+.changelog .version-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+/* ── Callout ── */
+.callout {
+    border-left: 4px solid var(--accent);
+    background: var(--accent-light);
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 20px 0;
+    font-size: 14px;
+    color: var(--text);
+}
+.callout.green { border-color: var(--green); background: var(--green-light); }
+.callout.amber { border-color: var(--amber); background: var(--amber-light); }
+
+/* ── Print ── */
+@media print {
+    body { background: white; }
+    .report { max-width: 100%; padding: 20px; }
+    .card, .chart-container, .copy-display { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="report">
+
+<div class="report-header">
+    <h1>Experience Architects</h1>
+    <div class="subtitle">Synthetic User Testing — Final Report</div>
+    <div class="meta">
+        <span>📅 February 23, 2026</span>
+        <span>👥 60 personas × 5 buckets</span>
+        <span>📊 7 rounds (BL + V1–V6)</span>
+        <span>📋 360 total evaluations</span>
+    </div>
+</div>
+
+<div class="section">
+    <div class="section-title">Executive Summary</div>
+    <p>This study tested and iterated landing page copy for Experience Architects, a taste-based experience ranking app with friend-network discovery ("Beli for everything"). Over 6 rounds of evaluation against 60 synthetic personas across 5 audience segments, the copy evolved from a deliberately generic baseline (7% conversion) to a polished final version with <strong>72% steady-state conversion</strong> (3-run average, V4–V6).</p>
+    <p>The study's biggest single unlock was a <strong>framing change</strong> — repositioning the copy from backward-looking ("record what you did") to forward-looking ("discover what's next") — which transformed the fomo_scroller bucket from 17% to 81% conversion. This confirms the best-practices finding that framing changes produce the largest metric swings (20–45pp).</p>
+    <p>The copy reached its ceiling at V4/V5, with qualitative feedback converging to "my objections are about the product, not the copy." Remaining blockers are product-level: passive tracking for retention (journal_graveyard), community discovery beyond friends (city_explorer), and interface/UX validation (all buckets).</p>
+</div>
+<div class="section"><div class="section-title">Final Metrics</div>
+<p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">3-run average (V4–V6) — most reliable estimate of true performance</p>
+<div class="metric-grid">
+<div class="metric-card"><div class="value">72%</div><div class="label">Conversion</div><div class="delta up">+65pp from BL</div></div>
+<div class="metric-card"><div class="value">83%</div><div class="label">Resonance</div><div class="delta up">+66pp from BL</div></div>
+<div class="metric-card"><div class="value">70%</div><div class="label">Intent</div><div class="delta up">+58pp from BL</div></div>
+<div class="metric-card"><div class="value">72%</div><div class="label">Network Belief</div><div class="delta up">+65pp from BL</div></div>
+<div class="metric-card"><div class="value">100%</div><div class="label">Clarity</div><div class="delta up">+100pp from BL</div></div>
+<div class="metric-card"><div class="value">7%</div><div class="label">Dealbreakers</div><div class="delta down">-20pp from BL</div></div>
+</div></div>
+<div class="section"><div class="section-title">Cross-Version Trends</div>
+<div class="chart-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;font-family:inherit;">
+<text x="350" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Core Metrics (Agree+ %)</text>
+<line x1="50" y1="250.0" x2="680" y2="250.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="254.0" text-anchor="end" font-size="11" fill="#94a3b8">0%</text>
+<line x1="50" y1="197.5" x2="680" y2="197.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="201.5" text-anchor="end" font-size="11" fill="#94a3b8">25%</text>
+<line x1="50" y1="145.0" x2="680" y2="145.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="149.0" text-anchor="end" font-size="11" fill="#94a3b8">50%</text>
+<line x1="50" y1="92.5" x2="680" y2="92.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="96.5" text-anchor="end" font-size="11" fill="#94a3b8">75%</text>
+<line x1="50" y1="40.0" x2="680" y2="40.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="44.0" text-anchor="end" font-size="11" fill="#94a3b8">100%</text>
+<text x="50.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">BL</text>
+<text x="155.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V1</text>
+<text x="260.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V2</text>
+<text x="365.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V3</text>
+<text x="470.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V4</text>
+<text x="575.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V5</text>
+<text x="680.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V6</text>
+<polyline points="50.0,214.3 155.0,128.2 260.0,124.0 365.0,107.19999999999999 470.0,75.70000000000002 575.0,77.80000000000001 680.0,71.5" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="214.3" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="128.2" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="124.0" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="107.19999999999999" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="75.70000000000002" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="77.80000000000001" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="71.5" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<polyline points="50.0,224.8 155.0,172.3 260.0,117.69999999999999 365.0,130.3 470.0,107.19999999999999 575.0,96.70000000000002 680.0,103.0" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="224.8" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="172.3" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="117.69999999999999" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="130.3" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="107.19999999999999" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="96.70000000000002" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="103.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<polyline points="50.0,235.3 155.0,159.7 260.0,109.29999999999998 365.0,124.0 470.0,88.29999999999998 575.0,109.29999999999998 680.0,96.70000000000002" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="235.3" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="159.7" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="109.29999999999998" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="124.0" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="88.29999999999998" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="109.29999999999998" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="96.70000000000002" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<polyline points="50.0,235.3 155.0,119.80000000000001 260.0,134.5 365.0,119.80000000000001 470.0,109.29999999999998 575.0,96.70000000000002 680.0,88.29999999999998" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="235.3" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="119.80000000000001" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="134.5" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="119.80000000000001" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="109.29999999999998" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="96.70000000000002" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="88.29999999999998" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+</svg>
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:8px;">
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#2563eb;border-radius:2px;display:inline-block;"></span>Resonance</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#dc2626;border-radius:2px;display:inline-block;"></span>Intent</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#059669;border-radius:2px;display:inline-block;"></span>Conversion</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#d97706;border-radius:2px;display:inline-block;"></span>Network</span>
+</div>
+</div>
+<div class="chart-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;font-family:inherit;">
+<text x="350" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Conversion by Bucket (Agree+ %)</text>
+<line x1="50" y1="250.0" x2="680" y2="250.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="254.0" text-anchor="end" font-size="11" fill="#94a3b8">0%</text>
+<line x1="50" y1="197.5" x2="680" y2="197.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="201.5" text-anchor="end" font-size="11" fill="#94a3b8">25%</text>
+<line x1="50" y1="145.0" x2="680" y2="145.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="149.0" text-anchor="end" font-size="11" fill="#94a3b8">50%</text>
+<line x1="50" y1="92.5" x2="680" y2="92.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="96.5" text-anchor="end" font-size="11" fill="#94a3b8">75%</text>
+<line x1="50" y1="40.0" x2="680" y2="40.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="44.0" text-anchor="end" font-size="11" fill="#94a3b8">100%</text>
+<text x="50.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">BL</text>
+<text x="155.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V1</text>
+<text x="260.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V2</text>
+<text x="365.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V3</text>
+<text x="470.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V4</text>
+<text x="575.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V5</text>
+<text x="680.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V6</text>
+<polyline points="50.0,250.0 155.0,128.2 260.0,92.5 365.0,109.29999999999998 470.0,92.5 575.0,161.8 680.0,92.5" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="250.0" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="128.2" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="92.5" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="109.29999999999998" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="92.5" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="161.8" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="92.5" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<polyline points="50.0,250.0 155.0,145.0 260.0,92.5 365.0,109.29999999999998 470.0,75.70000000000002 575.0,128.2 680.0,92.5" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="250.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="145.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="92.5" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="109.29999999999998" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="75.70000000000002" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="128.2" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="92.5" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<polyline points="50.0,250.0 155.0,214.3 260.0,161.8 365.0,180.7 470.0,145.0 575.0,109.29999999999998 680.0,145.0" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="250.0" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="214.3" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="161.8" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="180.7" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="145.0" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="109.29999999999998" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="145.0" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<polyline points="50.0,233.2 155.0,214.3 260.0,145.0 365.0,92.5 470.0,75.70000000000002 575.0,56.79999999999998 680.0,109.29999999999998" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="233.2" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="214.3" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="145.0" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="92.5" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="75.70000000000002" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="56.79999999999998" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="109.29999999999998" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<polyline points="50.0,197.5 155.0,92.5 260.0,56.79999999999998 365.0,128.2 470.0,56.79999999999998 575.0,92.5 680.0,40.0" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="197.5" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="92.5" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="56.79999999999998" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="128.2" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="56.79999999999998" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="92.5" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="40.0" r="4" fill="#7c3aed" stroke="white" stroke-width="2"/>
+</svg>
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:8px;">
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#2563eb;border-radius:2px;display:inline-block;"></span>Taste Curator</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#dc2626;border-radius:2px;display:inline-block;"></span>Social Connector</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#059669;border-radius:2px;display:inline-block;"></span>Journal Graveyard</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#d97706;border-radius:2px;display:inline-block;"></span>FOMO Scroller</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#7c3aed;border-radius:2px;display:inline-block;"></span>City Explorer</span>
+</div>
+</div>
+<div class="chart-container">
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;font-family:inherit;">
+<text x="350" y="20" text-anchor="middle" font-size="14" font-weight="600" fill="#1e293b">Price Perception & Dealbreakers (%)</text>
+<line x1="50" y1="250.0" x2="680" y2="250.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="254.0" text-anchor="end" font-size="11" fill="#94a3b8">0%</text>
+<line x1="50" y1="197.5" x2="680" y2="197.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="201.5" text-anchor="end" font-size="11" fill="#94a3b8">25%</text>
+<line x1="50" y1="145.0" x2="680" y2="145.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="149.0" text-anchor="end" font-size="11" fill="#94a3b8">50%</text>
+<line x1="50" y1="92.5" x2="680" y2="92.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="96.5" text-anchor="end" font-size="11" fill="#94a3b8">75%</text>
+<line x1="50" y1="40.0" x2="680" y2="40.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="42" y="44.0" text-anchor="end" font-size="11" fill="#94a3b8">100%</text>
+<text x="50.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">BL</text>
+<text x="155.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V1</text>
+<text x="260.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V2</text>
+<text x="365.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V3</text>
+<text x="470.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V4</text>
+<text x="575.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V5</text>
+<text x="680.0" y="285" text-anchor="middle" font-size="11" fill="#64748b">V6</text>
+<polyline points="50.0,145.0 155.0,201.7 260.0,193.3 365.0,214.3 470.0,191.2 575.0,203.8 680.0,222.7" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="145.0" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="201.7" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="193.3" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="214.3" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="191.2" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="203.8" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="222.7" r="4" fill="#2563eb" stroke="white" stroke-width="2"/>
+<polyline points="50.0,166.0 155.0,124.0 260.0,155.5 365.0,145.0 470.0,170.2 575.0,151.3 680.0,124.0" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="166.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="124.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="155.5" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="145.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="170.2" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="151.3" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="124.0" r="4" fill="#dc2626" stroke="white" stroke-width="2"/>
+<polyline points="50.0,229.0 155.0,214.3 260.0,191.2 365.0,180.7 470.0,180.7 575.0,182.8 680.0,193.3" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="229.0" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="214.3" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="191.2" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="180.7" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="180.7" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="182.8" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="193.3" r="4" fill="#059669" stroke="white" stroke-width="2"/>
+<polyline points="50.0,193.3 155.0,218.5 260.0,218.5 365.0,229.0 470.0,233.2 575.0,243.7 680.0,229.0" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="193.3" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="155.0" cy="218.5" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="260.0" cy="218.5" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="365.0" cy="229.0" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="470.0" cy="233.2" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="575.0" cy="243.7" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+<circle cx="680.0" cy="229.0" r="4" fill="#d97706" stroke="white" stroke-width="2"/>
+</svg>
+<div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-top:8px;">
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#2563eb;border-radius:2px;display:inline-block;"></span>Too Expensive</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#dc2626;border-radius:2px;display:inline-block;"></span>Fair</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#059669;border-radius:2px;display:inline-block;"></span>Good Deal</span>
+<span style="display:flex;align-items:center;gap:5px;font-size:12px;color:#475569;"><span style="width:12px;height:3px;background:#d97706;border-radius:2px;display:inline-block;"></span>Dealbreakers</span>
+</div>
+</div>
+<table><tr><th>Metric</th><th style="text-align:center">BL</th><th style="text-align:center">V1</th><th style="text-align:center">V2</th><th style="text-align:center">V3</th><th style="text-align:center">V4</th><th style="text-align:center">V5</th><th style="text-align:center">V6</th><th style="text-align:center">3-Avg</th></tr>
+<tr><td class="highlight">Conversion agree+</td><td class="num">7%</td><td class="num">43%</td><td class="num">67%</td><td class="num">60%</td><td class="num">77%</td><td class="num">67%</td><td class="num">73%</td><td class="num highlight">72%</td></tr>
+<tr><td class="highlight">Resonance agree+</td><td class="num">17%</td><td class="num">58%</td><td class="num">60%</td><td class="num">68%</td><td class="num">83%</td><td class="num">82%</td><td class="num">85%</td><td class="num highlight">83%</td></tr>
+<tr><td class="highlight">Intent agree+</td><td class="num">12%</td><td class="num">37%</td><td class="num">63%</td><td class="num">57%</td><td class="num">68%</td><td class="num">73%</td><td class="num">70%</td><td class="num highlight">70%</td></tr>
+<tr><td class="highlight">Network agree+</td><td class="num">7%</td><td class="num">62%</td><td class="num">55%</td><td class="num">62%</td><td class="num">67%</td><td class="num">73%</td><td class="num">77%</td><td class="num highlight">72%</td></tr>
+<tr><td class="highlight">Dealbreakers</td><td class="num">27%</td><td class="num">15%</td><td class="num">15%</td><td class="num">10%</td><td class="num">8%</td><td class="num">3%</td><td class="num">10%</td><td class="num highlight">7%</td></tr>
+</table>
+</div>
+<div class="section"><div class="section-title">Per-Bucket Analysis</div>
+<div class="card">
+<div class="card-header"><span class="bucket-badge bucket-taste_curator">Taste Curator</span></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+<div class="metric-card" style="flex:1;min-width:120px;padding:12px;"><div class="value" style="font-size:28px;">64%</div><div class="label">3-Run Avg Conv</div></div>
+<div style="flex:2;min-width:200px;padding:8px 0;">
+<table style="margin:0;font-size:12px;"><tr><th style="text-align:center;padding:2px 8px;background:transparent;">BL</th><th style="text-align:center;padding:2px 8px;background:transparent;">V1</th><th style="text-align:center;padding:2px 8px;background:transparent;">V2</th><th style="text-align:center;padding:2px 8px;background:transparent;">V3</th><th style="text-align:center;padding:2px 8px;background:transparent;">V4</th><th style="text-align:center;padding:2px 8px;background:transparent;">V5</th><th style="text-align:center;padding:2px 8px;background:transparent;">V6</th></tr><tr><td class="num" style="padding:4px 8px;background:var(--red-light);font-weight:600;">0%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">58%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">67%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td><td class="num" style="padding:4px 8px;background:var(--amber-light);font-weight:600;">42%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td></tr></table></div>
+</div>
+<p>Has taste, needs a system. These personas think in specific ratings (8/10, 4/10) and care about data portability and analytics. The specific rating examples ('Your 8/10 Thai place') were load-bearing for this bucket — when removed in V3, conversion dropped. Taste analytics detail in Pro was the key differentiator.</p>
+<p><strong>What won:</strong> Specific examples grounding the concept; taste analytics specificity in Pro; annual pricing at $99/year</p>
+<p><strong>Remaining blockers:</strong> Need to see the actual interface; data export capability; category granularity</p>
+</div>
+<div class="card">
+<div class="card-header"><span class="bucket-badge bucket-social_connector">Social Connector</span></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+<div class="metric-card" style="flex:1;min-width:120px;padding:12px;"><div class="value" style="font-size:28px;">72%</div><div class="label">3-Run Avg Conv</div></div>
+<div style="flex:2;min-width:200px;padding:8px 0;">
+<table style="margin:0;font-size:12px;"><tr><th style="text-align:center;padding:2px 8px;background:transparent;">BL</th><th style="text-align:center;padding:2px 8px;background:transparent;">V1</th><th style="text-align:center;padding:2px 8px;background:transparent;">V2</th><th style="text-align:center;padding:2px 8px;background:transparent;">V3</th><th style="text-align:center;padding:2px 8px;background:transparent;">V4</th><th style="text-align:center;padding:2px 8px;background:transparent;">V5</th><th style="text-align:center;padding:2px 8px;background:transparent;">V6</th></tr><tr><td class="num" style="padding:4px 8px;background:var(--red-light);font-weight:600;">0%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">50%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">67%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">83%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">58%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td></tr></table></div>
+</div>
+<p>Great recommenders who need effortless sharing. Zero dealbreakers for 4 consecutive rounds. The referral incentive + free basic friend activity resolved the original paywall concern that was blocking conversion. Their objections are entirely product-level (invite flow, privacy controls, group features).</p>
+<p><strong>What won:</strong> Friend network as the star section; 'send them my profile' testimonial; referral incentive aligning with natural behavior</p>
+<p><strong>Remaining blockers:</strong> Invite flow friction (product); group planning features; friends-of-friends discovery</p>
+</div>
+<div class="card">
+<div class="card-header"><span class="bucket-badge bucket-journal_graveyard">Journal Graveyard</span></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+<div class="metric-card" style="flex:1;min-width:120px;padding:12px;"><div class="value" style="font-size:28px;">56%</div><div class="label">3-Run Avg Conv</div></div>
+<div style="flex:2;min-width:200px;padding:8px 0;">
+<table style="margin:0;font-size:12px;"><tr><th style="text-align:center;padding:2px 8px;background:transparent;">BL</th><th style="text-align:center;padding:2px 8px;background:transparent;">V1</th><th style="text-align:center;padding:2px 8px;background:transparent;">V2</th><th style="text-align:center;padding:2px 8px;background:transparent;">V3</th><th style="text-align:center;padding:2px 8px;background:transparent;">V4</th><th style="text-align:center;padding:2px 8px;background:transparent;">V5</th><th style="text-align:center;padding:2px 8px;background:transparent;">V6</th></tr><tr><td class="num" style="padding:4px 8px;background:var(--red-light);font-weight:600;">0%</td><td class="num" style="padding:4px 8px;background:var(--red-light);font-weight:600;">17%</td><td class="num" style="padding:4px 8px;background:var(--amber-light);font-weight:600;">42%</td><td class="num" style="padding:4px 8px;background:var(--amber-light);font-weight:600;">33%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">50%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">67%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">50%</td></tr></table></div>
+</div>
+<p>The toughest bucket — high skepticism from a history of app abandonment. The honesty line ('most apps die after a week — we know that') was the single most important trust-builder, confirmed when removing it in V3 crashed resonance 25pp. The three-part retention argument (honesty → mechanism → proof via testimonial) is the formula.</p>
+<p><strong>What won:</strong> The honesty line; 'one tap, that's it'; retroactive entries ('profile doesn't care about timestamps'); three-month testimonial</p>
+<p><strong>Remaining blockers:</strong> No passive tracking (structural product gap); retention unproven until experienced; behavioral change required</p>
+</div>
+<div class="card">
+<div class="card-header"><span class="bucket-badge bucket-fomo_scroller">FOMO Scroller</span></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+<div class="metric-card" style="flex:1;min-width:120px;padding:12px;"><div class="value" style="font-size:28px;">81%</div><div class="label">3-Run Avg Conv</div></div>
+<div style="flex:2;min-width:200px;padding:8px 0;">
+<table style="margin:0;font-size:12px;"><tr><th style="text-align:center;padding:2px 8px;background:transparent;">BL</th><th style="text-align:center;padding:2px 8px;background:transparent;">V1</th><th style="text-align:center;padding:2px 8px;background:transparent;">V2</th><th style="text-align:center;padding:2px 8px;background:transparent;">V3</th><th style="text-align:center;padding:2px 8px;background:transparent;">V4</th><th style="text-align:center;padding:2px 8px;background:transparent;">V5</th><th style="text-align:center;padding:2px 8px;background:transparent;">V6</th></tr><tr><td class="num" style="padding:4px 8px;background:var(--red-light);font-weight:600;">8%</td><td class="num" style="padding:4px 8px;background:var(--red-light);font-weight:600;">17%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">50%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">83%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">92%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">67%</td></tr></table></div>
+</div>
+<p>The study's biggest transformation. In V1, this bucket had 75% resonance but only 17% conversion — they loved the framing but the copy was backward-looking ('record what you did'). The V2 forward-looking reframe ('discover what's next') unlocked conversion. By V4–V6, they're the second-highest converting bucket.</p>
+<p><strong>What won:</strong> 'Choosing feels like work when you don't have a system'; forward-looking discovery frame in hero; 'local trending' in Pro; friend network as discovery engine</p>
+<p><strong>Remaining blockers:</strong> Free vs Pro discovery gap; follow-through uncertainty; 'what to do right now' feature (product)</p>
+</div>
+<div class="card">
+<div class="card-header"><span class="bucket-badge bucket-city_explorer">City Explorer</span></div>
+<div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+<div class="metric-card" style="flex:1;min-width:120px;padding:12px;"><div class="value" style="font-size:28px;">89%</div><div class="label">3-Run Avg Conv</div></div>
+<div style="flex:2;min-width:200px;padding:8px 0;">
+<table style="margin:0;font-size:12px;"><tr><th style="text-align:center;padding:2px 8px;background:transparent;">BL</th><th style="text-align:center;padding:2px 8px;background:transparent;">V1</th><th style="text-align:center;padding:2px 8px;background:transparent;">V2</th><th style="text-align:center;padding:2px 8px;background:transparent;">V3</th><th style="text-align:center;padding:2px 8px;background:transparent;">V4</th><th style="text-align:center;padding:2px 8px;background:transparent;">V5</th><th style="text-align:center;padding:2px 8px;background:transparent;">V6</th></tr><tr><td class="num" style="padding:4px 8px;background:var(--amber-light);font-weight:600;">25%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">92%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">58%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">92%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">75%</td><td class="num" style="padding:4px 8px;background:var(--green-light);font-weight:600;">100%</td></tr></table></div>
+</div>
+<p>Highest conversion bucket — strongest unmet need. New to a city with no established recommendations system. The cold-start paragraph ('first it's your map, then it's your map plus everyone you trust') was load-bearing, confirmed when trimming it in V3 crashed conversion from 92% to 58%. 'Local trending' in V5 resolved the community discovery concern.</p>
+<p><strong>What won:</strong> 'First it's your map' cold-start framing; Chicago testimonial; local trending in Pro; taste analytics by neighborhood</p>
+<p><strong>Remaining blockers:</strong> Network density in specific cities (product); location-aware features; map view of experiences</p>
+</div>
+</div>
+<div class="section"><div class="section-title">Strongest Lines</div>
+<p>Lines most frequently cited as "strongest" across V4–V6 (180 evaluations).</p>
+<div class="card">
+<div class="line-item"><span class="line-count">15</span><span class="line-text">"Less mediocre. More you."</span></div>
+<div class="line-item"><span class="line-count">12</span><span class="line-text">"First it's your map. Then it's your map plus everyone you trust."</span></div>
+<div class="line-item"><span class="line-count">11</span><span class="line-text">"This isn't a trial. It's the real product."</span></div>
+<div class="line-item"><span class="line-count">10</span><span class="line-text">"Their discoveries become yours."</span></div>
+<div class="line-item"><span class="line-count">9</span><span class="line-text">"Most apps like this die after a week. We know that."</span></div>
+<div class="line-item"><span class="line-count">8</span><span class="line-text">"Local trending — see what's popular in your area beyond your friend group."</span></div>
+<div class="line-item"><span class="line-count">7</span><span class="line-text">"Network-powered discovery... Because it is one."</span></div>
+<div class="line-item"><span class="line-count">6</span><span class="line-text">"One tap. That's it."</span></div>
+<div class="line-item"><span class="line-count">6</span><span class="line-text">"Rate it now, or add it later — your profile doesn't care about timestamps."</span></div>
+<div class="line-item"><span class="line-count">6</span><span class="line-text">"Three months in and I still rate everything. It takes literally two seconds."</span></div>
+<div class="line-item"><span class="line-count">6</span><span class="line-text">"Invite 3 friends → get your first month of Pro free."</span></div>
+<div class="line-item"><span class="line-count">6</span><span class="line-text">"Choosing feels like work when you don't have a system."</span></div>
+</div></div>
+<div class="section"><div class="section-title">Dealbreaker Analysis</div>
+<p>Dealbreakers dropped from 27% (baseline) to 7% (3-run average). The remaining dealbreakers are structural product limitations that copy cannot resolve.</p>
+<table><tr><th>Dealbreaker Reason</th><th style="text-align:center">Count (V4–V6)</th><th>Bucket</th></tr>
+<tr><td>No community discovery layer for users without a local network.</td><td class="num">3</td><td><span class="bucket-badge bucket-city_explorer">City Explorer</span></td></tr>
+<tr><td>No passive tracking — manual entry is my fundamental failure mode.</td><td class="num">3</td><td><span class="bucket-badge bucket-journal_graveyard">Journal Graveyard</span></td></tr>
+<tr><td>Retention unproven until experienced.</td><td class="num">2</td><td><span class="bucket-badge bucket-journal_graveyard">Journal Graveyard</span></td></tr>
+<tr><td>Free discovery may still be too limited.</td><td class="num">2</td><td><span class="bucket-badge bucket-fomo_scroller">FOMO Scroller</span></td></tr>
+<tr><td>Retention is still promises without verifiable data.</td><td class="num">1</td><td><span class="bucket-badge bucket-journal_graveyard">Journal Graveyard</span></td></tr>
+<tr><td>Free discovery too limited for my core need.</td><td class="num">1</td><td><span class="bucket-badge bucket-fomo_scroller">FOMO Scroller</span></td></tr>
+<tr><td>Retention is still unproven until I experience it.</td><td class="num">1</td><td><span class="bucket-badge bucket-journal_graveyard">Journal Graveyard</span></td></tr>
+</table>
+<div class="callout amber">These dealbreakers represent the <strong>copy ceiling</strong> — they require product changes (passive tracking, community discovery, retention data), not further copy iteration.</div>
+</div>
+<div class="section"><div class="section-title">Price Perception</div>
+<div class="metric-grid" style="grid-template-columns: repeat(3, 1fr);">
+<div class="metric-card"><div class="value" style="color:var(--red);">21%</div><div class="label">Too Expensive</div><div class="delta down">was 50% at BL</div></div>
+<div class="metric-card"><div class="value" style="color:var(--amber);">48%</div><div class="label">Fair</div></div>
+<div class="metric-card"><div class="value" style="color:var(--green);">31%</div><div class="label">Good Deal</div><div class="delta up">was 10% at BL</div></div>
+</div>
+<p>Key pricing insights from qualitative feedback:</p>
+<ul>
+<li><strong>$99/year was the highest-impact pricing change</strong> — introduced in V3, it shifted "too expensive" from 50% to ~21% (3-run avg). Personas described it as "commitment" vs. monthly feeling "tentative."</li>
+<li><strong>Free tier clarity matters</strong> — specifying "see what friends rate nearby" in V5 removed ambiguity and improved social_connector and fomo_scroller perception.</li>
+<li><strong>"Invite 3 friends → free Pro month"</strong> aligned the business model with the product's social growth mechanic. Especially effective for social_connector and city_explorer.</li>
+<li><strong>journal_graveyard ignores pricing</strong> — their price response is consistently "free until I prove I'll stick with it." Pricing changes don't move this bucket.</li>
+</ul></div>
+<div class="section"><div class="section-title">What Resonated & What Didn't</div>
+<div class="section-subtitle">✅ What Worked</div>
+<div class="card">
+<p><strong>Emotional problem framing:</strong> "You've been to hundreds of places. You remember maybe twenty." Universal across all buckets. Specific beats generic.</p>
+<p><strong>One-tap effortlessness:</strong> The single most important line for journal_graveyard. "One tap. That's it." + "No review. No paragraph. No photo required." removes the effort objection.</p>
+<p><strong>Forward-looking discovery:</strong> "Discover what's next through the people you trust" — the reframe that unlocked fomo_scroller. Changed the product positioning from journal to discovery tool.</p>
+<p><strong>Honesty about retention:</strong> "Most apps like this die after a week. We know that." — load-bearing for journal_graveyard. Earned trust by naming their exact pattern.</p>
+<p><strong>Specific rating examples:</strong> "Your 8/10 Thai place. Your 4/10 tourist trap." — grounded the concept for taste_curator. Proved the team thinks in ratings, not marketing abstractions.</p>
+<p><strong>Cold-start framing:</strong> "First it's your map. Then it's your map plus everyone you trust." — the line that made solo value + network growth feel like a single journey, not a limitation.</p>
+<p><strong>Referral incentive:</strong> "Invite 3 friends → get your first month of Pro free" — aligned business model with product growth. Especially effective for social_connector.</p>
+<p><strong>Annual pricing anchor:</strong> $99/year reframed Pro as "commitment" vs. monthly feeling "tentative." Shifted price perception across all buckets.</p>
+</div>
+<div class="section-subtitle">❌ What Didn't Work</div>
+<div class="card">
+<p><strong>Generic baseline copy:</strong> 0% clarity nailed_it, 7% conversion. Fake testimonials damaged credibility. "Track Your Experiences" could describe 50 apps.</p>
+<p><strong>Backward-looking-only framing (V1):</strong> "Record what you did" resonated emotionally but didn't convert fomo_scroller — they need help deciding what to DO, not recording what they DID.</p>
+<p><strong>Over-trimming (V3):</strong> Removing load-bearing content (honesty line, examples, cold-start context) improved pace but hurt conversion. Length isn't the enemy — irrelevance is.</p>
+<p><strong>Vague feature descriptions:</strong> "Taste analytics that show you patterns" and "priority in local discovery" were flagged as meaningless across multiple rounds until made specific.</p>
+<p><strong>Paywalling social features (early V1):</strong> Gating friend features behind Pro created a catch-22: the network can't grow if free users can't see friends' activity.</p>
+</div></div>
+<div class="section"><div class="section-title">Unresolved Objections</div>
+<p>These objections surfaced consistently across V4–V6 and cannot be resolved by landing page copy alone. They represent opportunities for FAQ, follow-up content, onboarding, and product development.</p>
+<table><tr><th>Objection</th><th>Frequency</th><th>Recommended Response</th></tr>
+<tr><td>Need to see the actual interface / UX</td><td style="font-size:12px;">All buckets</td><td style="font-size:13px;">Add screenshots or short demo video to landing page; product walkthrough in onboarding</td></tr>
+<tr><td>No passive tracking / location detection</td><td style="font-size:12px;">journal_graveyard</td><td style="font-size:13px;">Product roadmap item; mention in FAQ if planned</td></tr>
+<tr><td>How many users in my city?</td><td style="font-size:12px;">city_explorer, social_connector</td><td style="font-size:13px;">Add city-level user counts when available; 'growing community' language in interim</td></tr>
+<tr><td>What does day one / empty profile look like?</td><td style="font-size:12px;">fomo_scroller, journal_graveyard</td><td style="font-size:13px;">Address in onboarding flow; consider adding onboarding screenshots to landing page</td></tr>
+<tr><td>Group planning / collaborative features</td><td style="font-size:12px;">social_connector</td><td style="font-size:13px;">Product roadmap item; FAQ or feature-request pipeline</td></tr>
+<tr><td>Data export / portability</td><td style="font-size:12px;">taste_curator</td><td style="font-size:13px;">Add to FAQ if supported; critical for trust with data-conscious users</td></tr>
+<tr><td>Retention data / 30-day stats</td><td style="font-size:12px;">journal_graveyard</td><td style="font-size:13px;">Publish when available; strongest possible social proof for this bucket</td></tr>
+<tr><td>Apple Watch / widget for faster entry</td><td style="font-size:12px;">journal_graveyard</td><td style="font-size:13px;">Product roadmap; could be a significant retention lever</td></tr>
+</table></div>
+<div class="section"><div class="section-title">Decision Log</div>
+<p>Key decisions and their outcomes across the study.</p>
+<table><tr><th>Version</th><th>Key Decision</th><th>Outcome</th></tr>
+<tr><td class="highlight">V1</td><td>Identity-driven framing ("Your social life, ranked") vs. functional baseline</td><td>+36pp conversion. Emotional framing massively outperformed functional.</td></tr>
+<tr><td class="highlight">V2</td><td>Forward-looking discovery reframe for fomo_scroller; cold-start paragraph; retention section; referral incentive</td><td>+24pp conversion. fomo_scroller tripled (17%→50%). social_connector gap closed. Crossed 50% threshold.</td></tr>
+<tr><td class="highlight">V3</td><td>Trimmed ~20% page length; annual pricing; taste analytics specificity</td><td>Mixed: fomo_scroller surged (+25pp) but journal_graveyard (-25pp res) and city_explorer (-34pp conv) regressed. Proved which content was load-bearing.</td></tr>
+<tr><td class="highlight">V4</td><td>Surgical restoration: honesty line, rating examples, cold-start context</td><td>+17pp conversion. Recovered V3 losses while keeping V3 gains. Best-ever results across all metrics.</td></tr>
+<tr><td class="highlight">V5</td><td>Micro-polish: free tier clarity, local trending, cleaner hero</td><td>Confirmed ceiling. Convergence with V4 within noise bands. city_explorer dealbreakers resolved by local trending.</td></tr>
+<tr><td class="highlight">V6</td><td>Pure re-run (convergence check)</td><td>Confirmed: 3-run avg conversion = 72%. Study complete.</td></tr>
+</table></div>
+<div class="section"><div class="section-title">Winning Copy (V5)</div>
+<p>The final, tested version of the landing page copy.</p>
+<div class="copy-display">
+<h1 class="copy-h1">Experience Architects — Copy V5</h1>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Hero</h2>
+<br/>
+<p><strong>Headline:</strong> Your social life, ranked.</p>
+<br/>
+<p><strong>Subhead:</strong> Experience Architects turns the restaurants, bars, trips, and things you actually do into a living taste profile — so you stop forgetting the great ones and discover what's next through the people you trust.</p>
+<br/>
+<p><strong>CTA:</strong> Get Early Access | Download the App</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Problem</h2>
+<br/>
+<p>You've been to hundreds of places. You remember maybe twenty.</p>
+<br/>
+<p>Someone texts you "where should we eat tonight?" and your mind goes blank — even though last month you had the best meal of the year and now you can't remember the name. Your Notes app is a graveyard. Your Google Maps saves are a wall of pins with no context. Your Instagram saves? Gone.</p>
+<br/>
+<p>Meanwhile, you keep ending up at the same three places — or worse, scrolling "best of" lists for twenty minutes and ending up on the couch. Not because you don't want to do things. Because choosing feels like work when you don't have a system.</p>
+<br/>
+<p>Your taste deserves better than this.</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Solution</h2>
+<br/>
+<p>One tap. That's it.</p>
+<br/>
+<p>After any experience — dinner, a hike, a comedy show, a bar you stumbled into at midnight — rate it. One tap, one number. No review. No paragraph. No photo required. Rate it now, or add it later — your profile doesn't care about timestamps.</p>
+<br/>
+<p>Experience Architects takes that single signal and builds your taste profile over time. Not a list. Not a journal. A living, ranked record of what you've done and what you actually thought of it.</p>
+<br/>
+<p>Your 8/10 Thai place. Your 4/10 tourist trap. The 10/10 speakeasy you'd never have found alone. Searchable. Sortable. Yours.</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Network Discovery</h2>
+<br/>
+<p>Here's where it gets interesting.</p>
+<br/>
+<p>Your friends are rating too. And their taste profiles feed yours — not through some algorithm guessing what you might like based on 50 million strangers, but through the actual people you trust.</p>
+<br/>
+<p>Your friend who always finds the best dive bars? You'll see their top-rated spots in your neighborhood. The one with perfect restaurant taste? Their 9s and 10s surface when you're looking for somewhere new. That friend who just moved to your city and has been exploring nonstop? Their discoveries become yours.</p>
+<br/>
+<p>Think Beli — the restaurant ranking app — but for everything. Bars, hikes, day trips, shows, classes, pop-ups.</p>
+<br/>
+<p>And before your friends join? Your personal taste profile works from day one — a searchable, ranked map of everything you've experienced. First it's your map. Then it's your map plus everyone you trust.</p>
+<br/>
+<p>Network-powered discovery that actually feels like getting a rec from a friend. Because it is one.</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">How It Works</h2>
+<br/>
+<p><strong>Rate</strong> — Tap to rate any experience. One number. Two seconds. Done.</p>
+<br/>
+<p><strong>Build</strong> — Your taste profile grows with every rating. It learns what you love, what you skip, and what you'd recommend without hesitation.</p>
+<br/>
+<p><strong>Discover</strong> — See what's highly rated by the people you actually trust. No strangers. No sponsored posts. Just your network's real signal.</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">What Keeps You Coming Back</h2>
+<br/>
+<p>Most apps like this die after a week. We know that.</p>
+<br/>
+<p>That's why Experience Architects is built around momentum, not effort. Weekly taste recaps show you patterns you didn't notice. Friend activity nudges pull you back when someone you trust rates something great nearby. And the more you rate, the sharper your discovery gets — your profile compounds, so month three is dramatically more useful than day one.</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Social Proof</h2>
+<br/>
+<p>"I used to keep a Google Sheet of every restaurant I went to. This replaced it in a day." — Mika, product designer, Brooklyn</p>
+<br/>
+<p>"My friends already ask me for recs constantly. Now I just send them my profile." — Jordan, recruiter, Austin</p>
+<br/>
+<p>"I moved to Chicago two months ago and my friends' ratings have been better than any 'best of' list." — Priya, consulting analyst, Chicago</p>
+<br/>
+<p>"I've tried five apps like this. This is the only one I opened a second time because it doesn't ask me to write anything." — Dante, data analyst, LA</p>
+<br/>
+<p>"Three months in and I still rate everything. It takes literally two seconds." — Reese, grad student, Denver</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Pricing</h2>
+<br/>
+<p class="copy-bold">Free — $0</p>
+<p>Your personal taste profile, unlimited ratings, full history, ranked experiences across every category, and basic friend activity — see what friends rate nearby. This isn't a trial. It's the real product.</p>
+<br/>
+<p class="copy-bold">Pro — $12/month or $99/year</p>
+<p>Full network discovery: personalized recommendations powered by your combined taste profiles, advanced filters, local trending — see what's popular in your area beyond your friend group — and taste analytics showing which neighborhoods you rate highest, how your taste compares to friends, and which categories you're pickiest about.</p>
+<br/>
+<p><strong>Invite 3 friends → get your first month of Pro free.</strong> The app gets better with every friend who joins.</p>
+<br/>
+<hr class="copy-hr"/>
+<br/>
+<h2 class="copy-h2">Final CTA</h2>
+<br/>
+<p class="copy-bold">Less mediocre. More you.</p>
+<br/>
+<p>Your taste already exists — scattered across apps, memory, and half-remembered conversations. Experience Architects just gives it a system.</p>
+<br/>
+<p>Get Early Access | Download the App</p>
+<br/></div></div>
+<div class="section"><div class="section-title">Audience Profiles</div>
+<p>Selected personas from each bucket (12 per bucket, 60 total in <code>audience_v1.json</code>).</p>
+<div class="persona-grid">
+<div class="persona-card">
+<span class="bucket-badge bucket-taste_curator" style="margin-bottom:8px;display:inline-block;">Taste Curator</span>
+<div class="name">Aisha Ali</div>
+<div class="demo">29, female · Atlanta, GA · creative director</div>
+<div class="voice">"Every time I try a new app it wants me to write reviews. I just want to rate and move on."</div>
+<div class="stats">
+<span class="stat">skepticism: 5/5</span>
+<span class="stat">price_sens: 2/5</span>
+<span class="stat">word_of_mouth</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-taste_curator" style="margin-bottom:8px;display:inline-block;">Taste Curator</span>
+<div class="name">Ezra Chen</div>
+<div class="demo">39, male · Washington, DC · editorial assistant</div>
+<div class="voice">"I wish I had a resume of everywhere I've been and what I thought."</div>
+<div class="stats">
+<span class="stat">skepticism: 4/5</span>
+<span class="stat">price_sens: 5/5</span>
+<span class="stat">instagram_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-social_connector" style="margin-bottom:8px;display:inline-block;">Social Connector</span>
+<div class="name">Ananya Chowdhury</div>
+<div class="demo">40, female · Portland, OR · fitness instructor</div>
+<div class="voice">"I know exactly where to send someone based on their vibe but I have to explain it every time."</div>
+<div class="stats">
+<span class="stat">skepticism: 2/5</span>
+<span class="stat">price_sens: 4/5</span>
+<span class="stat">tiktok_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-social_connector" style="margin-bottom:8px;display:inline-block;">Social Connector</span>
+<div class="name">Amir Tanaka</div>
+<div class="demo">28, male · Salt Lake City, UT · teacher</div>
+<div class="voice">"I love recommending stuff but I'm tired of repeating myself."</div>
+<div class="stats">
+<span class="stat">skepticism: 3/5</span>
+<span class="stat">price_sens: 2/5</span>
+<span class="stat">instagram_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-journal_graveyard" style="margin-bottom:8px;display:inline-block;">Journal Graveyard</span>
+<div class="name">Tobias Kapoor</div>
+<div class="demo">29, male · Atlanta, GA · business analyst</div>
+<div class="voice">"I've downloaded like five apps for this. Used each one for a week. They all have 3 entries."</div>
+<div class="stats">
+<span class="stat">skepticism: 3/5</span>
+<span class="stat">price_sens: 2/5</span>
+<span class="stat">tiktok_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-journal_graveyard" style="margin-bottom:8px;display:inline-block;">Journal Graveyard</span>
+<div class="name">Yuki Lee</div>
+<div class="demo">26, female · Washington, DC · pharmacist</div>
+<div class="voice">"If it doesn't work passively I'm going to forget it exists within a month."</div>
+<div class="stats">
+<span class="stat">skepticism: 3/5</span>
+<span class="stat">price_sens: 3/5</span>
+<span class="stat">instagram_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-fomo_scroller" style="margin-bottom:8px;display:inline-block;">FOMO Scroller</span>
+<div class="name">Kira Petrov</div>
+<div class="demo">27, female · Portland, OR · customer success rep</div>
+<div class="voice">"I have like 400 saved posts of places to go and I've been to none of them."</div>
+<div class="stats">
+<span class="stat">skepticism: 1/5</span>
+<span class="stat">price_sens: 3/5</span>
+<span class="stat">tiktok_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-fomo_scroller" style="margin-bottom:8px;display:inline-block;">FOMO Scroller</span>
+<div class="name">Maya Park</div>
+<div class="demo">35, female · Salt Lake City, UT · freelance writer</div>
+<div class="voice">"I keep saying I'll explore more but I end up on the couch every Saturday."</div>
+<div class="stats">
+<span class="stat">skepticism: 1/5</span>
+<span class="stat">price_sens: 3/5</span>
+<span class="stat">instagram_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-city_explorer" style="margin-bottom:8px;display:inline-block;">City Explorer</span>
+<div class="name">Samir Novak</div>
+<div class="demo">24, male · Atlanta, GA · consulting analyst</div>
+<div class="voice">"I'm saying yes to everything right now but I need a way to sort through what's actually good."</div>
+<div class="stats">
+<span class="stat">skepticism: 5/5</span>
+<span class="stat">price_sens: 2/5</span>
+<span class="stat">instagram_ad</span>
+</div></div>
+<div class="persona-card">
+<span class="bucket-badge bucket-city_explorer" style="margin-bottom:8px;display:inline-block;">City Explorer</span>
+<div class="name">Declan Watanabe</div>
+<div class="demo">39, male · Washington, DC · journalist</div>
+<div class="voice">"My Google Maps is just a sea of pins and I don't remember why I saved half of them."</div>
+<div class="stats">
+<span class="stat">skepticism: 1/5</span>
+<span class="stat">price_sens: 3/5</span>
+<span class="stat">instagram_ad</span>
+</div></div>
+</div></div>
+<div class="section"><div class="section-title">Limitations</div>
+<div class="callout">These are inherent to synthetic testing. The results indicate what messaging directions are strong, but real user behavior is the final arbiter.</div>
+<ul>
+<li>Synthetic users are not real users. They identify obvious problems but may miss subtle emotional responses.</li>
+<li>AI personas skew toward articulate, rational feedback. Real users are messier and less able to articulate why something feels off.</li>
+<li>This tests copy, not design. Visual design, load speed, layout, and interactive elements are not evaluated.</li>
+<li>Price sensitivity is directional, not precise. Synthetic personas have no real wallets.</li>
+<li>With 12 personas per bucket, per-bucket stats have ±8-17pp variance per run. The 3-run average is the reliable signal.</li>
+<li>No cross-round persona memory. Each evaluation is a fresh context. The same persona may respond differently across rounds.</li>
+</ul></div>
+
+<div style="text-align:center;padding:40px 0 20px;border-top:1px solid var(--border);margin-top:48px;">
+    <p style="font-size:13px;color:var(--text-muted);">Generated by synthetic user testing framework · 60 personas · 7 rounds · 360 evaluations</p>
+    <p style="font-size:13px;color:var(--text-muted);">Experience Architects — "Your social life, ranked."</p>
+</div>
+</div></body></html>

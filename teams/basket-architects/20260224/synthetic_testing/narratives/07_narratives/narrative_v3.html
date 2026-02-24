@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Narrative — V3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#fafaf9; --surface:#fff; --text:#1c1917; --text2:#57534e; --muted:#a8a29e; --border:#e7e5e4; --accent:#2563eb; --green:#059669; --red:#dc2626; --amber:#d97706; --purple:#7c3aed; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:32px 24px;max-width:900px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+h2{font-size:20px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--text);display:inline-block}
+h3{font-size:16px;font-weight:600;margin:20px 0 8px}
+h4{font-size:14px;font-weight:600;margin:12px 0 6px}
+p,li{font-size:14px;color:var(--text2);margin-bottom:8px}
+ul,ol{padding-left:20px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:24px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.metric .val{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;line-height:1}
+.metric .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:4px;font-weight:500}
+.metric .delta{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);background:#f5f5f4}
+td.num{font-family:'JetBrains Mono',monospace;text-align:center}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600}
+.b-tc{background:#ede9fe;color:#7c3aed} .b-sc{background:#dbeafe;color:#2563eb}
+.b-jg{background:#fef3c7;color:#d97706} .b-fs{background:#fee2e2;color:#dc2626}
+.b-ce{background:#d1fae5;color:#059669}
+strong{color:var(--text)}
+</style>
+</head><body>
+<h1>📝 Narrative — V3</h1>
+<p class="meta">Experience Architects · Researcher's interpretation · V3</p>
+<div class="card">
+<h3>Researcher's Stance</h3>
+<p>V3 proved what's expendable and what's load-bearing. Trimming ~20% helped some buckets (fomo_scroller surged to 75%) but hurt others (journal_graveyard crashed, city_explorer dropped 34pp). This round's primary value is diagnostic: it identified exactly which content elements drive conversion so V4 can make a data-driven hybrid. Annual pricing and taste analytics specificity were unambiguous wins.</p>
+</div>
+<h2>Executive Summary</h2>
+<p>Trimmed ~20% of page length. fomo_scroller surged (+25pp conv) and price perception hit best-ever. But journal_graveyard resonance crashed 25pp from removing the honesty line, and city_explorer conversion dropped 34pp from shortening cold-start context. V3's value is diagnostic: it proves which content is load-bearing.</p>
+<h2>Findings</h2>
+<div class="card"><ul><li><strong>Page length was hurting fomo_scroller</strong>: 50% → 75% conversion from trimming alone. Shorter page = less friction for mobile scrollers.</li><li><strong>Honesty line was load-bearing</strong>: Removing 'most apps die after a week. We know that.' crashed journal_graveyard resonance 25pp. Must be restored.</li><li><strong>Cold-start context was load-bearing</strong>: Shortening city_explorer's cold-start from 4 sentences to 1 dropped conversion from 92% to 58%. Punchline alone isn't enough.</li><li><strong>Specific examples were load-bearing</strong>: Removing '8/10 Thai place' dropped taste_curator conversion 8pp.</li><li><strong>$99/year was an unambiguous win</strong>: 'Too expensive' dropped from 27% to 17%. Best price perception ever.</li><li><strong>Taste analytics specificity landed</strong>: 'Neighborhoods, friend comparisons, category pickiness' drove taste_curator to 92% resonance.</li></ul></div>
+<h2>Recommendations</h2>
+<div class="card"><ol><li><strong>Restore the honesty line</strong> in the retention section opening.</li><li><strong>Restore the specific rating examples</strong> as a single compact line in the solution section.</li><li><strong>Expand cold-start to 2 sentences</strong> (not back to 4). Right-size the context around 'first it's your map.'</li><li><strong>Keep the tighter problem section</strong>. The merged fomo_scroller paragraph is driving their best results.</li><li><strong>Keep annual pricing and taste analytics specificity.</strong> Unambiguous wins.</li></ol></div>
+<h2>Qualitative Themes</h2>
+<div class="card"><ul><li><strong>Missing the honesty line</strong> (4 mentions, journal_graveyard): 'That was the most honest thing I'd read on a landing page.'</li><li><strong>Shorter page is better for mobile</strong> (6 mentions, fomo_scroller/city_explorer): 'I read every word without skimming.'</li><li><strong>$99/year is the right anchor</strong> (5 mentions): 'Annual signals commitment. Monthly felt tentative.'</li><li><strong>Taste analytics detail sells Pro</strong> (3 mentions, taste_curator): 'Which neighborhoods I rate highest — that's the data I want.'</li></ul></div>
+<h2>Clarity Notes</h2>
+<p>100% nailed_it. Maintained from V2. Product is fully understood.</p>
+<h2>Bucket Deep Dives</h2>
+<div class="card"><span class="badge b-tc">Taste Curator</span>
+<h4>67% conversion (-8pp), 92% resonance (+9pp), 0% dealbreakers (-17pp)</h4><p>Highest resonance yet but conversion dipped from losing the specific examples. Taste analytics specificity was the resonance driver.</p><p><strong>Key personas:</strong> 'I miss the 8/10 Thai place. Those examples proved someone who thinks like me built this.'</p><p><strong>Risk:</strong> Must restore examples in V4.</p>
+</div>
+<div class="card"><span class="badge b-sc">Social Connector</span>
+<h4>67% conversion (-8pp), 100% resonance, 0% dealbreakers</h4><p>Perfect resonance. Conversion dipped modestly — product experience is now the variable, not copy.</p>
+</div>
+<div class="card"><span class="badge b-jg">Journal Graveyard</span>
+<h4>33% conversion (-9pp), 25% resonance (-25pp) 🔴</h4><p>Removing the honesty line was a mistake. Resonance crashed. The three-month testimonial partially compensates but doesn't replace the direct acknowledgment.</p><p><strong>Key personas:</strong> 'I noticed the honesty line is gone. I respected that.'</p><p><strong>Risk:</strong> MUST restore. This is the clearest load-bearing signal in the study.</p>
+</div>
+<div class="card"><span class="badge b-fs">FOMO Scroller</span>
+<h4>75% conversion (+25pp) ⭐ Biggest V3 winner</h4><p>The tighter page is dramatically better for mobile scrollers. Conversion surged to 75%.</p><p><strong>Key personas:</strong> 'This version MOVES. I read the whole thing without losing interest.'</p><p><strong>Risk:</strong> Don't re-expand this bucket's critical sections.</p>
+</div>
+<div class="card"><span class="badge b-ce">City Explorer</span>
+<h4>58% conversion (-34pp) 🔴 Biggest V3 loser</h4><p>Punchy one-liner doesn't do enough without context. The longer cold-start explanation was doing more work than expected.</p><p><strong>Key personas:</strong> 'The standalone line is powerful but doesn't fully address my concern.'</p><p><strong>Risk:</strong> Must restore 2-sentence context in V4.</p>
+</div>
+<h2>Appendix Notes</h2>
+<p style="font-size:13px;color:var(--muted);">V3 is the diagnostic round. Its primary contribution is identifying load-bearing content for V4's surgical restoration.</p>
+</body></html>

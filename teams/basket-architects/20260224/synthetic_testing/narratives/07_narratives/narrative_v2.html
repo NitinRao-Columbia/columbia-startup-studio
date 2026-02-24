@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Narrative — V2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#fafaf9; --surface:#fff; --text:#1c1917; --text2:#57534e; --muted:#a8a29e; --border:#e7e5e4; --accent:#2563eb; --green:#059669; --red:#dc2626; --amber:#d97706; --purple:#7c3aed; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:32px 24px;max-width:900px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+h2{font-size:20px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--text);display:inline-block}
+h3{font-size:16px;font-weight:600;margin:20px 0 8px}
+h4{font-size:14px;font-weight:600;margin:12px 0 6px}
+p,li{font-size:14px;color:var(--text2);margin-bottom:8px}
+ul,ol{padding-left:20px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:24px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.metric .val{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;line-height:1}
+.metric .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:4px;font-weight:500}
+.metric .delta{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);background:#f5f5f4}
+td.num{font-family:'JetBrains Mono',monospace;text-align:center}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600}
+.b-tc{background:#ede9fe;color:#7c3aed} .b-sc{background:#dbeafe;color:#2563eb}
+.b-jg{background:#fef3c7;color:#d97706} .b-fs{background:#fee2e2;color:#dc2626}
+.b-ce{background:#d1fae5;color:#059669}
+strong{color:var(--text)}
+</style>
+</head><body>
+<h1>📝 Narrative — V2</h1>
+<p class="meta">Experience Architects · Researcher's interpretation · V2</p>
+<div class="card">
+<h3>Researcher's Stance</h3>
+<p>V2 crossed the 50% conversion threshold (67%) with targeted changes responding to V1's data. The forward-looking reframe tripled fomo_scroller conversion (17%→50%). The referral incentive and free social activity closed the social_connector gap. journal_graveyard doubled (17%→42%) but 25% dealbreakers persist — these are structural. The page is getting long, which matters for mobile traffic. Trimming is the V3 priority.</p>
+</div>
+<h2>Executive Summary</h2>
+<p>Targeted V1's two biggest gaps: added forward-looking discovery angle for fomo_scroller and retention section for journal_graveyard. Also added referral incentive, free friend activity, and cold-start paragraph. Conversion hit 67%, crossing the 50% threshold. All buckets improved. Page length is a new concern.</p>
+<h2>Findings</h2>
+<div class="card"><ul><li><strong>Forward-looking reframe tripled fomo_scroller</strong>: 17% → 50% conversion. 'Discover what's next' in the hero subhead was the single highest-leverage change.</li><li><strong>Referral incentive closed social_connector gap</strong>: 50% → 75% conversion, 0% dealbreakers. 'Invite 3 friends → free Pro month' aligned business model with product growth.</li><li><strong>Retention section moved journal_graveyard</strong>: 17% → 42%. 'Most apps die after a week. We know that.' earned trust through honesty.</li><li><strong>city_explorer hit 92%</strong>: Cold-start paragraph ('first it's your map') resolved their primary concern.</li><li><strong>Page length concern emerging</strong>: Multiple personas mention mobile reading experience. V3 should trim ~20%.</li></ul></div>
+<h2>Recommendations</h2>
+<div class="card"><ol><li><strong>Trim ~20% of page length</strong>: Protect conversion-driving content, cut supporting detail. Priority: tighten problem section, shorten cold-start explanation.</li><li><strong>Add annual pricing</strong>: 4+ personas requested $99/year option.</li><li><strong>Specify taste analytics</strong>: Replace vague 'taste analytics' with concrete descriptions.</li><li><strong>Monitor network believability dip</strong>: -7pp from V1. May be noise, may be dilution from longer page.</li></ol></div>
+<h2>Qualitative Themes</h2>
+<div class="card"><ul><li><strong>'Choosing feels like work' is a new anchor line</strong> (5 mentions): Added in V2, immediately resonates with fomo_scroller.</li><li><strong>'First it's your map' is the city_explorer anchor</strong> (7 mentions): Most-cited line overall. Solo→social journey in one sentence.</li><li><strong>Honesty about retention earns trust</strong> (4 mentions): journal_graveyard specifically responds to 'we know apps die after a week.'</li><li><strong>Page length concern</strong> (8 mentions): 'Getting long for mobile.' Especially from fomo_scroller and city_explorer (action-oriented).</li><li><strong>Objections shifting to product-level</strong> (6 mentions): 'I need to see the interface' — healthy signal that copy is approaching its ceiling.</li></ul></div>
+<h2>Clarity Notes</h2>
+<p>100% nailed_it. Perfect clarity. The product is fully understood by all 60 personas.</p>
+<h2>Bucket Deep Dives</h2>
+<div class="card"><span class="badge b-tc">Taste Curator</span>
+<h4>75% conversion (+17pp)</h4><p>Steady improvement. 83% resonance shows strong connection. Taste analytics vagueness is the remaining friction.</p><p><strong>Key personas:</strong> Want specifics: 'which neighborhoods, which categories.'</p><p><strong>Risk:</strong> Removing the specific examples would hurt this bucket.</p>
+</div>
+<div class="card"><span class="badge b-sc">Social Connector</span>
+<h4>75% conversion (+25pp), 0% dealbreakers</h4><p>Referral incentive + free social tier was the unlock. Resonance-conversion gap from V1 is closed. Objections are now product-level only.</p><p><strong>Key personas:</strong> Ready to evangelize. 'I'd have 3 friends on this within a week.'</p><p><strong>Risk:</strong> None from copy. Product invite flow quality is the remaining variable.</p>
+</div>
+<div class="card"><span class="badge b-jg">Journal Graveyard</span>
+<h4>42% conversion (+25pp), 25% dealbreakers</h4><p>Doubled but dealbreakers are structural. No passive tracking = guaranteed eventual abandonment for some personas.</p><p><strong>Key personas:</strong> 'The honesty earned my try. Whether I stick with it is on me.'</p><p><strong>Risk:</strong> 25% dealbreaker floor may be structural. Copy can't solve behavior change.</p>
+</div>
+<div class="card"><span class="badge b-fs">FOMO Scroller</span>
+<h4>50% conversion (+33pp) — biggest single-round gain</h4><p>Forward-looking reframe was the exact right change. 'V1 told me to record my life. V2 tells me to upgrade it.'</p><p><strong>Key personas:</strong> Discovery-driven. They want Saturday plans, not Monday journals.</p><p><strong>Risk:</strong> Page length is hurting this mobile-first audience.</p>
+</div>
+<div class="card"><span class="badge b-ce">City Explorer</span>
+<h4>92% conversion (+17pp) — near ceiling</h4><p>11 of 12 personas would convert. Cold-start paragraph was the final piece.</p><p><strong>Key personas:</strong> 'The page addresses my situation perfectly without naming it specifically.'</p><p><strong>Risk:</strong> Community discovery beyond friends is the remaining product request.</p>
+</div>
+<h2>Appendix Notes</h2>
+<p style="font-size:13px;color:var(--muted);">Same audience (audience_v1.json). All deltas directly comparable to V1 and baseline.</p>
+</body></html>

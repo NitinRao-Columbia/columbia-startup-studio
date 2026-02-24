@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Charts — V2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#fafaf9; --surface:#fff; --text:#1c1917; --text2:#57534e; --muted:#a8a29e; --border:#e7e5e4; --accent:#2563eb; --green:#059669; --red:#dc2626; --amber:#d97706; --purple:#7c3aed; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:32px 24px;max-width:900px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+h2{font-size:20px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--text);display:inline-block}
+h3{font-size:16px;font-weight:600;margin:20px 0 8px}
+h4{font-size:14px;font-weight:600;margin:12px 0 6px}
+p,li{font-size:14px;color:var(--text2);margin-bottom:8px}
+ul,ol{padding-left:20px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:24px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.metric .val{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;line-height:1}
+.metric .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:4px;font-weight:500}
+.metric .delta{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);background:#f5f5f4}
+td.num{font-family:'JetBrains Mono',monospace;text-align:center}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600}
+.b-tc{background:#ede9fe;color:#7c3aed} .b-sc{background:#dbeafe;color:#2563eb}
+.b-jg{background:#fef3c7;color:#d97706} .b-fs{background:#fee2e2;color:#dc2626}
+.b-ce{background:#d1fae5;color:#059669}
+strong{color:var(--text)}
+</style>
+</head><body>
+<h1>📊 Charts — V2</h1>
+<p class="meta">Experience Architects · Round 2 · 60 personas × 5 buckets</p>
+<div class="grid">
+<div class="metric"><div class="val">67%</div><div class="lbl">Conversion</div><div class="delta"><span class="up">+24pp</span></div></div>
+<div class="metric"><div class="val">60%</div><div class="lbl">Resonance</div><div class="delta"><span class="up">+2pp</span></div></div>
+<div class="metric"><div class="val">63%</div><div class="lbl">Intent</div></div>
+<div class="metric"><div class="val">55%</div><div class="lbl">Network</div></div>
+<div class="metric"><div class="val">15%</div><div class="lbl">Dealbreakers</div><div class="delta"><span class="flat">0pp</span></div></div>
+</div>
+<div class="chart-box">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;font-family:inherit;">
+<text x="350" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Core Metrics Through V2</text>
+<line x1="50" y1="232.0" x2="680" y2="232.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="236.0" text-anchor="end" font-size="10" fill="#94a3b8">0%</text>
+<line x1="50" y1="183.5" x2="680" y2="183.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="187.5" text-anchor="end" font-size="10" fill="#94a3b8">25%</text>
+<line x1="50" y1="135.0" x2="680" y2="135.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="139.0" text-anchor="end" font-size="10" fill="#94a3b8">50%</text>
+<line x1="50" y1="86.5" x2="680" y2="86.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="90.5" text-anchor="end" font-size="10" fill="#94a3b8">75%</text>
+<line x1="50" y1="38.0" x2="680" y2="38.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="42.0" text-anchor="end" font-size="10" fill="#94a3b8">100%</text>
+<text x="50.0" y="262" text-anchor="middle" font-size="11" fill="#64748b">BL</text>
+<text x="365.0" y="262" text-anchor="middle" font-size="11" fill="#64748b">V1</text>
+<text x="680.0" y="262" text-anchor="middle" font-size="11" fill="#64748b">V2</text>
+<polyline points="50.0,199.0 365.0,119.5 680.0,115.6" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="199.0" r="3.5" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="119.5" r="3.5" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="115.6" r="3.5" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,208.7 365.0,160.2 680.0,109.8" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="208.7" r="3.5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="160.2" r="3.5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="109.8" r="3.5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,218.4 365.0,148.6 680.0,102.0" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="218.4" r="3.5" fill="#059669" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="148.6" r="3.5" fill="#059669" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="102.0" r="3.5" fill="#059669" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,218.4 365.0,111.7 680.0,125.3" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="218.4" r="3.5" fill="#d97706" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="111.7" r="3.5" fill="#d97706" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="125.3" r="3.5" fill="#d97706" stroke="white" stroke-width="1.5"/>
+</svg>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:6px;">
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#2563eb;border-radius:2px;display:inline-block;"></span>Resonance</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#dc2626;border-radius:2px;display:inline-block;"></span>Intent</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#059669;border-radius:2px;display:inline-block;"></span>Conversion</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#d97706;border-radius:2px;display:inline-block;"></span>Network</span>
+</div></div>
+<div class="chart-box">
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;font-family:inherit;">
+<text x="350" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">Conversion by Bucket Through V2</text>
+<line x1="50" y1="232.0" x2="680" y2="232.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="236.0" text-anchor="end" font-size="10" fill="#94a3b8">0%</text>
+<line x1="50" y1="183.5" x2="680" y2="183.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="187.5" text-anchor="end" font-size="10" fill="#94a3b8">25%</text>
+<line x1="50" y1="135.0" x2="680" y2="135.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="139.0" text-anchor="end" font-size="10" fill="#94a3b8">50%</text>
+<line x1="50" y1="86.5" x2="680" y2="86.5" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="90.5" text-anchor="end" font-size="10" fill="#94a3b8">75%</text>
+<line x1="50" y1="38.0" x2="680" y2="38.0" stroke="#e2e8f0" stroke-width="1"/>
+<text x="43" y="42.0" text-anchor="end" font-size="10" fill="#94a3b8">100%</text>
+<text x="50.0" y="262" text-anchor="middle" font-size="11" fill="#64748b">BL</text>
+<text x="365.0" y="262" text-anchor="middle" font-size="11" fill="#64748b">V1</text>
+<text x="680.0" y="262" text-anchor="middle" font-size="11" fill="#64748b">V2</text>
+<polyline points="50.0,232.0 365.0,119.5 680.0,86.5" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="232.0" r="3.5" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="119.5" r="3.5" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="86.5" r="3.5" fill="#2563eb" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,232.0 365.0,135.0 680.0,86.5" fill="none" stroke="#dc2626" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="232.0" r="3.5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="135.0" r="3.5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="86.5" r="3.5" fill="#dc2626" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,232.0 365.0,199.0 680.0,150.5" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="232.0" r="3.5" fill="#059669" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="199.0" r="3.5" fill="#059669" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="150.5" r="3.5" fill="#059669" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,216.5 365.0,199.0 680.0,135.0" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="216.5" r="3.5" fill="#d97706" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="199.0" r="3.5" fill="#d97706" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="135.0" r="3.5" fill="#d97706" stroke="white" stroke-width="1.5"/>
+<polyline points="50.0,183.5 365.0,86.5 680.0,53.5" fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="50.0" cy="183.5" r="3.5" fill="#7c3aed" stroke="white" stroke-width="1.5"/>
+<circle cx="365.0" cy="86.5" r="3.5" fill="#7c3aed" stroke="white" stroke-width="1.5"/>
+<circle cx="680.0" cy="53.5" r="3.5" fill="#7c3aed" stroke="white" stroke-width="1.5"/>
+</svg>
+<div style="display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:6px;">
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#2563eb;border-radius:2px;display:inline-block;"></span>Taste Curator</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#dc2626;border-radius:2px;display:inline-block;"></span>Social Connector</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#059669;border-radius:2px;display:inline-block;"></span>Journal Graveyard</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#d97706;border-radius:2px;display:inline-block;"></span>FOMO Scroller</span>
+<span style="display:flex;align-items:center;gap:4px;font-size:11px;color:#475569;"><span style="width:12px;height:3px;background:#7c3aed;border-radius:2px;display:inline-block;"></span>City Explorer</span>
+</div></div>
+<div class="chart-box">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;font-family:inherit;">
+<text x="300" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">V2 — Conversion by Bucket</text>
+<rect x="80.5" y="71.5" width="45" height="100.5" fill="#2563eb" rx="3"/>
+<text x="103.0" y="66.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">75%</text>
+<text x="103.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Taste Curator</text>
+<rect x="186.5" y="71.5" width="45" height="100.5" fill="#2563eb" rx="3"/>
+<text x="209.0" y="66.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">75%</text>
+<text x="209.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Social Connector</text>
+<rect x="292.5" y="115.72" width="45" height="56.28" fill="#2563eb" rx="3"/>
+<text x="315.0" y="110.72" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">42%</text>
+<text x="315.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Journal Graveyard</text>
+<rect x="398.5" y="105.0" width="45" height="67.0" fill="#2563eb" rx="3"/>
+<text x="421.0" y="100.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">50%</text>
+<text x="421.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">FOMO Scroller</text>
+<rect x="504.5" y="48.72" width="45" height="123.28" fill="#2563eb" rx="3"/>
+<text x="527.0" y="43.72" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">92%</text>
+<text x="527.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">City Explorer</text>
+</svg>
+</div>
+<div class="chart-box">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;font-family:inherit;">
+<text x="300" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">V2 — Resonance by Bucket</text>
+<rect x="80.5" y="60.78" width="45" height="111.22" fill="#7c3aed" rx="3"/>
+<text x="103.0" y="55.78" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">83%</text>
+<text x="103.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Taste Curator</text>
+<rect x="186.5" y="71.5" width="45" height="100.5" fill="#7c3aed" rx="3"/>
+<text x="209.0" y="66.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">75%</text>
+<text x="209.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Social Connector</text>
+<rect x="292.5" y="105.0" width="45" height="67.0" fill="#7c3aed" rx="3"/>
+<text x="315.0" y="100.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">50%</text>
+<text x="315.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Journal Graveyard</text>
+<rect x="398.5" y="115.72" width="45" height="56.28" fill="#7c3aed" rx="3"/>
+<text x="421.0" y="110.72" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">42%</text>
+<text x="421.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">FOMO Scroller</text>
+<rect x="504.5" y="105.0" width="45" height="67.0" fill="#7c3aed" rx="3"/>
+<text x="527.0" y="100.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">50%</text>
+<text x="527.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">City Explorer</text>
+</svg>
+</div>
+<div class="chart-box">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;font-family:inherit;">
+<text x="300" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">V2 — Dealbreakers by Bucket</text>
+<rect x="80.5" y="106.91428571428571" width="45" height="65.08571428571429" fill="#dc2626" rx="3"/>
+<text x="103.0" y="101.91428571428571" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">17%</text>
+<text x="103.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Taste Curator</text>
+<rect x="186.5" y="172.0" width="45" height="0.0" fill="#dc2626" rx="3"/>
+<text x="209.0" y="167.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">0%</text>
+<text x="209.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Social Connector</text>
+<rect x="292.5" y="76.28571428571428" width="45" height="95.71428571428572" fill="#dc2626" rx="3"/>
+<text x="315.0" y="71.28571428571428" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">25%</text>
+<text x="315.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Journal Graveyard</text>
+<rect x="398.5" y="106.91428571428571" width="45" height="65.08571428571429" fill="#dc2626" rx="3"/>
+<text x="421.0" y="101.91428571428571" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">17%</text>
+<text x="421.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">FOMO Scroller</text>
+<rect x="504.5" y="106.91428571428571" width="45" height="65.08571428571429" fill="#dc2626" rx="3"/>
+<text x="527.0" y="101.91428571428571" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">17%</text>
+<text x="527.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">City Explorer</text>
+</svg>
+</div>
+<div class="chart-box">
+<svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;font-family:inherit;">
+<text x="300" y="22" text-anchor="middle" font-size="13" font-weight="600" fill="#1e293b">V2 — Price Perception</text>
+<rect x="115.83333333333333" y="135.82" width="45" height="36.18" fill="#059669" rx="3"/>
+<text x="138.33333333333331" y="130.82" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">27%</text>
+<text x="138.33333333333331" y="205" text-anchor="middle" font-size="10" fill="#64748b">Too Expensive</text>
+<rect x="292.5" y="111.69999999999999" width="45" height="60.300000000000004" fill="#059669" rx="3"/>
+<text x="315.0" y="106.69999999999999" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">45%</text>
+<text x="315.0" y="205" text-anchor="middle" font-size="10" fill="#64748b">Fair</text>
+<rect x="469.16666666666663" y="134.48" width="45" height="37.52" fill="#059669" rx="3"/>
+<text x="491.66666666666663" y="129.48" text-anchor="middle" font-size="11" font-weight="600" fill="#1e293b">28%</text>
+<text x="491.66666666666663" y="205" text-anchor="middle" font-size="10" fill="#64748b">Good Deal</text>
+</svg>
+</div>
+<h2>Per-Bucket Detail</h2>
+<table><tr><th>Bucket</th><th style="text-align:center">Resonance</th><th style="text-align:center">Conversion</th><th style="text-align:center">Intent</th><th style="text-align:center">Dealbreakers</th><th style="text-align:center">Price: Fair+</th></tr>
+<tr><td><span class="badge b-tc">Taste Curator</span></td><td class="num">83%</td><td class="num">75%</td><td class="num">83%</td><td class="num">17%</td><td class="num">75%</td></tr>
+<tr><td><span class="badge b-sc">Social Connector</span></td><td class="num">75%</td><td class="num">75%</td><td class="num">83%</td><td class="num">0%</td><td class="num">100%</td></tr>
+<tr><td><span class="badge b-jg">Journal Graveyard</span></td><td class="num">50%</td><td class="num">42%</td><td class="num">50%</td><td class="num">25%</td><td class="num">75%</td></tr>
+<tr><td><span class="badge b-fs">FOMO Scroller</span></td><td class="num">42%</td><td class="num">50%</td><td class="num">33%</td><td class="num">17%</td><td class="num">58%</td></tr>
+<tr><td><span class="badge b-ce">City Explorer</span></td><td class="num">50%</td><td class="num">92%</td><td class="num">67%</td><td class="num">17%</td><td class="num">59%</td></tr>
+</table>
+</body></html>

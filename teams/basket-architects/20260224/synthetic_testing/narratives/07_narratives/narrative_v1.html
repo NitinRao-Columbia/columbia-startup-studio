@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Narrative — V1</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#fafaf9; --surface:#fff; --text:#1c1917; --text2:#57534e; --muted:#a8a29e; --border:#e7e5e4; --accent:#2563eb; --green:#059669; --red:#dc2626; --amber:#d97706; --purple:#7c3aed; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:32px 24px;max-width:900px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+h2{font-size:20px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--text);display:inline-block}
+h3{font-size:16px;font-weight:600;margin:20px 0 8px}
+h4{font-size:14px;font-weight:600;margin:12px 0 6px}
+p,li{font-size:14px;color:var(--text2);margin-bottom:8px}
+ul,ol{padding-left:20px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:24px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.metric .val{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;line-height:1}
+.metric .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:4px;font-weight:500}
+.metric .delta{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);background:#f5f5f4}
+td.num{font-family:'JetBrains Mono',monospace;text-align:center}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600}
+.b-tc{background:#ede9fe;color:#7c3aed} .b-sc{background:#dbeafe;color:#2563eb}
+.b-jg{background:#fef3c7;color:#d97706} .b-fs{background:#fee2e2;color:#dc2626}
+.b-ce{background:#d1fae5;color:#059669}
+strong{color:var(--text)}
+</style>
+</head><body>
+<h1>📝 Narrative — V1</h1>
+<p class="meta">Experience Architects · Researcher's interpretation · V1</p>
+<div class="card">
+<h3>Researcher's Stance</h3>
+<p>V1 is a massive lift from baseline across every metric — conversion from 7% to 43%, resonance from 17% to 58%, clarity from 0% to 88% nailed_it. The brand voice is working. However, two critical gaps emerged: fomo_scroller has a 75% resonance / 17% conversion gap (they love the concept but the backward-looking copy doesn't serve their forward-looking need), and journal_graveyard is stuck at 17% (retention concerns are unsolved). Network believability at 62% is the breakout metric — this is the product's differentiator.</p>
+</div>
+<h2>Executive Summary</h2>
+<p>First real copy version tested. Identity-driven hero ('Your social life, ranked'), specific examples (8/10 Thai place), one-tap emphasis, network discovery section. All metrics lifted massively from baseline. Two structural gaps identified: fomo_scroller needs forward-looking reframe, journal_graveyard needs retention proof.</p>
+<h2>Findings</h2>
+<div class="card"><ul><li><strong>+36pp conversion lift validates the baseline approach</strong>: V1 at 43% vs baseline 7%. The floor was real, the lift is real.</li><li><strong>Network discovery is the breakout concept</strong>: 62% believability — highest metric. Friend-powered discovery resonates more than the personal journal framing.</li><li><strong>Resonance-conversion gap in fomo_scroller</strong>: 75% resonance but only 17% conversion. They love the concept but the copy is backward-looking ('record what you did'). They need 'discover what to do next.'</li><li><strong>Clarity at 88% nailed_it</strong>: The specific examples and Beli comparison communicate the product clearly. Major improvement from 0%.</li><li><strong>Price perception improved</strong>: 'too expensive' dropped from 50% to 23%. Value framing makes $12/month feel justified.</li></ul></div>
+<h2>Recommendations</h2>
+<div class="card"><ol><li><strong>Reframe hero for forward-looking discovery</strong>: Add 'discover what's next' to subhead for fomo_scroller.</li><li><strong>Add retention section</strong>: Address journal_graveyard's 'I'll abandon this in a week' concern directly.</li><li><strong>Address cold-start</strong>: Multiple buckets ask 'what if I'm the first of my friends?' Add pre-network value paragraph.</li><li><strong>Soften paywall</strong>: Social features behind Pro creates a catch-22. Add basic friend activity to free.</li><li><strong>Add referral incentive</strong>: Align business model with network growth.</li></ol></div>
+<h2>Qualitative Themes</h2>
+<div class="card"><ul><li><strong>Memory framing lands universally</strong> (28 mentions): 'Hundreds of places, remember twenty' is the most-cited problem statement.</li><li><strong>'One tap' is critical</strong> (22 mentions): Especially for journal_graveyard. The effortlessness claim is the entry point.</li><li><strong>Network discovery excites</strong> (31 mentions): 'Friends' picks over algorithms' is the differentiator personas respond to most.</li><li><strong>Cold-start concern</strong> (15 mentions): 'What if none of my friends use this?' across 4 of 5 buckets.</li><li><strong>Social paywall objection</strong> (12 mentions): 'Don't gate the social features behind Pro — the network can't grow.'</li></ul></div>
+<h2>Clarity Notes</h2>
+<p>88% nailed_it, 10% partial, 2% wrong. Major improvement. The Beli comparison and specific examples communicate the product clearly.</p>
+<h2>Bucket Deep Dives</h2>
+<div class="card"><span class="badge b-tc">Taste Curator</span>
+<h4>58% conversion — strong start</h4><p>The specific rating examples (8/10 Thai place) proved the team 'gets it.' Taste analytics in Pro need more specificity.</p><p><strong>Key personas:</strong> High-skepticism personas still cite 'need to see the interface.'</p><p><strong>Risk:</strong> Removing specific examples would hurt this bucket.</p>
+</div>
+<div class="card"><span class="badge b-sc">Social Connector</span>
+<h4>50% conversion — resonance-conversion gap</h4><p>75% resonance but 50% conversion. They love the concept but worry friends won't join and social features are paywalled.</p><p><strong>Key personas:</strong> Social evangelists who need a free social tier and a referral incentive to convert.</p><p><strong>Risk:</strong> If paywall isn't softened, this bucket plateaus.</p>
+</div>
+<div class="card"><span class="badge b-jg">Journal Graveyard</span>
+<h4>17% conversion — toughest bucket</h4><p>Down from 58% dealbreakers (baseline) to 25%, which is progress. But retention fears dominate. They need to believe this time will be different.</p><p><strong>Key personas:</strong> Every persona cites past app abandonment. Copy must acknowledge this directly.</p><p><strong>Risk:</strong> May be a structural 50% ceiling bucket. Copy can reduce friction but can't change behavior.</p>
+</div>
+<div class="card"><span class="badge b-fs">FOMO Scroller</span>
+<h4>17% conversion — biggest gap, biggest opportunity</h4><p>75% resonance proves the audience is right. 17% conversion proves the framing is wrong. They need forward-looking discovery ('what to do next'), not backward-looking recording ('rate what you did').</p><p><strong>Key personas:</strong> 'V1 told me to record my life. I need help upgrading it.'</p><p><strong>Risk:</strong> If V2 doesn't add forward-looking framing, this bucket stays at 17%.</p>
+</div>
+<div class="card"><span class="badge b-ce">City Explorer</span>
+<h4>75% conversion — strongest bucket</h4><p>Highest conversion, lowest dealbreakers (8%). The product-audience fit is strong. Cold-start concern is the main friction.</p><p><strong>Key personas:</strong> Recently relocated, actively building their city map.</p><p><strong>Risk:</strong> Cold-start must be addressed to push above 75%.</p>
+</div>
+<h2>Appendix Notes</h2>
+<p style="font-size:13px;color:var(--muted);">V1 uses the same audience as baseline (audience_v1.json). All deltas are directly comparable.</p>
+</body></html>

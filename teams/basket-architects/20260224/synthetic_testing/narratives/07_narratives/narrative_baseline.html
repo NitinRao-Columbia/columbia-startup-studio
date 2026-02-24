@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Narrative — Baseline</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#fafaf9; --surface:#fff; --text:#1c1917; --text2:#57534e; --muted:#a8a29e; --border:#e7e5e4; --accent:#2563eb; --green:#059669; --red:#dc2626; --amber:#d97706; --purple:#7c3aed; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;padding:32px 24px;max-width:900px;margin:0 auto}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+h2{font-size:20px;font-weight:600;margin:28px 0 12px;padding-bottom:6px;border-bottom:2px solid var(--text);display:inline-block}
+h3{font-size:16px;font-weight:600;margin:20px 0 8px}
+h4{font-size:14px;font-weight:600;margin:12px 0 6px}
+p,li{font-size:14px;color:var(--text2);margin-bottom:8px}
+ul,ol{padding-left:20px}
+.meta{font-size:13px;color:var(--muted);margin-bottom:24px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin:16px 0;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:16px 0}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.metric .val{font-family:'JetBrains Mono',monospace;font-size:32px;font-weight:700;line-height:1}
+.metric .lbl{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-top:4px;font-weight:500}
+.metric .delta{font-family:'JetBrains Mono',monospace;font-size:12px;margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);background:#f5f5f4}
+td.num{font-family:'JetBrains Mono',monospace;text-align:center}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600}
+.b-tc{background:#ede9fe;color:#7c3aed} .b-sc{background:#dbeafe;color:#2563eb}
+.b-jg{background:#fef3c7;color:#d97706} .b-fs{background:#fee2e2;color:#dc2626}
+.b-ce{background:#d1fae5;color:#059669}
+strong{color:var(--text)}
+</style>
+</head><body>
+<h1>📝 Narrative — Baseline</h1>
+<p class="meta">Experience Architects · Researcher's interpretation · Baseline</p>
+<div class="card">
+<h3>Researcher's Stance</h3>
+<p>The baseline is deliberately bad — a generic, flat landing page with no brand voice, fake testimonials, and functional-only copy. Its purpose is to calibrate the floor so that V1 gains can be validated as real rather than AI grading generosity. The 7% conversion confirms the floor is low enough to be useful.</p>
+</div>
+<h2>Executive Summary</h2>
+<p>Tested a deliberately mediocre landing page ('Track Your Experiences — Remember Everything You Do') against 60 personas across 5 buckets. Conversion was 7%, resonance 17%, clarity nailed_it 0%. This establishes the scoring floor for all subsequent rounds.</p>
+<h2>Findings</h2>
+<div class="card"><ul><li><strong>Floor established at 7% conversion</strong>: Low enough to validate V1 lifts as genuine. Any version scoring above 15% is demonstrably better than generic copy.</li><li><strong>Clarity at 0% nailed_it</strong>: No persona correctly identified what the product does. Generic framing ('Track Your Experiences') could describe 50 apps.</li><li><strong>Fake testimonials detected</strong>: Multiple personas flagged social proof as 'obvious marketing copy' and 'generic.' Synthetic users catch inauthenticity.</li><li><strong>Price anchoring failed</strong>: 50% rated pricing 'too expensive' — without value framing, $12/month feels arbitrary.</li></ul></div>
+<h2>Recommendations</h2>
+<div class="card"><ol><li><strong>Replace generic hero with identity-driven framing</strong>: 'Your social life, ranked' or equivalent — something only this product could say.</li><li><strong>Write specific copy</strong>: Use concrete examples (ratings, categories, scenarios) instead of abstract claims.</li><li><strong>Add real brand voice</strong>: The baseline reads like a template. The product has a distinctive voice — use it.</li><li><strong>Fix testimonials</strong>: Replace generic quotes with specific, situation-driven social proof.</li></ol></div>
+<h2>Qualitative Themes</h2>
+<div class="card"><ul><li><strong>Generic / could be any app</strong> (42 mentions): 'This sounds like every other tracking app.' 'Nothing distinguishes it.'</li><li><strong>Fake testimonials</strong> (18 mentions): 'These don't sound like real people.' 'Obviously written by marketing.'</li><li><strong>Unclear what it actually does</strong> (35 mentions): 'Is this a journal? A review site? A recommendation engine?'</li><li><strong>Price without value</strong> (22 mentions): 'Why would I pay for this when Google Maps is free?'</li></ul></div>
+<h2>Clarity Notes</h2>
+<p>0% nailed_it, 13% partial, 87% wrong. The generic framing completely fails to communicate the product's actual value proposition.</p>
+<h2>Bucket Deep Dives</h2>
+<div class="card"><span class="badge b-tc">Taste Curator</span>
+<h4>0% conversion — nothing to work with</h4><p>Generic copy fails to signal that this product is built for people who think in ratings. No specificity, no data, no analytics mention.</p><p><strong>Risk:</strong> If V1 doesn't add concrete rating examples, this bucket stays dead.</p>
+</div>
+<div class="card"><span class="badge b-sc">Social Connector</span>
+<h4>0% conversion — social pitch absent</h4><p>The baseline doesn't mention friend networks, sharing, or social discovery. The core value prop for this bucket is invisible.</p><p><strong>Risk:</strong> Social features need to be front and center in V1.</p>
+</div>
+<div class="card"><span class="badge b-jg">Journal Graveyard</span>
+<h4>0% conversion, 58% dealbreakers</h4><p>Highest dealbreaker rate. Every friction signal ('write reviews', 'log entries') activates their abandonment reflex. They need to see 'one tap' and 'no effort' immediately.</p><p><strong>Risk:</strong> Structural bucket — may never exceed 50% even with perfect copy.</p>
+</div>
+<div class="card"><span class="badge b-fs">FOMO Scroller</span>
+<h4>8% conversion — one accidental near-hit</h4><p>The baseline's 'remember everything' framing accidentally touches their need, but backward-looking. They need forward-looking: 'discover what to do next.'</p><p><strong>Risk:</strong> If V1 remains backward-looking, this bucket stays flat.</p>
+</div>
+<div class="card"><span class="badge b-ce">City Explorer</span>
+<h4>25% conversion — best baseline bucket</h4><p>Even generic copy partially serves their acute need for recommendations in a new city. But 25% is still low — they need cold-start reassurance and local discovery framing.</p><p><strong>Risk:</strong> Easiest bucket to convert. If V1 doesn't hit 50%+ here, something is wrong.</p>
+</div>
+<h2>Appendix Notes</h2>
+<p style="font-size:13px;color:var(--muted);">Baseline is intentionally bad. Do not compare V1+ improvements to baseline as if the baseline represents a reasonable alternative — it represents the floor.</p>
+</body></html>
