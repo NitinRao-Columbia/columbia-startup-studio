@@ -22,7 +22,7 @@ Each assignment links to a detailed description with submission instructions. De
 
 | Due | Assignment | Deck |
 |-----|-----------|------|
-| Thu Feb 19 | [Synthesis, Product Brief & Brand Position](20260219_synthesis-brief-position/README.md) | [c8 Synthetic Testing](../classes/20260217_c8w5_tue_synthetic-testing/slides_c8w5_tue_synthetic-testing.pdf) / [c9 Synthetic Testing](../classes/20260219_c9w5_thu_synthetic-testing/slides_c9w5_thu_synthetic-testing.pdf) |
+| Thu Feb 19 | [Synthesis, Product Brief & Brand Position](20260219_synthesis-brief-position.md) | [c8 Synthetic Testing](../classes/20260217_c8w5_tue_synthetic-testing/slides_c8w5_tue_synthetic-testing.pdf) / [c9 Synthetic Testing](../classes/20260219_c9w5_thu_synthetic-testing/slides_c9w5_thu_synthetic-testing.pdf) |
 | Tue Feb 24 | [Landing Page + Synthetic Testing](20260224_landing-page-synthetic-testing.md) | [c9 Synthetic Testing](../classes/20260219_c9w5_thu_synthetic-testing/slides_c9w5_thu_synthetic-testing.pdf) |
 
 ## Week 6: Demand Gen + Style Guide
@@ -51,6 +51,18 @@ Each assignment links to a detailed description with submission instructions. De
 | Every Tue (from Apr 7) | [Weekly Updates](20260407_weekly-updates.md) | [c20 Analytics Deep Dive](../classes/20260407_c20w11_tue_analytics-deep-dive/slides_c20w11_tue_analytics-deep-dive.pdf) |
 | ASAP after Apr 9 | [Cold Start Strategy](20260409_cold-start-strategy.md) | [c21 Cold Start](../classes/20260409_c21w11_thu_cold-start/slides_c21w11_thu_cold-start.pdf) |
 | Thu Apr 16 | [Analytics Snapshot](20260416_analytics-snapshot.md) | [c20 Analytics Deep Dive](../classes/20260407_c20w11_tue_analytics-deep-dive/slides_c20w11_tue_analytics-deep-dive.pdf) |
+
+## Week 13: Pitching
+
+| Due | Assignment | Deck |
+|-----|-----------|------|
+| Tue Apr 28 (start of class) | [Pitch Deck Draft 1](20260428_pitch-deck-draft.md) | [c24 Pitching](../classes/20260421_c24w13_tue_pitching/deck/slides_c24w13_tue_pitching.pdf) |
+
+## Week 15: Demo Day
+
+| Due | Assignment |
+|-----|-----------|
+| Tue May 12 | Final Pitch Deck — submit both your live deck and leave-behind PDF to your team folder in this repo |
 
 ---
 

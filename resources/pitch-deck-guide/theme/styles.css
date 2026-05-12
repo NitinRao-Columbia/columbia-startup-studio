@@ -1,0 +1,1564 @@
+/**
+ * Startup Studio - Modern Designer Theme
+ * Using Tailwind CSS + DaisyUI for gorgeous, modern presentations
+ */
+
+/* ==========================================================================
+   FOUNDATIONS
+   ========================================================================== */
+:root {
+    --black: #0f0f0f;
+    --dark: #1a1a1a;
+    --gray: #525252;
+    --light: #a3a3a3;
+    --faint: #f5f5f5;
+    --white: #ffffff;
+
+    /* Modern accent palette */
+    --accent: #f97316;
+    --accent-light: #fb923c;
+    --accent-dark: #ea580c;
+
+    /* Complementary colors */
+    --indigo: #6366f1;
+    --emerald: #10b981;
+    --rose: #f43f5e;
+    --sky: #0ea5e9;
+    --pink: #ec4899;
+
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, #f97316 0%, #ec4899 100%);
+    --gradient-cool: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+    --gradient-dark: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    --gradient-subtle: linear-gradient(180deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.reveal {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    color: var(--dark);
+    background: var(--white);
+}
+
+.reveal .slides {
+    text-align: left;
+}
+
+.reveal .slides section {
+    padding: 60px 80px;
+    height: 100%;
+    box-sizing: border-box;
+    background: var(--white);
+}
+
+/* Slide numbers - percentage-based to stay inside the scaled slide area.
+   Fixed pixel values land in the margin gap at most viewport sizes.
+   12%/4% keeps numbers inside the slide content across viewport sizes. */
+.reveal .slide-number {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--light);
+    background: transparent;
+    padding: 8px 16px;
+    right: 12%;
+    bottom: 4%;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY - Modern Scale
+   ========================================================================== */
+.reveal h1 {
+    font-size: 5em;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1.0;
+    color: var(--black);
+    margin: 0 0 0.3em 0;
+}
+
+.reveal h2 {
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--black);
+    margin: 0 0 0.6em 0;
+}
+
+.reveal h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--gray);
+    margin: 0 0 0.5em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+.reveal p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: var(--gray);
+    margin: 0 0 0.6em 0;
+}
+
+.reveal strong {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+/* ==========================================================================
+   TITLE SLIDE - Hero Style
+   ========================================================================== */
+.title-slide {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 100px 80px !important;
+    background: linear-gradient(180deg, var(--white) 0%, var(--faint) 100%);
+    position: relative;
+    overflow: hidden;
+    border-top: none !important;
+}
+
+/* Single decorative bar at top — must scope to section to avoid
+   reveal.js .slide-background also matching .title-slide */
+section.title-slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--accent);
+    z-index: 10;
+}
+
+/* Decorative shapes */
+.title-slide::after {
+    content: "";
+    position: absolute;
+    right: -200px;
+    bottom: -200px;
+    width: 600px;
+    height: 600px;
+    background: var(--gradient-warm);
+    opacity: 0.08;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.title-slide h1 {
+    font-size: 4.5em;
+    margin-bottom: 0.2em;
+    position: relative;
+    z-index: 1;
+}
+
+.title-slide .subtitle {
+    font-size: 1.5em;
+    font-weight: 400;
+    color: var(--gray);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.title-slide .meta {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--light);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+/* Decorative line removed from meta */
+
+/* ==========================================================================
+   SECTION SLIDE - Modern Divider
+   ========================================================================== */
+.section-slide {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 !important;
+    background: var(--gradient-dark) !important;
+    position: relative;
+}
+
+.section-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.section-slide h2 {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--white);
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* No decorative bar on section slides */
+.section-slide h2::after {
+    display: none;
+}
+
+/* Section subtitle - for exercise time limits */
+.section-slide .section-subtitle,
+.emphasis-slide .section-subtitle {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: var(--light);
+    margin: 0.5em 0 0;
+    letter-spacing: 0.05em;
+}
+
+.section-slide .section-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   CONTENT SLIDES - Card-Based
+   ========================================================================== */
+.content-slide {
+    padding: 70px 80px 50px 80px !important;
+    background: var(--gradient-subtle);
+}
+
+.content-slide h2 {
+    margin-bottom: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 0.4em;
+}
+
+.content-slide h2::before {
+    content: "";
+    width: 8px;
+    height: 0.8em;
+    background: var(--accent);
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.content-slide[data-theme="rose"] h2::before {
+    background: var(--rose);
+}
+
+/* No vertical bars on headings inside cards, and reset flex */
+.card h2::before,
+.card h3::before {
+    display: none !important;
+}
+
+.card h2,
+.card h3 {
+    display: block !important;
+}
+
+.card p {
+    display: block !important;
+}
+
+/* Modern list styling */
+.reveal ul, .reveal ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.reveal li {
+    font-size: 1.15em;
+    line-height: 1.5;
+    color: var(--gray);
+    margin-bottom: 0.5em;
+    padding-left: 1.1em;
+    position: relative;
+}
+
+.reveal li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    top: -0.24em;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1.5;
+}
+
+.reveal li strong {
+    color: var(--black);
+    font-weight: 600;
+}
+
+/* Nested lists */
+.reveal ul ul {
+    margin-top: 0.5em;
+    margin-left: 0;
+}
+
+.reveal ul ul li {
+    font-size: 0.85em;
+    color: var(--light);
+}
+
+.reveal ul ul li::before {
+    content: "–";
+    font-size: 1em;
+    color: var(--light);
+}
+
+/* Numbered lists - Modern counter */
+.reveal ol {
+    counter-reset: item;
+}
+
+.reveal ol li {
+    counter-increment: item;
+    padding-left: 2.5em;
+}
+
+.reveal ol li::before {
+    content: counter(item);
+    background: var(--accent);
+    color: white;
+    width: 1.6em;
+    height: 1.6em;
+    font-size: 0.7em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: 0.2em;
+}
+
+/* ==========================================================================
+   EMPHASIS SLIDE - Statement Style
+   ========================================================================== */
+.emphasis-slide {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 100px 100px 60px 100px !important;
+    background: var(--white);
+    position: relative;
+}
+
+/* Vertical accent bar removed - didn't align well with varied content heights */
+
+.emphasis-slide h2 {
+    font-size: 1.8em;
+    line-height: 1.35;
+    margin-bottom: 0.5em;
+    max-width: 90%;
+}
+
+.emphasis-slide p {
+    font-size: 1.2em;
+    max-width: 85%;
+}
+
+/* ==========================================================================
+   SPLIT SLIDE - Modern Two-Column
+   ========================================================================== */
+.split-slide {
+    display: flex !important;
+    padding: 0 !important;
+    gap: 0;
+}
+
+.split-slide .left,
+.split-slide .right {
+    flex: 1;
+    padding: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.split-slide .left {
+    background: var(--black);
+    position: relative;
+}
+
+.split-slide .left::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-cool);
+}
+
+.split-slide .left h2,
+.split-slide .left h3,
+.split-slide .left p,
+.split-slide .left li,
+.split-slide .left strong {
+    color: var(--white);
+}
+
+.split-slide .left li::before {
+    color: var(--indigo);
+}
+
+.split-slide .right {
+    background: var(--faint);
+    position: relative;
+}
+
+.split-slide .right::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-warm);
+}
+
+.split-slide .right li::before {
+    color: var(--accent);
+}
+
+/* Track labels */
+.track-label {
+    font-size: 1.6em !important;
+    font-weight: 700 !important;
+    margin: 0.3em 0 0.5em !important;
+}
+
+.split-slide .left .track-label {
+    color: var(--indigo) !important;
+}
+
+.split-slide .right .track-label {
+    color: var(--accent) !important;
+}
+
+/* ==========================================================================
+   CARD COMPONENTS - DaisyUI Enhanced
+   ========================================================================== */
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 1.2em;
+    margin: 0.3em;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
+}
+
+.card-dark {
+    background: var(--black);
+    color: var(--white);
+    font-size: 0.9em;
+}
+
+.card-dark h3, .card-dark h4, .card-dark p, .card-dark strong {
+    color: var(--white);
+}
+
+/* Pre/code styling in dark cards */
+.card-dark pre {
+    margin: 0;
+    white-space: pre-wrap;
+    color: #e5e5e5;
+    font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.card-dark code {
+    color: #a5f3fc;
+    font-family: inherit;
+}
+
+.card-accent {
+    border-top: 4px solid var(--accent) !important;
+}
+
+.card-indigo {
+    border-top: 4px solid var(--indigo) !important;
+}
+
+.card-emerald {
+    border-top: 4px solid var(--emerald);
+}
+
+.card-rose {
+    border-top: 4px solid var(--rose);
+}
+
+.card-pink {
+    border-top: 4px solid var(--pink);
+}
+
+.card-sky {
+    border-top: 4px solid var(--sky);
+}
+
+/* Centered card - for hero/feature cards */
+.card-center {
+    text-align: center;
+    padding: 2em;
+}
+
+.card-center h3 {
+    font-size: 1.4em !important;
+    font-weight: 600 !important;
+    color: var(--black);
+    margin: 0 0 0.5em !important;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.card-center h3 i[data-lucide],
+.card-center h3 svg.lucide {
+    width: 36px !important;
+    height: 36px !important;
+    vertical-align: -0.1em;
+    margin-right: 0.3em;
+}
+
+.card-center p {
+    font-size: 1.1em !important;
+    margin: 0 !important;
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ==========================================================================
+   COMPACT CARD VARIANTS - For dense layouts
+   ========================================================================== */
+/* Use on grid containers when you need tighter spacing */
+.grid-compact {
+    gap: 0.8em !important;
+}
+
+/* Compact card styling - for slides with many cards */
+.card-compact,
+.grid-compact .card {
+    padding: 1em 1.2em;
+}
+
+.card-compact h4,
+.grid-compact .card h4 {
+    font-size: 1em !important;
+    margin: 0 0 0.3em !important;
+}
+
+.card-compact p,
+.grid-compact .card p {
+    font-size: 0.8em !important;
+    margin: 0 !important;
+}
+
+.card-compact ul,
+.grid-compact .card ul {
+    margin: 0;
+    padding: 0;
+}
+
+.card-compact li,
+.grid-compact .card li {
+    font-size: 0.85em !important;
+    margin-bottom: 0.3em !important;
+}
+
+/* Icon card pattern - card with large icon + title + description */
+.card-icon {
+    text-align: center;
+    padding: 1.2em;
+}
+
+.card-icon .icon-lg {
+    font-size: 2em;
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+.card-icon h4 {
+    font-size: 1em !important;
+    color: var(--black);
+    margin: 0.3em 0 !important;
+}
+
+.card-icon p {
+    font-size: 0.85em !important;
+    color: var(--gray);
+    margin: 0 !important;
+}
+
+/* ==========================================================================
+   LUCIDE ICON SYSTEM
+   All icons use data-lucide attribute, sized via CSS variables
+   ========================================================================== */
+:root {
+    --icon-size-sm: 40px;
+    --icon-size-md: 72px;
+    --icon-size-lg: 96px;
+}
+
+/* Base icon styling - applies to ALL Lucide icons
+   NOTE: Lucide.js replaces <i data-lucide="x"> with <svg class="lucide lucide-x">.
+   We must target BOTH i[data-lucide] (pre-render) and svg.lucide (post-render). */
+i[data-lucide],
+svg.lucide {
+    width: var(--icon-size-md) !important;
+    height: var(--icon-size-md) !important;
+    display: inline-block !important;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+
+/* Icon color classes - use instead of inline styles */
+i[data-lucide].icon-accent,
+svg.lucide.icon-accent,
+.icon-accent i[data-lucide],
+.icon-accent svg.lucide {
+    color: var(--accent) !important;
+}
+
+i[data-lucide].icon-indigo,
+svg.lucide.icon-indigo,
+.icon-indigo i[data-lucide],
+.icon-indigo svg.lucide {
+    color: var(--indigo) !important;
+}
+
+i[data-lucide].icon-emerald,
+svg.lucide.icon-emerald,
+.icon-emerald i[data-lucide],
+.icon-emerald svg.lucide {
+    color: var(--emerald) !important;
+}
+
+i[data-lucide].icon-rose,
+svg.lucide.icon-rose,
+.icon-rose i[data-lucide],
+.icon-rose svg.lucide {
+    color: var(--rose) !important;
+}
+
+i[data-lucide].icon-pink,
+svg.lucide.icon-pink,
+.icon-pink i[data-lucide],
+.icon-pink svg.lucide {
+    color: var(--pink) !important;
+}
+
+i[data-lucide].icon-sky,
+svg.lucide.icon-sky,
+.icon-sky i[data-lucide],
+.icon-sky svg.lucide {
+    color: var(--sky) !important;
+}
+
+/* Semantic icon colors for common patterns */
+i[data-lucide].icon-success,
+svg.lucide.icon-success,
+.icon-success i[data-lucide],
+.icon-success svg.lucide {
+    color: #10b981 !important;  /* emerald - for check marks */
+}
+
+i[data-lucide].icon-error,
+svg.lucide.icon-error,
+.icon-error i[data-lucide],
+.icon-error svg.lucide {
+    color: #ef4444 !important;  /* red - for x marks, warnings */
+}
+
+/* Size variants */
+i[data-lucide].icon-inline,
+svg.lucide.icon-inline {
+    width: 1em !important;
+    height: 1em !important;
+}
+
+i[data-lucide].icon-sm,
+svg.lucide.icon-sm {
+    width: var(--icon-size-sm) !important;
+    height: var(--icon-size-sm) !important;
+}
+
+i[data-lucide].icon-md,
+svg.lucide.icon-md {
+    width: 48px !important;
+    height: 48px !important;
+}
+
+i[data-lucide].icon-lg,
+svg.lucide.icon-lg {
+    width: var(--icon-size-lg) !important;
+    height: var(--icon-size-lg) !important;
+}
+
+/* Icons in card headers - match text height */
+.card h4 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5em;
+}
+
+.card h4 i[data-lucide],
+.card h4 svg.lucide {
+    width: 1.3em !important;
+    height: 1.3em !important;
+    min-width: 1.3em !important;
+    min-height: 1.3em !important;
+    margin-right: 0.3em;
+}
+
+/* Allow explicit size overrides in cards */
+.card h4 i[data-lucide].icon-lg,
+.card h4 svg.lucide.icon-lg {
+    width: 1.6em !important;
+    height: 1.6em !important;
+    min-width: 1.6em !important;
+    min-height: 1.6em !important;
+}
+
+/* ==========================================================================
+   COMPACT STEPS - For slides with more content
+   ========================================================================== */
+.steps-compact {
+    margin: 1.5em 0 1em 0 !important;
+    padding: 0 1em !important;
+}
+
+.steps-compact .step-number {
+    width: 56px;
+    height: 56px;
+    font-size: 1em;
+}
+
+.steps-compact .step::after {
+    top: 28px;
+    left: calc(50% + 32px);
+    width: calc(100% - 64px);
+}
+
+.steps-compact .step-content h4 {
+    font-size: 0.85em;
+    margin-bottom: 0.4em;
+}
+
+.steps-compact .step-content p {
+    font-size: 0.65em;
+}
+
+/* ==========================================================================
+   BADGE COMPONENTS
+   ========================================================================== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.7em 1.4em;
+    font-size: 0.55em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 9999px;
+    background: var(--faint);
+    color: var(--gray);
+}
+
+.badge-accent {
+    background: var(--accent);
+    color: white;
+}
+
+.badge-indigo {
+    background: var(--indigo);
+    color: white;
+}
+
+.badge-emerald {
+    background: var(--emerald);
+    color: white;
+}
+
+.badge-rose {
+    background: var(--rose);
+    color: white;
+}
+
+.badge-pink {
+    background: var(--pink);
+    color: white;
+}
+
+.badge-sky {
+    background: var(--sky);
+    color: white;
+}
+
+.badge-outline {
+    background: transparent;
+    border: 2px solid currentColor;
+}
+
+/* ==========================================================================
+   STEPS COMPONENT - Perfect for Processes
+   ========================================================================== */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 4em 0 2em 0;
+    padding: 0 2em;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    position: relative;
+    padding: 0 0.8em;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    top: 36px;
+    left: calc(50% + 42px);
+    width: calc(100% - 84px);
+    height: 3px;
+    background: var(--faint);
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step-number {
+    width: 72px;
+    height: 72px;
+    background: var(--gradient-warm);
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.8em;
+    position: relative;
+    z-index: 1;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-content h4 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--dark);
+    margin: 0 0 0.5em;
+    text-align: center;
+}
+
+.step-content p {
+    font-size: 0.8em;
+    color: var(--light);
+    margin: 0;
+    text-align: center;
+}
+
+/* Slides with steps — vertically center the body content */
+.content-slide:has(.steps-container) {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+}
+
+/* ==========================================================================
+   STAT BOXES
+   ========================================================================== */
+.stats-container {
+    display: flex;
+    gap: 1.5em;
+    margin: 1.5em 0;
+}
+
+.stat-box {
+    flex: 1;
+    padding: 1em 0.8em;
+    background: var(--faint);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1;
+    margin-bottom: 0.2em;
+    white-space: nowrap;
+}
+
+.stat-value.accent {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.stat-label {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* Compact stats for slides with more content */
+.stats-compact {
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.stats-compact .stat-box {
+    padding: 0.8em 0.6em;
+}
+
+.stats-compact .stat-value {
+    font-size: 1.8em;
+}
+
+.stats-compact .stat-label {
+    font-size: 0.8em;
+}
+
+/* Extra info under stat label */
+.stat-box p {
+    font-size: 0.75em;
+    color: var(--gray);
+    margin: 0.3em 0 0;
+    line-height: 1.3;
+}
+
+/* ==========================================================================
+   ALERT/CALLOUT BOXES
+   ========================================================================== */
+.callout {
+    background: var(--faint);
+    padding: 0.5em 1em;
+    margin: 0.8em 0;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.callout-icon {
+    font-size: 1em;
+    flex-shrink: 0;
+}
+
+.callout p {
+    margin: 0;
+    font-size: 0.8em;
+    line-height: 1.4;
+}
+
+.callout-warning {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+.callout-info {
+    background: #e0f2fe;
+    border-color: var(--sky);
+}
+
+.callout-success {
+    background: #d1fae5;
+    border-color: var(--emerald);
+}
+
+/* Compact callout for tight slides */
+.callout-compact {
+    padding: 0.4em 0.8em;
+    margin: 0.5em 0;
+}
+
+.callout-compact p {
+    font-size: 0.75em;
+}
+
+/* ==========================================================================
+   TWO-COL GRID
+   ========================================================================== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2em;
+    margin: 1em 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    margin: 1.5em 0;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin: 1.5em 0;
+}
+
+/* ==========================================================================
+   TABLE SLIDE - Modern
+   ========================================================================== */
+.reveal table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.reveal th {
+    font-size: 0.9em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    background: var(--black);
+    text-align: left;
+    padding: 1em 1.5em;
+}
+
+.reveal td {
+    font-size: 1.1em;
+    padding: 1em 1.5em;
+    color: var(--gray);
+    background: var(--white);
+    border-bottom: 1px solid var(--faint);
+}
+
+.reveal tr:last-child td {
+    border-bottom: none;
+}
+
+.reveal td strong {
+    color: var(--black);
+}
+
+/* ==========================================================================
+   END SLIDE
+   ========================================================================== */
+.end-slide {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--black) !important;
+    position: relative;
+}
+
+.end-slide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+}
+
+.end-slide h2 {
+    font-size: 3em;
+    color: var(--white);
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+/* ==========================================================================
+   FRAGMENTS - Smooth Animations
+   ========================================================================== */
+.fragment {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(10px);
+}
+
+.fragment.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.fragment.fade-up {
+    transform: translateY(20px);
+}
+
+.fragment.fade-up.visible {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   ICON UTILITIES
+   ========================================================================== */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+}
+
+.icon-circle {
+    background: var(--faint);
+    border-radius: 50%;
+    padding: 0.5em;
+}
+
+.icon.icon-accent {
+    background: var(--accent);
+    color: white;
+}
+
+/* ==========================================================================
+   ACCENT & UTILITY CLASSES
+   ========================================================================== */
+/* Legacy color classes (kept for compatibility) */
+.accent {
+    color: var(--accent) !important;
+}
+
+.indigo {
+    color: var(--indigo) !important;
+}
+
+.emerald {
+    color: var(--emerald) !important;
+}
+
+.rose {
+    color: var(--rose) !important;
+}
+
+/* Semantic color utilities - use these */
+.clr-accent {
+    color: var(--accent) !important;
+}
+
+.clr-indigo {
+    color: var(--indigo) !important;
+}
+
+.clr-emerald {
+    color: var(--emerald) !important;
+}
+
+.clr-rose {
+    color: var(--rose) !important;
+}
+
+.clr-pink {
+    color: var(--pink) !important;
+}
+
+.clr-sky {
+    color: var(--sky) !important;
+}
+
+.gradient-text {
+    background: var(--gradient-warm);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-small {
+    font-size: 0.85em !important;
+}
+
+.text-large {
+    font-size: 1.2em !important;
+}
+
+.mt-1 { margin-top: 1em; }
+.mt-2 { margin-top: 2em; }
+.mt-3 { margin-top: 3em; }
+.mb-1 { margin-bottom: 1em; }
+.mb-2 { margin-bottom: 2em; }
+
+.gray {
+    color: var(--light) !important;
+}
+
+/* Background utilities */
+.bg-dark {
+    background: var(--black) !important;
+}
+
+.bg-faint {
+    background: var(--faint) !important;
+}
+
+.bg-gradient {
+    background: var(--gradient-warm) !important;
+}
+
+/* Divider */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 2em 0;
+    color: var(--light);
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--faint);
+}
+
+.divider::before {
+    margin-right: 1em;
+}
+
+.divider::after {
+    margin-left: 1em;
+}
+
+/* ==========================================================================
+   SOURCE CITATION - For attributing data/quotes on slides
+   ========================================================================== */
+.source-citation {
+    position: absolute;
+    bottom: 50px;
+    left: 100px;
+    font-size: 0.55em !important;
+    font-weight: 300 !important;
+    font-style: italic;
+    color: var(--light) !important;
+    margin: 0 !important;
+}
+
+.source-citation a {
+    color: var(--light) !important;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+}
+
+.source-citation a:hover {
+    color: var(--gray) !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 1400px) {
+    .reveal h1 { font-size: 3.5em; }
+    .reveal h2 { font-size: 1.8em; }
+    .reveal li { font-size: 1em; }
+}
+
+/* ==========================================================================
+   PRINT / PDF EXPORT FIXES
+   Reveal.js ?print-pdf mode has issues with flexbox, absolute positioning,
+   and pseudo-elements. These overrides ensure proper PDF output.
+   ========================================================================== */
+
+/* Print-pdf mode uses this class on body */
+html.print-pdf .reveal .slides section,
+@media print {
+    .reveal .slides section {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+html.print-pdf {
+    /* ---------- TITLE SLIDE PRINT FIX ---------- */
+    .title-slide {
+        display: block !important;
+        padding: 50px 100px 100px !important;
+    }
+
+    .title-slide .meta {
+        position: static !important;
+        margin-bottom: 380px;
+    }
+
+    .title-slide h1,
+    .title-slide .subtitle {
+        position: static !important;
+    }
+
+    .title-slide::before,
+    .title-slide::after {
+        display: none !important;
+    }
+
+    /* ---------- SECTION SLIDE PRINT FIX ---------- */
+    /* Use padding to vertically center since flexbox fails */
+    .section-slide {
+        display: block !important;
+        padding-top: 380px !important;
+        text-align: center !important;
+        background: #1a1a1a !important;
+    }
+
+    .section-slide::before {
+        display: none !important;
+    }
+
+    .section-slide h2 {
+        margin: 0 auto !important;
+    }
+
+    /* ---------- SPLIT SLIDE PRINT FIX ---------- */
+    .split-slide {
+        display: table !important;
+        width: 100% !important;
+        padding: 0 !important;
+        table-layout: fixed !important;
+    }
+
+    .split-slide .left,
+    .split-slide .right {
+        display: table-cell !important;
+        width: 50% !important;
+        vertical-align: top !important;
+        padding: 60px 50px !important;
+    }
+
+    .split-slide .left {
+        background: #1a1a1a !important;
+    }
+
+    .split-slide .right {
+        background: #f5f5f5 !important;
+    }
+
+    .split-slide .left::after,
+    .split-slide .right::after {
+        display: none !important;
+    }
+
+    /* ---------- CONTENT SLIDE PRINT FIX ---------- */
+    .content-slide h2 {
+        border-left: 8px solid #f97316 !important;
+        padding-left: 0.4em !important;
+    }
+
+    .content-slide h2::before {
+        display: none !important;
+    }
+
+    .content-slide[data-theme="rose"] h2 {
+        border-left-color: #f43f5e !important;
+    }
+
+    /* ---------- EMPHASIS SLIDE PRINT FIX ---------- */
+    .emphasis-slide {
+        display: block !important;
+        padding: 100px 100px !important;
+    }
+
+    .emphasis-slide h2 {
+        border-left: none !important;
+        padding-left: 0 !important;
+    }
+
+    /* ---------- END SLIDE PRINT FIX ---------- */
+    .end-slide {
+        display: block !important;
+        padding-top: 400px !important;
+        text-align: center !important;
+        background: #1a1a1a !important;
+    }
+
+    .end-slide::before {
+        display: none !important;
+    }
+
+    /* ---------- STEPS CONTAINER PRINT FIX ---------- */
+    .steps-container {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+    }
+
+    .step {
+        display: table-cell !important;
+        text-align: center !important;
+        vertical-align: top !important;
+    }
+
+    .step::after {
+        display: none !important;
+    }
+
+    .step-number {
+        display: inline-flex !important;
+        background: #f97316 !important;
+    }
+
+    /* ---------- GRID LAYOUTS PRINT FIX ---------- */
+    /* Use table layout instead of flex - more reliable in print */
+    .grid-2 {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+        border-spacing: 1em 0.8em !important;
+    }
+
+    .grid-2 > * {
+        display: table-cell !important;
+        vertical-align: top !important;
+    }
+
+    .grid-3 {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+        border-spacing: 1em !important;
+    }
+
+    .grid-3 > * {
+        display: table-cell !important;
+        vertical-align: top !important;
+    }
+
+    .grid-4 {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+        border-spacing: 0.8em !important;
+    }
+
+    .grid-4 > * {
+        display: table-cell !important;
+        vertical-align: top !important;
+    }
+
+    /* ---------- STATS CONTAINER PRINT FIX ---------- */
+    .stats-container {
+        display: table !important;
+        width: 100% !important;
+        table-layout: fixed !important;
+        border-spacing: 1em !important;
+    }
+
+    .stat-box {
+        display: table-cell !important;
+        background: #f5f5f5 !important;
+    }
+
+    /* ---------- CARDS PRINT FIX ---------- */
+    .card {
+        background: #ffffff !important;
+    }
+
+    .card-accent {
+        border-top: 4px solid #f97316 !important;
+    }
+
+    .card-indigo {
+        border-top: 4px solid #6366f1 !important;
+    }
+
+    .card-rose {
+        border-top: 4px solid #f43f5e !important;
+    }
+
+    .card-emerald {
+        border-top: 4px solid #10b981 !important;
+    }
+
+    .card-pink {
+        border-top: 4px solid #ec4899 !important;
+    }
+
+    .card-sky {
+        border-top: 4px solid #0ea5e9 !important;
+    }
+
+    /* Section subtitle print fix */
+    .section-slide .section-subtitle {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    /* ---------- CALLOUT PRINT FIX ---------- */
+    .callout {
+        border-left: 4px solid #f97316 !important;
+        background: #f5f5f5 !important;
+    }
+
+    .callout-warning {
+        background: #fef3c7 !important;
+        border-left-color: #f59e0b !important;
+    }
+
+    .callout-info {
+        background: #e0f2fe !important;
+        border-left-color: #0ea5e9 !important;
+    }
+
+    .callout-success {
+        background: #d1fae5 !important;
+        border-left-color: #10b981 !important;
+    }
+
+    /* ---------- GRADIENT TEXT PRINT FIX ---------- */
+    .gradient-text,
+    .stat-value.accent {
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        -webkit-text-fill-color: #f97316 !important;
+        color: #f97316 !important;
+    }
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <title>Startup Studio - Class [N]</title>
+
+    <!-- Tailwind CSS (local JIT compiler) -->
+    <script src="css/tailwind.js"></script>
+
+    <!-- DaisyUI (local) -->
+    <link rel="stylesheet" href="css/daisyui.css">
+
+    <!-- reveal.js (local) -->
+    <link rel="stylesheet" href="reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/white.css">
+
+    <!-- Syntax highlighting theme -->
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+    <!-- Custom theme overrides (loaded last to take precedence) -->
+    <link rel="stylesheet" href="theme/styles.css">
+
+    <!-- Lucide icons (SVG icon library - no font files needed) -->
+    <script src="css/lucide.min.js"></script>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- ALL SLIDES LOADED FROM MARKDOWN
+                 Title and end slides are in slides.md for consistent PDF export.
+                 See slides.md for examples of all slide types. -->
+            <section data-markdown="slides.md"
+                     data-separator="^---$"
+                     data-separator-vertical="^--$"
+                     data-separator-notes="^Notes:">
+            </section>
+
+        </div>
+    </div>
+
+    <!-- reveal.js and plugins (local) -->
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/math/math.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/search/search.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+
+    <script>
+        Reveal.initialize({
+            // Presentation settings
+            hash: true,
+            slideNumber: 'c/t',
+            controls: true,
+            progress: false,
+            center: false,
+
+            // Transition
+            transition: 'none',
+
+            // Aspect ratio (16:9)
+            width: 1920,
+            height: 1080,
+
+            // Scale settings
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0,
+
+            // Plugin configuration
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealMath,
+                RevealNotes,
+                RevealSearch,
+                RevealZoom
+            ],
+
+            // Math plugin config
+            // DEFAULT: Uses CDN (requires internet on first load)
+            // If using math equations, switch to local path for offline support:
+            //   mathjax: 'reveal.js/plugin/math/mathjax/tex-mml-chtml.js'
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                config: 'TeX-AMS_HTML-full'
+            }
+        });
+
+        // Initialize Lucide icons after slides are ready
+        Reveal.on('ready', () => lucide.createIcons());
+    </script>
+</body>
+</html>

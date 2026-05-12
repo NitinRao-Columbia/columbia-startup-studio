@@ -1,0 +1,13 @@
+# User Testing Synthesis
+
+**What we observed:** Across all three sessions, participants successfully reached the "aha" moment of creating an activity circle (e.g., a "Study Session" or "Jai Nepal Group"). However, their experience was heavily disrupted by confusing terminology, broken inputs, and technical friction. 
+
+Specifically, the location input is a major blocker; participants struggled because it lacks visual confirmation and doesn't link to actual maps. Terminology on the landing page (like "hang out" and "off campus") misled at least one user into thinking the product was a dating app rather than a student connection tool. Additionally, UI layouts hid critical features—like burying the chat box at the very bottom of the event page—and standard interactions, such as uploading iPhone `.HEIC` photos or using the custom time-picker, resulted in persistent errors. Finally, the lack of a native in-app sharing feature prevented users from easily inviting specific friends to their newly created circles.
+
+**What we're changing:** 
+1. **Location Integration:** We are replacing the manual text input for event locations with a Google Maps API integration to provide auto-complete suggestions and visual confirmations. 
+2. **Terminology & Copy Update:** We are revising the main landing page headline to clearly state the value proposition, rewriting confusing login copy ("Sign your Columbia bar..."), and updating ambiguous category tags (e.g., changing "hang out" to a more student-event-focused label).
+3. **UI & Layout Adjustments:** We are moving the active circle chat box higher up on the event page (directly below the interaction templates), adding a clear "Home" navigation button from the user profile, and overhauling the custom time-picker for intuitive formatting.
+4. **Technical Patches:** We are adding backend support for `.HEIC` image uploads and prioritizing the development of native in-app friend sharing.
+
+**Why:** The testing sessions showed that while the core concept of organizing student activities is highly engaging to users, the current friction in onboarding and circle creation breaks their trust and creative flow. The confusion over terminology immediately diluted our value proposition, while the broken location and time inputs prevented users from actually finalizing their plans. By fixing the location API and bringing the communication features (chat and sharing) to the forefront of the UI, we remove the primary barriers to activation and encourage users to invite their existing friend groups, which our participants noted is the main "pull factor" for using the app.

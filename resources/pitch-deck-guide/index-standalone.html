@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <title>Startup Studio - Class [N]</title>
+
+    <!-- reveal.js (local) -->
+    <link rel="stylesheet" href="reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+    <link rel="stylesheet" href="reveal.js/dist/theme/white.css">
+
+    <!-- Syntax highlighting theme -->
+    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+    <!-- Custom theme overrides -->
+    <link rel="stylesheet" href="theme/styles.css">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+
+            <!-- TITLE SLIDE (HTML for precise styling) -->
+            <section class="title-slide">
+                <h1>Startup Studio</h1>
+                <p class="subtitle">AI-Accelerated Building and Validation</p>
+                <p class="date-code">c[N]w[Y] | [Date]</p>
+            </section>
+
+            <!-- LOAD SLIDES FROM MARKDOWN FILE -->
+            <section data-markdown
+                     data-separator="^---$"
+                     data-separator-vertical="^--$"
+                     data-separator-notes="^Notes:">
+                <script type="text/template">
+<!-- AGENDA -->
+<!-- class="content-slide" -->
+## Today's Agenda
+
+- Topic One
+- Topic Two
+- Topic Three
+
+Notes:
+Speaker notes go here. Press S to open speaker view.
+
+---
+
+<!-- OVERVIEW -->
+<!-- class="content-slide" -->
+## What This Template Covers
+
+1. **Section dividers** — Visual breaks between topics
+2. **Content slides** — Standard bullet-point layouts
+3. **Progressive disclosure** — Reveal points one at a time
+4. **Code blocks** — Syntax-highlighted snippets
+5. **Math equations** — LaTeX rendering
+
+Notes:
+This overview prepares viewers for what's coming. No surprises.
+
+---
+
+<!-- SECTION DIVIDER -->
+<!-- class="section-divider" -->
+## Section Title
+
+---
+
+<!-- CONTENT SLIDE -->
+<!-- class="content-slide" -->
+## Slide Title
+
+- Main point one
+  - Supporting detail
+- Main point two
+- Main point three
+
+---
+
+<!-- PROGRESSIVE DISCLOSURE -->
+<!-- class="content-slide" -->
+## Progressive Points
+
+- First point (appears on click) <!-- .element: class="fragment" -->
+- Second point <!-- .element: class="fragment" -->
+- Third point <!-- .element: class="fragment" -->
+
+Notes:
+Click or press space/arrow to reveal each point.
+
+---
+
+<!-- CODE EXAMPLE -->
+<!-- class="content-slide" -->
+## Code Example
+
+```python
+def hello_world():
+    print("Hello, Startup Studio!")
+    return True
+```
+
+Notes:
+Syntax highlighting via highlight.js plugin.
+
+---
+
+<!-- MATH EXAMPLE -->
+<!-- class="content-slide" -->
+## Math Example
+
+Market size estimation:
+
+$TAM = N 	imes P 	imes F$
+
+Where:
+- $N$ = Number of potential customers
+- $P$ = Price per unit
+- $F$ = Purchase frequency
+
+Notes:
+Math rendering via MathJax. Use $ for inline, $$ for block equations.
+
+                </script>
+            </section>
+
+            <!-- END SLIDE (HTML for precise styling) -->
+            <section class="end-slide">
+                <h2>End of Class [N]</h2>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- reveal.js and plugins (local) -->
+    <script src="reveal.js/dist/reveal.js"></script>
+    <script src="reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="reveal.js/plugin/math/math.js"></script>
+    <script src="reveal.js/plugin/notes/notes.js"></script>
+    <script src="reveal.js/plugin/search/search.js"></script>
+    <script src="reveal.js/plugin/zoom/zoom.js"></script>
+
+    <script>
+        Reveal.initialize({
+            // Presentation settings
+            hash: true,
+            slideNumber: false,
+            controls: true,
+            progress: false,
+            center: false,
+
+            // Transition
+            transition: 'none',
+
+            // Aspect ratio (16:9)
+            width: 1920,
+            height: 1080,
+
+            // Scale settings
+            margin: 0.04,
+            minScale: 0.2,
+            maxScale: 2.0,
+
+            // Plugin configuration
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealMath,
+                RevealNotes,
+                RevealSearch,
+                RevealZoom
+            ],
+
+            // Math plugin config
+            // DEFAULT: Uses CDN (requires internet on first load)
+            // If using math equations, switch to local path for offline support:
+            //   mathjax: 'reveal.js/plugin/math/mathjax/tex-mml-chtml.js'
+            math: {
+                mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+                config: 'TeX-AMS_HTML-full'
+            }
+        });
+    </script>
+</body>
+</html>

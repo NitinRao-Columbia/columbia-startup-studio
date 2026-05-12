@@ -8,7 +8,7 @@
 
 ## Quick Links
 
-- [Course Syllabus](resources/course_syllabus.md) — grading, required readings, policies
+- [Course Syllabus](course_syllabus.md) — grading, required readings, policies
 - [Class Schedule](classes/class_schedule.md) — weekly topics, dates, and readings
 
 ## Course Overview
@@ -26,8 +26,9 @@ Startup Studio is a hands-on course that immerses you in the full cycle of techn
 │       ├── slides_*.html          # Interactive slides (open in browser)
 │       └── exercise/              # In-class exercise materials
 │
-└── resources/
-    └── course_syllabus.md         # Full syllabus
+├── course_syllabus.md             # Full syllabus
+│
+└── resources/                     # (empty — reserved for future materials)
 ```
 
 ### Class Folder Naming

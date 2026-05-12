@@ -1,0 +1,120 @@
+# Course Syllabus: Startup Studio - AI-Accelerated Building & Validation
+
+## Course Information
+- **Course Title:** Startup Studio: AI-Accelerated Building & Validation
+- **Course Number:** COMS4995-011
+- **Semester:** Spring 2026
+- **Credits:** 3
+- **Department:** Columbia University - Computer Science
+
+## Instructors
+- **Ken St. Clair** -  Adjunct Assistant Professor of Computer Science
+
+## Course Summary
+
+Startup Studio is a hands-on course that immerses students in the full cycle of technology entrepreneurship: from concept development to AI-assisted product building to real-world validation. Student teams will form startups, create products using modern AI coding and design tools, and engage real users through demand validation and UX interviews. Students will learn to develop minimal viable products (MVPs), run growth experiments, and iterate based on real user feedback.
+
+### Key Differentiators
+- **Concept testing** through Wizard of Oz testing and vaporware site launches
+- **Conducting paid ad campaigns** for demand validation  
+- **Building real, working products** leveraging AI for rapid development
+- **Interviewing real users** and integrating feedback into design and development
+- **Earning industry-recognized certifications** in digital marketing and analytics (Meta Blueprint and Google Analytics), enhancing both practical skills and resumes
+
+By the end of the semester, students will have built and validated a technology product and gained experience in both technical development and entrepreneurial growth methods.
+
+## Learning Objectives
+
+By the end of the course, students will:
+
+1. **Apply AI-assisted tools** to accelerate software development and product design
+2. **Conduct UX research**, including Wizard of Oz testing and user interviews  
+3. **Design and execute demand validation experiments**, including paid ad campaigns
+4. **Develop MVPs** and iterate based on quantitative and qualitative feedback
+5. **Collaborate effectively** within diverse, multidisciplinary teams
+6. **Present product concepts and results** to industry audiences
+7. **Achieve certifications** that demonstrate proficiency in digital marketing and user analytics
+
+## Prerequisites
+- **Senior standing** in Computer Science or related field, or instructor permission
+- **Prior experience in software development** is recommended
+
+
+## Grading Breakdown
+
+| Component | Weight |
+|-----------|--------|
+| Demo Day | 30% |
+| Milestone Submissions | 30% |
+| Peer Reviews | 20% |
+| Reflections / Journals | 10% |
+| Class Participation | 10% |
+
+## Grading Rubric Overview
+
+### Demo Day (30%)
+
+| Criteria | Excellent (A) | Good (B) | Satisfactory (C) | Poor (D/F) |
+|----------|---------------|----------|------------------|-------------|
+| **Product Development** | Functional, innovative, addresses validated user need | Functional, moderate innovation, partial validation | Basic functionality, minimal validation | Incomplete or non-functional |
+| **Validation Efforts** | Clear evidence of demand validation + user feedback integration | Some validation, some user research | Limited validation or user research | No meaningful validation |
+| **Presentation** | Clear, persuasive, well-structured pitch | Adequate presentation, minor gaps | Disorganized or unclear | Unclear or missing |
+| **Iteration** | Demonstrated learning + multiple iterations | Some iteration | Minimal iteration | No iteration |
+
+### Milestone Submissions (30%)
+
+| Criteria | Full Credit | Partial Credit |
+|----------|-------------|----------------|
+| **Quality & Timeliness** | On time, high quality, shows learning | Late, incomplete, or poor quality |
+
+### Peer Reviews (20%)
+
+| Criteria | High Marks | Low Marks |
+|----------|------------|-----------|
+| **Team Contribution** | Strong team role, positive peer feedback | Minimal contribution, peer concerns |
+
+### Reflections / Journals (10%)
+
+| Criteria | Full Credit | Partial Credit |
+|----------|-------------|----------------|
+| **Depth & Learning** | Thoughtful, demonstrates reflection on process | Superficial or missing |
+
+### Class Participation (10%)
+
+| Criteria | Excellent | Good | Satisfactory | Poor |
+|----------|-----------|------|--------------|------|
+| **Attendance** | Consistent, active presence | Occasional absences | Frequent absences | Chronic absences |
+| **Engagement** | Regular, constructive contributions | Participates when prompted | Rare participation | Disengaged |
+
+## Intellectual Property & Public Disclosure Policy
+
+### Key Points
+- **No Confidentiality:** All work developed in this class is open and may be shared publicly
+- **Pre-existing IP:** Students retain rights to intellectual property they bring into the course
+- **In-class Developed Work:** Intended for open, collaborative use within the class and for public viewing as part of demand validation efforts
+- **Continuation Beyond Class:** If teams wish to pursue their project commercially post-class, they should negotiate ownership and IP rights internally and/or with external advisors
+- **Site Shutdown or Continuation:** Teams will decide post-semester whether to shut down their products/sites or continue development independently
+
+> **Note:** This course is not an incubator, and Columbia University does not claim ownership of student-developed IP unless university-owned technologies are involved.
+
+## Additional Notes
+
+### AI Tools
+Students are encouraged to use AI tools such as GitHub Copilot, GPT models, and AI design assistants where appropriate.
+
+### Guest Speakers
+Sessions with product designers, UX researchers, and growth marketers may be scheduled to provide real-world perspectives *(tentative)*.
+
+### Certifications
+Students will complete the Meta Blueprint and Google Analytics certifications as part of the course, gaining industry-recognized credentials that enhance their resumes and practical skills.
+
+## Demo Day Format 
+
+### Audience
+Class peers, instructors, invited alumni, company hiring reps, potential mentors.
+
+### Format
+- Each team gets **7 minutes** to present (5 min pitch, 2 min Q&A)
+- Pitches should cover: Problem, Solution, Validation results, Iteration history, Future vision
+- Judging (if desired) or just feedback panel with industry guests
+- **Optional:** Post-demo networking session with audience members

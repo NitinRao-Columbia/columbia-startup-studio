@@ -1,40 +1,46 @@
-# Demo Day
-
-**Startup Studio: AI-Accelerated Building & Validation**
-Columbia University, Department of Computer Science
+# Columbia Startup Studio: Demo Day
 
 **Tuesday, May 12, 2026**
-**1:10 PM - 4:00 PM**
-**451 Computer Science Building, Columbia University**
+1:00 – 4:00 PM
+451 Computer Science Building, Columbia University
 
 ---
 
-## What is Demo Day?
+This spring, students in Columbia University's [Startup Studio: AI-Accelerated Building & Validation](resources/course_syllabus.md) built real startups from scratch. Starting with interviewing users for problem validation, they built working code using AI, acquired real users, and iterated based on what those users actually said and did.
 
-Twelve student teams will present the startups they've built over the course of the Spring 2026 semester. Each team started with a problem, interviewed real users, validated demand, and built a working product using AI-accelerated development tools.
+On May 12, they will present VC-style pitches with live demos. 
 
-These aren't mockups or slide decks about hypothetical products. Every team has a live product with real users.
-
-## What to Expect
-
-Teams will give short presentations covering:
-
-- The problem they're solving and who they're solving it for
-- How they validated demand (user interviews, landing pages, ad campaigns)
-- A live product demo
-- Growth metrics and key results from the semester
-- What's next
+---
 
 ## The Teams
 
-Teams span a range of consumer and B2B products, including social discovery, recruitment marketplaces, event curation, wellness platforms, and AI-powered productivity tools. All products were built and launched during the semester.
+| Product          | What it does                                                                             |
+| ---------------- | ---------------------------------------------------------------------------------------- |
+| Circles          | Novel social coordination built for Columbia Students                                    |
+| Evidence of Life | Private timeline that shows what actually happened, not just what was planned            |
+| FreeWeight       | Connecting college coaches and athletes for improved athletic training                   |
+| HAUNT            | NYC event discovery and group coordination: see what friends are doing, decide together  |
+| Misfit.AI        | AI analyzes your wardrobe, calendar, and weather for wardrobe recommendations            |
+| QuestCity        | Gamified outdoor exploration for friends and strangers                                   |
+| Recruitr         | Sports recruiting that feels like social media                                           |
+| Rekindled        | A social app for people in transition who need to build a new social circle              |
+| Roam             | Turn TikTok reels into plans with friends                                                |
+| Sift             | Event recommendation that's not overwhelming                                             |
+| Tripable         | Group trip planning: votes, itinerary, and costs in one place                            |
+| Vouch            | Ratings where your friends are the algorithm                                             |
+
+---
 
 ## About the Course
 
-COMS4995-011 is a hands-on computer science course where student teams experience the full cycle of technology entrepreneurship: problem discovery, user research, AI-assisted product development, and growth experimentation. Students build real products, acquire real users, and learn to make decisions from real data.
+[COMS4995-011](resources/course_syllabus.md) is designed as a blend of three disciplines: UX research, startup hacking, and LLMs. The course is structured as a studio-style environment, emphasizing real building, iteration, and critique, and pushes students to practice cross-functional concepts in the service of building products that people actually want to use. 
 
 **Instructor:** Ken St. Clair, Adjunct Assistant Professor of Computer Science
 
+---
+
 ## Attending
 
-Demo Day is open to invited guests. If you'd like to attend, please reach out to Ken St. Clair at krs2212@columbia.edu.
+We have several confirmed industry attendees from large companies and startups, and a few slots remaining for additional industry guests. Reach out to Ken at krs2212@columbia.edu to request an invitation.
+
+Columbia has a closed campus. Attendance is by invitation only.

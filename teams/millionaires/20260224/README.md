@@ -8,7 +8,9 @@
 
 ## 🔗 Live Landing Page URL
 
-**Deployed at:** https://poetic-dodol-732556.netlify.app/
+**Deployed at:** https://questcity-millionaires.netlify.app/
+
+**Metrics endpoint:** https://questcity-millionaires.netlify.app/user-count.json
 
 ---
 
