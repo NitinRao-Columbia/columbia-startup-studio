@@ -1,0 +1,52 @@
+{
+  "buckets": [
+    "thesis_dreader",
+    "duct_tape_analyst",
+    "ai_loop_prisoner",
+    "ai_weary_old_school_analyst",
+    "power_qual_practitioner",
+    "fast_moving_product_team"
+  ],
+  "per_bucket": 12,
+  "females_per_bucket": 8,
+  "males_per_bucket": 4,
+  "age_bands": [[22,28], [29,35], [36,42], [43,49], [50,56]],
+  "female_allocations": [
+    {"bucket": "thesis_dreader", "age_band": [22,28], "count": 3},
+    {"bucket": "thesis_dreader", "age_band": [29,35], "count": 3},
+    {"bucket": "thesis_dreader", "age_band": [36,42], "count": 2},
+
+    {"bucket": "duct_tape_analyst", "age_band": [29,35], "count": 2},
+    {"bucket": "duct_tape_analyst", "age_band": [36,42], "count": 3},
+    {"bucket": "duct_tape_analyst", "age_band": [43,49], "count": 2},
+    {"bucket": "duct_tape_analyst", "age_band": [50,56], "count": 1},
+
+    {"bucket": "ai_loop_prisoner", "age_band": [22,28], "count": 2},
+    {"bucket": "ai_loop_prisoner", "age_band": [29,35], "count": 3},
+    {"bucket": "ai_loop_prisoner", "age_band": [36,42], "count": 2},
+    {"bucket": "ai_loop_prisoner", "age_band": [43,49], "count": 1},
+
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [29,35], "count": 1},
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [36,42], "count": 3},
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [43,49], "count": 2},
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [50,56], "count": 2},
+
+    {"bucket": "power_qual_practitioner", "age_band": [22,28], "count": 2},
+    {"bucket": "power_qual_practitioner", "age_band": [29,35], "count": 3},
+    {"bucket": "power_qual_practitioner", "age_band": [36,42], "count": 2},
+    {"bucket": "power_qual_practitioner", "age_band": [43,49], "count": 1},
+
+    {"bucket": "fast_moving_product_team", "age_band": [22,28], "count": 2},
+    {"bucket": "fast_moving_product_team", "age_band": [29,35], "count": 3},
+    {"bucket": "fast_moving_product_team", "age_band": [36,42], "count": 2},
+    {"bucket": "fast_moving_product_team", "age_band": [43,49], "count": 1}
+  ],
+  "male_ages": {
+    "thesis_dreader": [24, 27, 31, 34],
+    "duct_tape_analyst": [31, 38, 44, 51],
+    "ai_loop_prisoner": [25, 30, 37, 42],
+    "ai_weary_old_school_analyst": [35, 42, 48, 54],
+    "power_qual_practitioner": [27, 32, 36, 41],
+    "fast_moving_product_team": [26, 30, 34, 38]
+  }
+}

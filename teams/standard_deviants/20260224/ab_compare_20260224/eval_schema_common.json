@@ -1,0 +1,17 @@
+{
+  "person_id": "<number from profile>",
+  "bucket": "<bucket from profile>",
+  "resonance": "<strongly_disagree|disagree|neutral|agree|strongly_agree>",
+  "clarity_response": "<describe in one sentence what this product does>",
+  "intent": "<strongly_disagree|disagree|neutral|agree|strongly_agree>",
+  "conversion_confidence": "<strongly_disagree|disagree|neutral|agree|strongly_agree>",
+  "price_perception": "<too_expensive|fair|good_deal>",
+  "strongest_line": "<single line from the copy that resonated most>",
+  "what_feels_off": "<anything generic, try-hard, or dishonest-feeling>",
+  "objections": "<what's stopping you from signing up>",
+  "dealbreaker": "<true|false>",
+  "dealbreaker_reason": "<why, or null if dealbreaker is false>",
+  "gut_reaction": "<1-2 sentences, first impression>",
+  "unanswered_questions": "<what the page didn't answer>",
+  "price_reaction": "<specific thoughts on pricing tiers>"
+}

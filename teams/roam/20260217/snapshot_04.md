@@ -1,0 +1,2 @@
+ Elijah, Senior, Computer Science major
+Another participant reported that scheduling was a major problem for them. They reported that instagram reels was just noise and if you don’t “force and annoy” everyone to come to something, nobody would bother. They liked throwing something on a group calendar (they are in leadership for their frat) and calling people out for being flaky to get people to commit. It seemed like this person valued commitment and scheduling over idea recommendations as they felt like they had enough ideas already.

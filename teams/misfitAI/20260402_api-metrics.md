@@ -1,0 +1,1 @@
+https://misfitai-2026.web.app/api/metrics

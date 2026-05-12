@@ -1,0 +1,422 @@
+[
+  {
+    "person_id": 1,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 22,
+    "name": "Debra Davidson"
+  },
+  {
+    "person_id": 2,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 23,
+    "name": "Rachel Rodriguez"
+  },
+  {
+    "person_id": 3,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 23,
+    "name": "Troy Barnes"
+  },
+  {
+    "person_id": 4,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 24,
+    "name": "Angel Ellis"
+  },
+  {
+    "person_id": 5,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 27,
+    "name": "Sandra Aguilar"
+  },
+  {
+    "person_id": 6,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 27,
+    "name": "Joshua Merritt"
+  },
+  {
+    "person_id": 7,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 28,
+    "name": "Brooke Bass"
+  },
+  {
+    "person_id": 8,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 29,
+    "name": "Lauren Shaw"
+  },
+  {
+    "person_id": 9,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 30,
+    "name": "Daniel Fisher"
+  },
+  {
+    "person_id": 10,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 34,
+    "name": "Jeffery Thompson"
+  },
+  {
+    "person_id": 11,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 35,
+    "name": "Courtney Morgan"
+  },
+  {
+    "person_id": 12,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 36,
+    "name": "Taylor Wong"
+  },
+  {
+    "person_id": 13,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 31,
+    "name": "Terri Walter"
+  },
+  {
+    "person_id": 14,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 31,
+    "name": "Danny Gonzalez"
+  },
+  {
+    "person_id": 15,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 32,
+    "name": "Diana Wright"
+  },
+  {
+    "person_id": 16,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 35,
+    "name": "Anna Henderson"
+  },
+  {
+    "person_id": 17,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 36,
+    "name": "Paula Moreno"
+  },
+  {
+    "person_id": 18,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 37,
+    "name": "Crystal Robinson"
+  },
+  {
+    "person_id": 19,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 38,
+    "name": "Ronnie King"
+  },
+  {
+    "person_id": 20,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 40,
+    "name": "Shirley Suarez"
+  },
+  {
+    "person_id": 21,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 41,
+    "name": "Katherine Whitehead"
+  },
+  {
+    "person_id": 22,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 42,
+    "name": "Anne Jordan"
+  },
+  {
+    "person_id": 23,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 43,
+    "name": "Travis Gonzalez"
+  },
+  {
+    "person_id": 24,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 50,
+    "name": "Benjamin Perry"
+  },
+  {
+    "person_id": 25,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 24,
+    "name": "Erin Lin"
+  },
+  {
+    "person_id": 26,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 25,
+    "name": "Lynn Perez"
+  },
+  {
+    "person_id": 27,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 25,
+    "name": "Jason Daniels"
+  },
+  {
+    "person_id": 28,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 28,
+    "name": "Shannon Jones"
+  },
+  {
+    "person_id": 29,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 29,
+    "name": "Cassandra Gaines"
+  },
+  {
+    "person_id": 30,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 30,
+    "name": "Victoria Baker"
+  },
+  {
+    "person_id": 31,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 30,
+    "name": "Travis Vance"
+  },
+  {
+    "person_id": 32,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 33,
+    "name": "Monica Herrera"
+  },
+  {
+    "person_id": 33,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 36,
+    "name": "Cheryl West"
+  },
+  {
+    "person_id": 34,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 36,
+    "name": "Joshua Taylor"
+  },
+  {
+    "person_id": 35,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 40,
+    "name": "Crystal Johnson"
+  },
+  {
+    "person_id": 36,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 41,
+    "name": "Guy Molina"
+  },
+  {
+    "person_id": 37,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 34,
+    "name": "Jamie Mayo"
+  },
+  {
+    "person_id": 38,
+    "gender": "male",
+    "bucket": "budget_gatekeeper",
+    "age": 35,
+    "name": "David Douglas"
+  },
+  {
+    "person_id": 39,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 38,
+    "name": "Kristina Baker"
+  },
+  {
+    "person_id": 40,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 40,
+    "name": "Kimberly Blair"
+  },
+  {
+    "person_id": 41,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 42,
+    "name": "Carolyn Daniel"
+  },
+  {
+    "person_id": 42,
+    "gender": "male",
+    "bucket": "budget_gatekeeper",
+    "age": 42,
+    "name": "Christopher Mcdonald"
+  },
+  {
+    "person_id": 43,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 45,
+    "name": "Jane Ferrell"
+  },
+  {
+    "person_id": 44,
+    "gender": "male",
+    "bucket": "budget_gatekeeper",
+    "age": 48,
+    "name": "Marcus Johnson"
+  },
+  {
+    "person_id": 45,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 49,
+    "name": "Jennifer Brown"
+  },
+  {
+    "person_id": 46,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 52,
+    "name": "Sharon Cherry"
+  },
+  {
+    "person_id": 47,
+    "gender": "female",
+    "bucket": "budget_gatekeeper",
+    "age": 53,
+    "name": "Whitney Peters"
+  },
+  {
+    "person_id": 48,
+    "gender": "male",
+    "bucket": "budget_gatekeeper",
+    "age": 53,
+    "name": "Mark Hill"
+  },
+  {
+    "person_id": 49,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 29,
+    "name": "Rebecca Valencia"
+  },
+  {
+    "person_id": 50,
+    "gender": "male",
+    "bucket": "skeptical_methodologist",
+    "age": 29,
+    "name": "Paul Wilson"
+  },
+  {
+    "person_id": 51,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 30,
+    "name": "Gina Moore"
+  },
+  {
+    "person_id": 52,
+    "gender": "male",
+    "bucket": "skeptical_methodologist",
+    "age": 37,
+    "name": "Michael Travis"
+  },
+  {
+    "person_id": 53,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 38,
+    "name": "Christine Wright"
+  },
+  {
+    "person_id": 54,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 41,
+    "name": "Shannon Walker"
+  },
+  {
+    "person_id": 55,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 42,
+    "name": "Victoria Garcia"
+  },
+  {
+    "person_id": 56,
+    "gender": "male",
+    "bucket": "skeptical_methodologist",
+    "age": 44,
+    "name": "Jason Powell"
+  },
+  {
+    "person_id": 57,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 46,
+    "name": "Karen Pierce"
+  },
+  {
+    "person_id": 58,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 47,
+    "name": "Ms. Kimberly Adkins"
+  },
+  {
+    "person_id": 59,
+    "gender": "female",
+    "bucket": "skeptical_methodologist",
+    "age": 49,
+    "name": "Christina Walters"
+  },
+  {
+    "person_id": 60,
+    "gender": "male",
+    "bucket": "skeptical_methodologist",
+    "age": 51,
+    "name": "Dustin Jordan"
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "person_id": 1,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 24,
+    "name": "Benjamin Smith",
+    "location": "Las Vegas, NV",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 2,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 26,
+    "name": "Lynn Perez",
+    "location": "Flagstaff, AZ",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 3,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 27,
+    "name": "Maria Henry",
+    "location": "Provo, UT",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 4,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 27,
+    "name": "Michael Bradshaw",
+    "location": "San Antonio, TX",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 5,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 28,
+    "name": "Shannon Jones",
+    "location": "Tucson, AZ",
+    "referrer": "google_search"
+  },
+  {
+    "person_id": 6,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 30,
+    "name": "Yolanda Hicks",
+    "location": "Gainesville, FL",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 7,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 31,
+    "name": "Mary Travis",
+    "location": "Savannah, GA",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 8,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 31,
+    "name": "Richard Sanchez",
+    "location": "Austin, TX",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 9,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 33,
+    "name": "Denise Jacobs",
+    "location": "Akron, OH",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 10,
+    "gender": "male",
+    "bucket": "thesis_dreader",
+    "age": 34,
+    "name": "Robert Montgomery",
+    "location": "Sacramento, CA",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 11,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 38,
+    "name": "Sherry Decker",
+    "location": "New Haven, CT",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 12,
+    "gender": "female",
+    "bucket": "thesis_dreader",
+    "age": 42,
+    "name": "Kelly Williams",
+    "location": "Omaha, NE",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 13,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 31,
+    "name": "Jamie Lewis",
+    "location": "Pittsburgh, PA",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 14,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 31,
+    "name": "Thomas Walker",
+    "location": "State College, PA",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 15,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 35,
+    "name": "Julie Daniel",
+    "location": "Raleigh, NC",
+    "referrer": "google_search"
+  },
+  {
+    "person_id": 16,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 37,
+    "name": "Donna Jordan",
+    "location": "Tempe, AZ",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 17,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 38,
+    "name": "Zachary Burns",
+    "location": "Memphis, TN",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 18,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 39,
+    "name": "April Wise",
+    "location": "Boise, ID",
+    "referrer": "linkedin_ad"
+  },
+  {
+    "person_id": 19,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 42,
+    "name": "Terri Walter",
+    "location": "Lawrence, KS",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 20,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 44,
+    "name": "Peter Harris",
+    "location": "Ithaca, NY",
+    "referrer": "google_search"
+  },
+  {
+    "person_id": 21,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 48,
+    "name": "Laura Scott",
+    "location": "Lincoln, NE",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 22,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 49,
+    "name": "Patricia Jefferson",
+    "location": "Asheville, NC",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 23,
+    "gender": "male",
+    "bucket": "duct_tape_analyst",
+    "age": 51,
+    "name": "Jason Garcia",
+    "location": "Spokane, WA",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 24,
+    "gender": "female",
+    "bucket": "duct_tape_analyst",
+    "age": 55,
+    "name": "Sonya Mckee",
+    "location": "Oakland, CA",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 25,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 22,
+    "name": "Sharon Cochran",
+    "location": "Kansas City, MO",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 26,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 25,
+    "name": "Courtney Gonzalez",
+    "location": "Amherst, MA",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 27,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 25,
+    "name": "Anthony Obrien",
+    "location": "Durham, NC",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 28,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 29,
+    "name": "Barbara Riggs",
+    "location": "Charlottesville, VA",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 29,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 30,
+    "name": "David Arnold",
+    "location": "Corvallis, OR",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 30,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 31,
+    "name": "Tiffany Gonzalez",
+    "location": "Denver, CO",
+    "referrer": "google_search"
+  },
+  {
+    "person_id": 31,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 34,
+    "name": "Mary Mcmillan",
+    "location": "Norman, OK",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 32,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 37,
+    "name": "Jeremy Reed",
+    "location": "Madison, WI",
+    "referrer": "google_search"
+  },
+  {
+    "person_id": 33,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 40,
+    "name": "Abigail Shaffer",
+    "location": "Salt Lake City, UT",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 34,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 41,
+    "name": "Deborah Figueroa",
+    "location": "Tallahassee, FL",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 35,
+    "gender": "male",
+    "bucket": "ai_loop_prisoner",
+    "age": 42,
+    "name": "Terry Serrano",
+    "location": "Albuquerque, NM",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 36,
+    "gender": "female",
+    "bucket": "ai_loop_prisoner",
+    "age": 48,
+    "name": "Debra Davidson",
+    "location": "Richmond, VA",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 37,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 33,
+    "name": "Brittany Farmer",
+    "location": "Burlington, VT",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 38,
+    "gender": "male",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 35,
+    "name": "David Smith",
+    "location": "Eugene, OR",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 39,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 37,
+    "name": "Marcia Cannon",
+    "location": "Fort Collins, CO",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 40,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 38,
+    "name": "Sierra Sanchez",
+    "location": "Knoxville, TN",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 41,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 40,
+    "name": "Taylor Wong",
+    "location": "Buffalo, NY",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 42,
+    "gender": "male",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 42,
+    "name": "John Browning",
+    "location": "Des Moines, IA",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 43,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 43,
+    "name": "Samantha Garcia",
+    "location": "Tampa, FL",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 44,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 44,
+    "name": "Shirley Suarez",
+    "location": "Baton Rouge, LA",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 45,
+    "gender": "male",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 48,
+    "name": "Brandon Bailey",
+    "location": "Chicago, IL",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 46,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 51,
+    "name": "Tiffany Barnes",
+    "location": "Baltimore, MD",
+    "referrer": "linkedin_ad"
+  },
+  {
+    "person_id": 47,
+    "gender": "female",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 53,
+    "name": "Emily Adams",
+    "location": "Minneapolis, MN",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 48,
+    "gender": "male",
+    "bucket": "ai_weary_old_school_analyst",
+    "age": 54,
+    "name": "Brian Jordan",
+    "location": "Hartford, CT",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 49,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 23,
+    "name": "Cassandra Gaines",
+    "location": "Seattle, WA",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 50,
+    "gender": "male",
+    "bucket": "power_qual_practitioner",
+    "age": 27,
+    "name": "Gary Hernandez",
+    "location": "Nashville, TN",
+    "referrer": "linkedin_ad"
+  },
+  {
+    "person_id": 51,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 28,
+    "name": "Victoria Baker",
+    "location": "Missoula, MT",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 52,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 29,
+    "name": "Michelle Wagner",
+    "location": "Fayetteville, AR",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 53,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 31,
+    "name": "Jennifer Silva",
+    "location": "Boulder, CO",
+    "referrer": "google_search"
+  },
+  {
+    "person_id": 54,
+    "gender": "male",
+    "bucket": "power_qual_practitioner",
+    "age": 32,
+    "name": "Bobby Franklin",
+    "location": "El Paso, TX",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 55,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 35,
+    "name": "Paige Cannon",
+    "location": "Columbia, SC",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 56,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 36,
+    "name": "Anna Walker",
+    "location": "Iowa City, IA",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 57,
+    "gender": "male",
+    "bucket": "power_qual_practitioner",
+    "age": 36,
+    "name": "Patrick Thornton",
+    "location": "Rochester, NY",
+    "referrer": "colleague_referral"
+  },
+  {
+    "person_id": 58,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 39,
+    "name": "Jessica Chavez",
+    "location": "Philadelphia, PA",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 59,
+    "gender": "male",
+    "bucket": "power_qual_practitioner",
+    "age": 41,
+    "name": "Scott James",
+    "location": "Ann Arbor, MI",
+    "referrer": "twitter"
+  },
+  {
+    "person_id": 60,
+    "gender": "female",
+    "bucket": "power_qual_practitioner",
+    "age": 44,
+    "name": "Julia Torres",
+    "location": "Louisville, KY",
+    "referrer": "twitter"
+  },
+  {
+    "person_id": 61,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 25,
+    "name": "Rachel Aguirre",
+    "location": "San Diego, CA",
+    "referrer": "twitter"
+  },
+  {
+    "person_id": 62,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 26,
+    "name": "Nancy Rhodes",
+    "location": "Lexington, KY",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 63,
+    "gender": "male",
+    "bucket": "fast_moving_product_team",
+    "age": 26,
+    "name": "Michael Farrell",
+    "location": "Providence, RI",
+    "referrer": "twitter"
+  },
+  {
+    "person_id": 64,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 30,
+    "name": "Kristen Calderon",
+    "location": "Portland, OR",
+    "referrer": "linkedin_ad"
+  },
+  {
+    "person_id": 65,
+    "gender": "male",
+    "bucket": "fast_moving_product_team",
+    "age": 30,
+    "name": "Ernest Morris",
+    "location": "Boston, MA",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 66,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 32,
+    "name": "Sandra Zimmerman",
+    "location": "St. Louis, MO",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 67,
+    "gender": "male",
+    "bucket": "fast_moving_product_team",
+    "age": 34,
+    "name": "Jordan Suarez",
+    "location": "Syracuse, NY",
+    "referrer": "slack_community"
+  },
+  {
+    "person_id": 68,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 35,
+    "name": "Erin Edwards",
+    "location": "Columbus, OH",
+    "referrer": "word_of_mouth"
+  },
+  {
+    "person_id": 69,
+    "gender": "male",
+    "bucket": "fast_moving_product_team",
+    "age": 38,
+    "name": "Jonathan Lawrence",
+    "location": "Atlanta, GA",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 70,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 41,
+    "name": "Christine Fisher",
+    "location": "Milwaukee, WI",
+    "referrer": "academic_forum"
+  },
+  {
+    "person_id": 71,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 42,
+    "name": "Bethany Fisher",
+    "location": "Santa Fe, NM",
+    "referrer": "instagram_ad"
+  },
+  {
+    "person_id": 72,
+    "gender": "female",
+    "bucket": "fast_moving_product_team",
+    "age": 43,
+    "name": "Michelle Maldonado",
+    "location": "Champaign, IL",
+    "referrer": "instagram_ad"
+  }
+]

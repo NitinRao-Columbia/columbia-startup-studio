@@ -1,0 +1,35 @@
+{
+  "buckets": ["thesis_dreader", "duct_tape_analyst", "ai_loop_prisoner", "budget_gatekeeper", "skeptical_methodologist"],
+  "per_bucket": 12,
+  "females_per_bucket": 8,
+  "males_per_bucket": 4,
+  "age_bands": [[22, 28], [29, 35], [36, 42], [43, 49], [50, 56]],
+  "female_allocations": [
+    {"bucket": "thesis_dreader", "age_band": [22, 26], "count": 3},
+    {"bucket": "thesis_dreader", "age_band": [27, 31], "count": 3},
+    {"bucket": "thesis_dreader", "age_band": [32, 36], "count": 2},
+
+    {"bucket": "duct_tape_analyst", "age_band": [28, 33], "count": 2},
+    {"bucket": "duct_tape_analyst", "age_band": [34, 39], "count": 3},
+    {"bucket": "duct_tape_analyst", "age_band": [40, 48], "count": 3},
+
+    {"bucket": "ai_loop_prisoner", "age_band": [24, 28], "count": 3},
+    {"bucket": "ai_loop_prisoner", "age_band": [29, 34], "count": 3},
+    {"bucket": "ai_loop_prisoner", "age_band": [35, 42], "count": 2},
+
+    {"bucket": "budget_gatekeeper", "age_band": [32, 38], "count": 2},
+    {"bucket": "budget_gatekeeper", "age_band": [39, 45], "count": 3},
+    {"bucket": "budget_gatekeeper", "age_band": [46, 55], "count": 3},
+
+    {"bucket": "skeptical_methodologist", "age_band": [28, 34], "count": 2},
+    {"bucket": "skeptical_methodologist", "age_band": [35, 42], "count": 3},
+    {"bucket": "skeptical_methodologist", "age_band": [43, 52], "count": 3}
+  ],
+  "male_ages": {
+    "thesis_dreader": [23, 27, 30, 34],
+    "duct_tape_analyst": [31, 38, 43, 50],
+    "ai_loop_prisoner": [25, 30, 36, 41],
+    "budget_gatekeeper": [35, 42, 48, 53],
+    "skeptical_methodologist": [29, 37, 44, 51]
+  }
+}

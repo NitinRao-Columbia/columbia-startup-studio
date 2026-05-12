@@ -1,7 +1,7 @@
 # TheBirds
 
 ## Members
-- as8116
-- gm3239
-- av3315
-- ik2619
+- Alessandro Sayad (as8116)
+- Geonsik Moon (gm3239)
+- Arjun Vaidya (av3315)
+- In Keun Kim (ik2619)

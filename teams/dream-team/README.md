@@ -1,7 +1,7 @@
 # Dream Team
 
 ## Members
-- (cw3503)
-- (cw3579)
-- (jh4645)
-- (bms2227)
+- Connor Wikholm (cw3503)
+- Cam Wilson (cw3579)
+- Joao Pedro Hall Lima (jh4645)
+- Benjamin Sidley (bms2227)

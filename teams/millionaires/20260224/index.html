@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestCity - Turn Your City Into an Adventure Game</title>
+    <meta name="description" content="Stop repeating the same date night. Complete quests, discover hidden gems, and never run out of things to do.">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="QuestCity - Turn Your City Into an Adventure Game">
+    <meta property="og:description" content="Stop repeating the same date night. Start collecting experiences.">
+    <meta property="og:type" content="website">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #f59e0b;
+            color: white;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+        }
+        
+        .cta-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+        }
+        
+        /* Main Content */
+        .content {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: -40px 20px 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        section {
+            margin-bottom: 60px;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: #1a202c;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .steps {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .step {
+            padding: 25px;
+            border-left: 4px solid #667eea;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .problem {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fef3c7;
+            border-radius: 12px;
+        }
+        
+        .problem h3 {
+            font-size: 1.5rem;
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+        
+        .quest-example {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+        
+        .quest-example h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        
+        .quest-example ul {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .quest-example li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .quest-example li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+        
+        .testimonials {
+            display: grid;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .testimonial {
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border-left: 4px solid #f59e0b;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+        
+        .testimonial .author {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .testimonial .details {
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .objections {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .objection {
+            padding: 20px;
+            background: #f7fafc;
+            border-radius: 8px;
+        }
+        
+        .objection h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        
+        /* Form */
+        .waitlist-form {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: white;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+        }
+        
+        .submit-button {
+            background: #f59e0b;
+            color: white;
+            padding: 16px 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+        }
+        
+        .fine-print {
+            font-size: 0.9rem;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+        
+        .pricing {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .content {
+                padding: 40px 25px;
+                margin: -40px 10px 20px;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+            }
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Stop Repeating the Same Date Night.<br>Start Collecting Experiences.</h1>
+            <p>Turn your city into an adventure game. Complete quests, discover hidden gems, and never run out of things to do—solo or together.</p>
+            <a href="#waitlist" class="cta-button">Get Early Access</a>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="content">
+            
+            <!-- How It Works -->
+            <section>
+                <h2>3 Steps to More Adventures</h2>
+                <div class="steps">
+                    <div class="step">
+                        <h3>Step 1: Pick a Quest</h3>
+                        <p>"Find 5 rooftop bars in Brooklyn" • "Hidden murals walking tour" • "Best tacos in a 2-mile radius"</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 2: Go Explore</h3>
+                        <p>We guide you to each spot. Check in, snap a photo, complete the challenge. Play solo or with friends.</p>
+                    </div>
+                    <div class="step">
+                        <h3>Step 3: Level Up</h3>
+                        <p>Earn badges, track your streak, unlock new quests. Compete on leaderboards and share your wins.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Problem -->
+            <section>
+                <div class="problem">
+                    <h3>"We've been everywhere already."</h3>
+                    <p>Not true—your city has thousands of spots you've never tried. The problem? No structure. No motivation. No clear "next step."</p>
+                    <p><strong>That's where we come in.</strong></p>
+                </div>
+            </section>
+            
+            <!-- Differentiation -->
+            <section>
+                <h2>What Makes Us Different</h2>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 20px;"><strong>Not another list app.</strong></p>
+                <p style="text-align: center; margin-bottom: 30px;">We don't just show you places. We create storylines.</p>
+                
+                <div class="quest-example">
+                    <h3>Example Quest: "Coffee Connoisseur"</h3>
+                    <ul>
+                        <li>Visit 5 indie coffee shops in your neighborhood</li>
+                        <li>Try a different brewing method at each</li>
+                        <li>Earn the "Barista's Best Friend" badge</li>
+                        <li>Unlock the "Roastery Tour" advanced quest</li>
+                    </ul>
+                    <p><strong>The difference:</strong> You're not scrolling reviews. You're on a mission. And missions are way more fun.</p>
+                </div>
+                
+                <p style="text-align: center;"><strong>Social features:</strong> Invite friends to join quests, compete on city leaderboards, or share your achievements. Play your way.</p>
+            </section>
+            
+            <!-- Testimonials -->
+            <section>
+                <h2>Real Beta Testers</h2>
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <p>"We found a secret garden we didn't know existed—after living here 5 years."</p>
+                        <div class="author">— Jamie & Chris, Portland</div>
+                        <div class="details">(Completed 12 quests in first month)</div>
+                    </div>
+                    <div class="testimonial">
+                        <p>"It's like Pokémon GO but for actual cool places instead of cartoon characters."</p>
+                        <div class="author">— Taylor, 29, Seattle</div>
+                        <div class="details">(Explorer Level 8, 47-day streak)</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Objections -->
+            <section>
+                <h2>Two Quick Objections</h2>
+                <div class="objections">
+                    <div class="objection">
+                        <h4>"I don't have time."</h4>
+                        <p>Most quests = 1-2 hours. You're already going out for coffee or walks. We just make it count.</p>
+                    </div>
+                    <div class="objection">
+                        <h4>"Will this work in my city?"</h4>
+                        <p>Launching in <strong>NYC & SF in March 2026</strong>, with LA, Chicago, Austin, Portland, Seattle, and Denver following by <strong>May 2026</strong>.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Waitlist Form -->
+            <section id="waitlist">
+                <div class="waitlist-form">
+                    <h2 style="color: white;">Ready to Explore Like It's a Game?</h2>
+                    <p style="font-size: 1.1rem; margin-bottom: 30px;">Join the waitlist and get exclusive beta access when we launch in your city.</p>
+                    
+                    <form id="signup-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required placeholder="New York, SF, Chicago...">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>I want to explore: *</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="explore-type" value="solo" required> Solo
+                                </label>
+                                <label>
+                                    <input type="radio" name="explore-type" value="partner"> With my partner
+                                </label>
+                                <label>
+                                    <input type="radio" name="explore-type" value="friends"> With friends
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Get Early Access</button>
+                        
+                        <div id="success-message" class="success-message">
+                            🎉 You're on the list! Check your email for confirmation.
+                        </div>
+                    </form>
+                    
+                    <div class="fine-print">
+                        <p><strong>What happens next:</strong> You'll receive exclusive beta invites, city launch notifications, and early access to premium quests. We email once a week max. Unsubscribe anytime.</p>
+                    </div>
+                    
+                    <div class="pricing">
+                        100% free to start. Premium quests unlock for $4.99/month (optional).
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+    </div>
+    
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // In production, you would send this data to your backend
+            const formData = new FormData(event.target);
+            const data = {
+                email: formData.get('email'),
+                city: formData.get('city'),
+                exploreType: formData.get('explore-type')
+            };
+            
+            console.log('Form submission:', data);
+            
+            // Show success message
+            document.getElementById('success-message').style.display = 'block';
+            
+            // Reset form
+            event.target.reset();
+            
+            // In production, you would:
+            // 1. Send data to your backend API
+            // 2. Add to email list (e.g., Mailchimp, ConvertKit)
+            // 3. Send confirmation email
+            // 4. Track conversion in analytics
+            
+            // Example:
+            // fetch('/api/waitlist', {
+            //     method: 'POST',
+            //     headers: { 'Content-Type': 'application/json' },
+            //     body: JSON.stringify(data)
+            // });
+        }
+    </script>
+</body>
+</html>

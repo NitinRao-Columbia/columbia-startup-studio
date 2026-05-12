@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rekindled — Make showing up feel easier.</title>
+<meta name="description" content="Rekindled matches you into curated, activity-based hangs with people who picked the same events you did. Small groups. Built-in transparency. No guessing." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0E0E0C;
+    --surface: #161614;
+    --surface-raised: #1C1C19;
+    --cream: #F1F0EC;
+    --muted: #9B9B93;
+    --warm: #C8B89A;
+    --accent: #E8A85C;
+    --sage: #7EC8A0;
+    --sage-dim: rgba(126,200,160,0.08);
+    --lavender: #A8A0D2;
+    --lavender-dim: rgba(168,160,210,0.08);
+    --rose: #D4908A;
+    --rose-dim: rgba(212,144,138,0.08);
+    --sky: #7ABED9;
+    --sky-dim: rgba(122,190,217,0.08);
+    --max-w: 1140px;
+  }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--cream); background: var(--bg); line-height: 1.55; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+  button { font-family: inherit; }
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  .label { color: var(--warm); font-size: 13px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 20px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.2; letter-spacing: -0.8px; color: var(--cream); }
+
+  /* ── Top Bar ── */
+  .top-bar { background: var(--surface); text-align: center; padding: 10px 28px; font-size: 13px; font-weight: 500; color: var(--muted); letter-spacing: 0.3px; border-bottom: 1px solid rgba(255,255,255,0.04); position: fixed; top: 0; left: 0; right: 0; z-index: 101; transition: transform 0.3s ease; }
+  .top-bar span { color: var(--warm); }
+
+  /* ── Nav ── */
+  nav { position: fixed; top: 37px; left: 0; right: 0; z-index: 100; background: transparent; border-bottom: 1px solid transparent; transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease, top 0.3s ease; }
+  nav.scrolled { background: rgba(14,14,12,0.92); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom-color: rgba(255,255,255,0.05); top: 0; }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; letter-spacing: -0.5px; color: var(--cream); }
+  .nav-cta { background: var(--accent); color: var(--bg); border: none; border-radius: 6px; padding: 10px 22px; font-size: 14px; font-weight: 600; letter-spacing: 0.2px; cursor: pointer; transition: opacity 0.2s; }
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* ── Hero ── */
+  .hero { min-height: 100vh; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; opacity: 0.03; pointer-events: none; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E"); }
+  .hero::after { content: ''; position: absolute; top: -20%; right: -10%; width: 60%; height: 60%; background: radial-gradient(ellipse, rgba(232,168,92,0.03) 0%, transparent 70%); pointer-events: none; }
+  .hero-content { position: relative; padding-top: 180px; padding-bottom: 100px; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5.5vw, 68px); font-weight: 500; line-height: 1.1; letter-spacing: -1.5px; max-width: 620px; margin-bottom: 24px; }
+  .hero h1 em { font-style: italic; color: var(--warm); }
+  .hero-sub { font-size: clamp(16px, 1.8vw, 19px); line-height: 1.65; color: var(--muted); max-width: 480px; margin-bottom: 40px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-primary { display: inline-block; background: var(--accent); color: var(--bg); padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; transition: transform 0.2s, opacity 0.2s; border: none; cursor: pointer; }
+  .btn-primary:hover { transform: translateY(-1px); opacity: 0.9; }
+  .btn-secondary { display: inline-block; color: var(--cream); padding: 16px 32px; border-radius: 8px; font-size: 16px; font-weight: 500; border: 1px solid rgba(255,255,255,0.12); transition: border-color 0.2s; }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.3); }
+  .hero-micro { color: var(--muted); font-size: 13px; font-weight: 500; margin-top: 24px; letter-spacing: 0.3px; }
+
+  /* ── Phone Mockup ── */
+  .hero-mockup { display: flex; justify-content: center; align-items: center; position: relative; }
+  .phone-frame { width: 280px; height: 560px; background: var(--surface); border-radius: 36px; border: 2px solid rgba(255,255,255,0.08); position: relative; overflow: hidden; box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.03); }
+  .phone-notch { width: 120px; height: 28px; background: var(--bg); border-radius: 0 0 16px 16px; position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 2; }
+  .phone-screen { padding: 40px 20px 20px; height: 100%; overflow: hidden; }
+  .ps-label { font-size: 10px; color: var(--warm); font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .ps-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; margin-bottom: 16px; line-height: 1.2; }
+  .phone-card { background: var(--surface-raised); border-radius: 12px; padding: 16px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.05); }
+  .pc-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+  .pc-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; color: var(--cream); }
+  .pc-meta { font-size: 11px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+  .pc-vibe { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 20px; display: inline-block; margin-top: 8px; }
+  .phone-swipe { display: flex; justify-content: center; gap: 16px; margin-top: 14px; }
+  .swipe-btn { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--surface); }
+  .swipe-btn.yes { border: 1.5px solid var(--sage); background: var(--sage-dim); }
+  .swipe-btn.no { border: 1.5px solid var(--rose); background: var(--rose-dim); }
+  .phone-glow { position: absolute; width: 200px; height: 200px; border-radius: 50%; background: radial-gradient(circle, rgba(232,168,92,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); pointer-events: none; z-index: 0; }
+
+  /* ── Sections ── */
+  .section { padding: 100px 0; position: relative; }
+  .section-surface { background: var(--surface); }
+  .section-divider { position: absolute; left: 0; right: 0; top: 0; height: 1px; background: rgba(255,255,255,0.05); }
+
+  /* ── Problem ── */
+  .problem-inner { max-width: 680px; margin: 0 auto; }
+  .problem-body { color: var(--muted); font-size: 17px; line-height: 1.75; margin-bottom: 20px; }
+  .problem-fix { color: var(--cream); font-size: 21px; font-weight: 600; font-family: 'Playfair Display', serif; font-style: italic; margin-top: 8px; }
+
+  /* ── Steps ── */
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .step-card { background: var(--bg); border-radius: 12px; padding: 36px 32px; border: 1px solid rgba(255,255,255,0.06); transition: border-color 0.3s; }
+  .step-card:hover { border-color: rgba(200,184,154,0.2); }
+  .step-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .step-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+  .step-num { color: var(--accent); font-size: 13px; font-weight: 700; }
+  .step-label-text { color: var(--warm); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+  .step-card h3 { font-size: 20px; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
+  .step-card p { color: var(--muted); font-size: 15px; line-height: 1.65; }
+  .hiw-sub { color: var(--muted); font-size: 17px; line-height: 1.65; margin-bottom: 56px; max-width: 560px; }
+
+  /* ── Hang Cards ── */
+  .hang-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+  .hang-card { background: var(--surface); border-radius: 10px; padding: 24px; border: 1px solid rgba(255,255,255,0.05); transition: transform 0.25s ease, border-color 0.3s; }
+  .hang-card:hover { transform: translateY(-3px); border-color: rgba(200,184,154,0.15); }
+  .hang-icon-wrap { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .hang-top { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .hang-activity { font-size: 16px; font-weight: 600; line-height: 1.35; color: var(--cream); }
+  .hang-meta { display: flex; gap: 12px; align-items: center; font-size: 13px; color: var(--muted); }
+  .hang-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted); flex-shrink: 0; }
+  .vibe-chill { color: var(--sage); font-weight: 500; }
+  .vibe-energetic { color: #E89B6C; font-weight: 500; }
+  .vibe-social { color: var(--lavender); font-weight: 500; }
+  .hang-footer { color: var(--muted); font-size: 15px; margin-top: 32px; font-style: italic; }
+
+  /* ── Transparency ── */
+  .trans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .trans-card { padding: 28px 24px; border-left: 2px solid var(--warm); background: rgba(200,184,154,0.03); border-radius: 0 8px 8px 0; }
+  .trans-card h4 { font-size: 17px; font-weight: 600; margin-bottom: 8px; color: var(--cream); }
+  .trans-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .trans-inner { max-width: 780px; margin: 0 auto; }
+  .trans-footer { color: var(--muted); font-size: 15px; margin-top: 28px; }
+
+  /* ── Comparison ── */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+  .compare-header { display: flex; align-items: center; gap: 12px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .compare-logo { font-size: 18px; font-weight: 700; }
+  .compare-logo.rek { color: var(--accent); font-family: 'Playfair Display', serif; }
+  .compare-logo.others { color: var(--muted); }
+  .compare-tag { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
+  .compare-row { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 20px; }
+  .compare-check { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .compare-check.yes { background: var(--sage-dim); border: 1.5px solid var(--sage); }
+  .compare-check.no { background: var(--rose-dim); border: 1.5px solid var(--rose); }
+  .compare-text { font-size: 15px; color: var(--cream); line-height: 1.5; }
+  .compare-text span { color: var(--muted); font-size: 13px; display: block; margin-top: 2px; }
+
+  /* ── Testimonials ── */
+  .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .test-card { background: var(--surface); border-radius: 10px; padding: 28px 26px; border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; justify-content: space-between; }
+  .test-stars { color: var(--accent); font-size: 13px; letter-spacing: 2px; margin-bottom: 12px; }
+  .test-quote { font-size: 16px; line-height: 1.6; color: var(--cream); margin-bottom: 18px; font-family: 'DM Sans', sans-serif; font-weight: 400; }
+  .test-author { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+  /* ── Pricing ── */
+  .pricing-inner { max-width: 880px; margin: 0 auto; }
+  .pricing-top { text-align: center; margin-bottom: 48px; }
+  .pricing-explainer { max-width: 600px; margin: 16px auto 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+  .pricing-explainer strong { color: var(--cream); font-weight: 600; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 720px; margin: 0 auto; }
+  .pricing-card { background: var(--bg); border-radius: 12px; padding: 36px 24px; border: 1px solid rgba(255,255,255,0.06); text-align: center; }
+  .pricing-card.featured { background: linear-gradient(135deg, rgba(232,168,92,0.08), rgba(200,184,154,0.05)); border-color: rgba(232,168,92,0.25); }
+  .pricing-label { color: var(--muted); font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+  .pricing-amount { font-size: 36px; font-weight: 700; margin-bottom: 8px; color: var(--cream); }
+  .pricing-detail { color: var(--muted); font-size: 14px; }
+  .pricing-includes { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .pricing-includes li { color: var(--muted); font-size: 12px; line-height: 1.9; list-style: none; }
+  .pricing-includes li::before { content: '✓ '; color: var(--sage); font-weight: 600; }
+  .pricing-note { color: var(--muted); font-size: 14px; margin-top: 28px; text-align: center; }
+
+  /* ── FAQ ── */
+  .faq-inner { max-width: 680px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; background: none; border: none; color: var(--cream); font-size: 17px; font-weight: 500; padding: 22px 0; cursor: pointer; text-align: left; line-height: 1.4; }
+  .faq-icon { font-size: 22px; font-weight: 300; margin-left: 16px; color: var(--warm); transition: transform 0.3s ease; flex-shrink: 0; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; opacity: 0; }
+  .faq-item.open .faq-answer { max-height: 200px; opacity: 1; }
+  .faq-answer p { color: var(--muted); font-size: 15px; line-height: 1.65; padding: 0 0 22px 0; }
+
+  /* ── Final CTA ── */
+  .final-cta { padding: 120px 0; position: relative; text-align: center; }
+  .final-cta::before { content: ''; position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 80%; height: 80%; background: radial-gradient(ellipse, rgba(232,168,92,0.025) 0%, transparent 70%); pointer-events: none; }
+  .final-cta-inner { max-width: 600px; margin: 0 auto; position: relative; }
+  .final-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 48px); font-weight: 500; line-height: 1.15; letter-spacing: -1px; margin-bottom: 20px; }
+  .final-cta-sub { color: var(--muted); font-size: 17px; line-height: 1.6; margin-bottom: 40px; }
+  .email-form { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .email-input { background: var(--surface); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 20px; font-size: 16px; color: var(--cream); font-family: 'DM Sans', sans-serif; outline: none; min-width: 260px; flex: 1; max-width: 340px; transition: border-color 0.2s; }
+  .email-input:focus { border-color: rgba(200,184,154,0.3); }
+  .email-input::placeholder { color: rgba(155,155,147,0.6); }
+  .success-box { background: var(--surface); border-radius: 12px; padding: 32px; border: 1px solid rgba(200,184,154,0.15); display: none; }
+  .success-box.show { display: block; }
+  .success-box h3 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--cream); }
+  .success-box p { color: var(--muted); font-size: 15px; }
+  .cta-micro { color: var(--muted); font-size: 13px; margin-top: 20px; }
+  footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; }
+  footer p { color: var(--muted); font-size: 13px; }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-mockup { order: -1; }
+    .phone-frame { width: 240px; height: 480px; }
+    .compare-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 640px) {
+    .container { padding: 0 24px; }
+    .top-bar { padding: 10px 24px; }
+    .hero-content { padding-top: 140px; padding-bottom: 60px; }
+    .hero-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: clamp(34px, 9vw, 44px); }
+    .hero-sub { font-size: 16px; line-height: 1.6; }
+    .section { padding: 72px 0; }
+    .final-cta { padding: 80px 0; }
+    .steps-grid, .hang-grid, .test-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
+    .trans-grid { grid-template-columns: 1fr; }
+    .email-form { flex-direction: column; align-items: stretch; }
+    .email-input { min-width: unset; max-width: unset; }
+    .hero-mockup { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 1. Top bar: "Making showing up feel easier" -->
+<div class="top-bar" id="topBar"><span>Don't walk in blind.</span> Know the vibe before you go.</div>
+
+<!-- Nav -->
+<nav id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <span class="logo">Rekindled</span>
+      <a href="#signup" class="nav-cta">Get early access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero with app mockup -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="label fade-in">For people in transition</p>
+        <h1 class="fade-in" style="transition-delay:0.1s">Make showing up<br>feel <em>easier.</em></h1>
+        <p class="hero-sub fade-in" style="transition-delay:0.2s">Curated, activity-based hangs with people who like the same things you do.</p>
+        <div class="hero-ctas fade-in" style="transition-delay:0.3s">
+          <a href="#signup" class="btn-primary">Get early access</a>
+          <a href="#hangs" class="btn-secondary">Preview upcoming hangs</a>
+        </div>
+        <p class="hero-micro fade-in" style="transition-delay:0.45s">Everyone comes alone. That's the whole point.</p>
+      </div>
+      <!-- 2. App mockup visual -->
+      <div class="hero-mockup fade-in" style="transition-delay:0.3s">
+      <div class="phone-glow"></div>
+      <div class="phone-frame">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="ps-label">Discover hangs</div>
+          <div class="ps-title">This weekend</div>
+          <div class="phone-card">
+            <div class="pc-icon" style="background:var(--sage-dim);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7EC8A0" stroke-width="2" stroke-linecap="round"><path d="M17 8h1a4 4 0 110 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <div class="pc-name">Coffee + conversation prompts</div>
+            <div class="pc-meta"><span>6 people</span><span style="color:var(--sage)">Chill</span></div>
+            <div class="pc-vibe" style="background:var(--sage-dim);color:var(--sage);">Sat · 10am · East Village</div>
+          </div>
+          <div class="phone-card">
+            <div class="pc-icon" style="background:var(--rose-dim);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4908A" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 008 0"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg>
+            </div>
+            <div class="pc-name">Pickup basketball + food after</div>
+            <div class="pc-meta"><span>8 people</span><span style="color:#E89B6C">Energetic</span></div>
+            <div class="pc-vibe" style="background:var(--rose-dim);color:var(--rose);">Sun · 2pm · Brooklyn</div>
+          </div>
+          <div class="phone-swipe">
+            <div class="swipe-btn no"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#D4908A" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div class="swipe-btn yes"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7EC8A0" stroke-width="2" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /hero-mockup -->
+    </div><!-- /hero-grid -->
+  </div><!-- /container hero-content -->
+</section>
+
+<!-- Problem -->
+<section class="section">
+  <div class="section-divider"></div>
+  <div class="container problem-inner">
+    <p class="label fade-in">The real problem</p>
+    <h2 class="section-title fade-in" style="margin-bottom:28px;transition-delay:0.1s">You've tried. It hasn't worked.</h2>
+    <p class="problem-body fade-in" style="transition-delay:0.15s">You've gone to meetups where nobody talked to you. Downloaded apps that led nowhere. Said yes to events and left early because nobody made space for you.</p>
+    <p class="problem-body fade-in" style="transition-delay:0.2s;margin-bottom:28px">The problem isn't effort. It's format. Big groups, no structure, no follow-up, no reason to talk to anyone specific.</p>
+    <p class="problem-fix fade-in" style="transition-delay:0.25s">Rekindled fixes the format.</p>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section section-surface">
+  <div class="container">
+    <p class="label fade-in">How it works</p>
+    <h2 class="section-title fade-in" style="margin-bottom:16px;max-width:600px;transition-delay:0.1s">Matched by interest.<br>Connected by activity.</h2>
+    <p class="hiw-sub fade-in" style="transition-delay:0.15s">You swipe on events you like. We group you with people who picked the same ones. 6–8 people, a shared activity, full transparency before you go.</p>
+    <div class="steps-grid">
+      <div class="step-card fade-in" style="transition-delay:0s">
+        <div class="step-icon" style="background:var(--sky-dim);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sky)" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="step-meta"><span class="step-num">01</span><span class="step-label-text">Before</span></div>
+        <h3>Know what you're walking into.</h3>
+        <p>You see the activity, the vibe, the group size, and what to expect. No blind commitment.</p>
+      </div>
+      <div class="step-card fade-in" style="transition-delay:0.1s">
+        <div class="step-icon" style="background:var(--sage-dim);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="step-meta"><span class="step-num">02</span><span class="step-label-text">During</span></div>
+        <h3>The activity carries you.</h3>
+        <p>The activity handles the first 15 minutes. Small group means you actually get to know people — no standing around in silence.</p>
+      </div>
+      <div class="step-card fade-in" style="transition-delay:0.2s">
+        <div class="step-icon" style="background:var(--lavender-dim);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lavender)" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <div class="step-meta"><span class="step-num">03</span><span class="step-label-text">After</span></div>
+        <h3>One hang plants the seed.</h3>
+        <p>Group chat opens. Follow-up hangs happen if the group clicks. Your future matches improve based on feedback.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Hang Examples with SVG icons -->
+<section class="section" id="hangs">
+  <div class="container">
+    <p class="label fade-in">Preview upcoming hangs</p>
+    <h2 class="section-title fade-in" style="margin-bottom:48px;max-width:500px;transition-delay:0.1s">Here's what <em style="font-family:'Playfair Display',serif;font-style:italic">activity-based</em> actually means.</h2>
+    <div class="hang-grid" id="hangGrid"></div>
+    <p class="hang-footer fade-in">The point: the activity carries the first 15 minutes for you.</p>
+  </div>
+</section>
+
+<!-- Transparency -->
+<section class="section section-surface">
+  <div class="container trans-inner">
+    <p class="label fade-in">Built-in transparency</p>
+    <h2 class="section-title fade-in" style="margin-bottom:40px;transition-delay:0.1s">Before you go, you'll know.</h2>
+    <div class="trans-grid">
+      <div class="trans-card fade-in"><h4>The activity</h4><p>What you'll do and how the hang flows</p></div>
+      <div class="trans-card fade-in" style="transition-delay:0.1s"><h4>The vibe</h4><p>Chill, social, or energetic — picked by you</p></div>
+      <div class="trans-card fade-in" style="transition-delay:0.2s"><h4>The expectations</h4><p>Simple norms so everyone can relax</p></div>
+    </div>
+    <p class="trans-footer fade-in" style="transition-delay:0.3s">Not "rules." Just enough structure so everyone can relax.</p>
+  </div>
+</section>
+
+<!-- 7. Not Meetup — Dedicated Comparison Section -->
+<section class="section">
+  <div class="container" style="max-width:920px">
+    <p class="label fade-in">Why this is different</p>
+    <h2 class="section-title fade-in" style="margin-bottom:8px;transition-delay:0.1s">This isn't another Meetup.</h2>
+    <p class="fade-in" style="color:var(--muted);font-size:17px;line-height:1.65;max-width:600px;transition-delay:0.15s">Most platforms give you an event and hope for the best. Rekindled gives you a group designed to click.</p>
+    <div class="compare-grid fade-in" style="transition-delay:0.2s">
+      <div class="compare-col">
+        <div class="compare-header">
+          <span class="compare-logo rek">Rekindled</span>
+          <span class="compare-tag" style="background:var(--sage-dim);color:var(--sage);">What we do</span>
+        </div>
+        <div class="compare-row"><div class="compare-check yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7EC8A0" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="compare-text">Small groups of 6–8 matched by shared interest<span>You know who's coming before you go</span></div></div>
+        <div class="compare-row"><div class="compare-check yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7EC8A0" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="compare-text">Activity carries the conversation<span>No awkward "so what do you do?" cold starts</span></div></div>
+        <div class="compare-row"><div class="compare-check yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7EC8A0" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="compare-text">Built-in follow-up and group chat<span>One hang → ongoing circle</span></div></div>
+        <div class="compare-row"><div class="compare-check yes"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#7EC8A0" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div><div class="compare-text">Clear norms and post-hang feedback<span>The vibe stays safe and respectful</span></div></div>
+      </div>
+      <div class="compare-col">
+        <div class="compare-header">
+          <span class="compare-logo others">Meetup, Eventbrite, etc.</span>
+          <span class="compare-tag" style="background:var(--rose-dim);color:var(--rose);">What they do</span>
+        </div>
+        <div class="compare-row"><div class="compare-check no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4908A" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div class="compare-text">Large anonymous groups, 20–200+ people<span>You don't know anyone and nobody knows you</span></div></div>
+        <div class="compare-row"><div class="compare-check no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4908A" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div class="compare-text">No structure — show up and hope for the best<span>Awkward mingling with no icebreaker</span></div></div>
+        <div class="compare-row"><div class="compare-check no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4908A" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div class="compare-text">No follow-up after the event<span>You leave and that's it</span></div></div>
+        <div class="compare-row"><div class="compare-check no"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D4908A" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div><div class="compare-text">No accountability or safety norms<span>Anything goes — for better or worse</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Testimonials (not italicized) -->
+<section class="section section-surface">
+  <div class="container">
+    <p class="label fade-in">After one hang</p>
+    <h2 class="section-title fade-in" style="margin-bottom:48px;transition-delay:0.1s">What people say.</h2>
+    <div class="test-grid" id="testGrid"></div>
+  </div>
+</section>
+
+<!-- 6. Pricing with sharp value prop -->
+<section class="section">
+  <div class="container pricing-inner">
+    <div class="pricing-top">
+      <p class="label fade-in">Pricing</p>
+      <h2 class="section-title fade-in" style="transition-delay:0.1s">You're not paying for the event.</h2>
+      <p class="pricing-explainer fade-in" style="transition-delay:0.15s">The activities themselves are free or low-cost. You're paying for <strong>curation</strong> — the matching, the small group, the structure, the transparency, and the follow-up that turns a random event into a real connection.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-in">
+        <div class="pricing-label">First hang</div>
+        <div class="pricing-amount">Free</div>
+        <p class="pricing-detail">No card required</p>
+        <ul class="pricing-includes"><li>Full hang experience</li><li>Group chat access</li><li>Post-hang feedback</li></ul>
+      </div>
+      <div class="pricing-card fade-in" style="transition-delay:0.1s">
+        <div class="pricing-label">Per hang</div>
+        <div class="pricing-amount">$10</div>
+        <p class="pricing-detail">Pay as you go</p>
+        <ul class="pricing-includes"><li>Curated matching</li><li>Pre-event transparency</li><li>Follow-up system</li></ul>
+      </div>
+      <div class="pricing-card featured fade-in" style="transition-delay:0.2s">
+        <div class="pricing-label">Unlimited</div>
+        <div class="pricing-amount">$25<span style="font-size:18px;font-weight:500;color:var(--muted)">/mo</span></div>
+        <p class="pricing-detail">As many hangs as you want</p>
+        <ul class="pricing-includes"><li>Priority matching</li><li>All hang types</li><li>Early access to new drops</li></ul>
+      </div>
+    </div>
+    <p class="pricing-note fade-in" style="transition-delay:0.3s">Sliding scale coming soon. We don't want cost to be a barrier.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section section-surface">
+  <div class="container faq-inner">
+    <p class="label fade-in">Questions</p>
+    <h2 class="section-title fade-in" style="margin-bottom:40px;transition-delay:0.1s">FAQ</h2>
+    <div id="faqList" class="fade-in" style="transition-delay:0.15s"></div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta" id="signup">
+  <div class="container final-cta-inner">
+    <h2 class="fade-in">Stop waiting for<br>someone to invite you.</h2>
+    <p class="final-cta-sub fade-in" style="transition-delay:0.1s">Get early access and be first to know when curated hangs drop in your city.</p>
+    <div id="emailFormWrap" class="fade-in" style="transition-delay:0.2s">
+      <div class="email-form" id="emailForm">
+        <input type="email" class="email-input" id="emailInput" placeholder="Your email" />
+        <button class="btn-primary" id="emailBtn" type="button">Get early access</button>
+      </div>
+      <div class="success-box" id="successBox"><h3>You're in.</h3><p>We'll notify you when curated hangs drop in your city.</p></div>
+    </div>
+    <p class="cta-micro fade-in" style="transition-delay:0.3s">Know the vibe before you go. No guessing.</p>
+  </div>
+</section>
+
+<footer><div class="container"><p>&copy; 2026 Rekindled. Making showing up feel easier.</p></div></footer>
+
+<script>
+(function() {
+  var hangIcons = {
+    coffee: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 8h1a4 4 0 110 8h-1"/><path d="M3 8h14v9a4 4 0 01-4 4H7a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>',
+    basketball: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 008 0"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/></svg>',
+    museum: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><line x1="9" y1="21" x2="9" y2="14"/><line x1="15" y1="21" x2="15" y2="14"/></svg>',
+    cooking: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a3 3 0 00-3 3v1h6V5a3 3 0 00-3-3z"/><path d="M4 10h16l-1.5 9.5a2 2 0 01-2 1.5H7.5a2 2 0 01-2-1.5L4 10z"/><line x1="12" y1="6" x2="12" y2="10"/></svg>',
+    boardgames: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="3"/><rect x="7" y="7" width="4" height="4" rx="1"/><rect x="13" y="13" width="4" height="4" rx="1"/><circle cx="15" cy="9" r="1.5"/><circle cx="9" cy="15" r="1.5"/></svg>',
+    hiking: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 20L8 4l4 8 4-4 4 12"/></svg>',
+    mic: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>'
+  };
+  var events = [
+    { activity: "Coffee + conversation prompts", size: 6, vibe: "Chill", icon: "coffee", color: "var(--sage)", bg: "var(--sage-dim)" },
+    { activity: "Pickup basketball + food after", size: 8, vibe: "Energetic", icon: "basketball", color: "#E89B6C", bg: "rgba(232,155,108,0.08)" },
+    { activity: "Museum walk + talk-as-you-go", size: 6, vibe: "Social", icon: "museum", color: "var(--lavender)", bg: "var(--lavender-dim)" },
+    { activity: "Cooking together + shared meal", size: 6, vibe: "Chill", icon: "cooking", color: "var(--sage)", bg: "var(--sage-dim)" },
+    { activity: "Board games + mixing", size: 6, vibe: "Social", icon: "boardgames", color: "var(--lavender)", bg: "var(--lavender-dim)" },
+    { activity: "Hiking + trailside conversation", size: 8, vibe: "Energetic", icon: "hiking", color: "#E89B6C", bg: "rgba(232,155,108,0.08)" },
+    { activity: "Open mic night + debrief", size: 8, vibe: "Social", icon: "mic", color: "var(--lavender)", bg: "var(--lavender-dim)" }
+  ];
+  var testimonials = [
+    { text: "I showed up alone and left with three people's numbers.", name: "Sarah", age: 26 },
+    { text: "Knowing it was only 6 people made me actually go.", name: "Marcus", age: 28 },
+    { text: "The group chat after was the best part. We're hanging out again this weekend.", name: "Priya", age: 24 },
+    { text: "The host noticed I was quiet and brought me in naturally. That never happens at meetups.", name: "James", age: 27 },
+    { text: "I've tried everything. This is the first thing that actually led to friends.", name: "Aisha", age: 25 },
+    { text: "I was scared I'd be the most awkward person there. Turns out everyone felt that way.", name: "Devon", age: 23 }
+  ];
+  var faqs = [
+    { q: "Will it be awkward if I come alone?", a: "Everyone comes alone — that's the whole point. The activity carries the first 15 minutes, and small groups mean you actually get to know people." },
+    { q: "Does this feel like a dating app?", a: "Not at all. There's no swiping on people. You swipe on activities, and we match you with others who picked the same ones. Connection happens through shared experience." },
+    { q: "What happens after the hang?", a: "A group chat opens up. Follow-up hangs happen naturally if the group clicks. Your future matches improve based on your feedback." },
+    { q: "Is it safe?", a: "Small groups, clear norms, and post-hang feedback keep the vibe respectful. If anything feels off, our flag system catches it." },
+    { q: "What if I can't afford $10?", a: "Your first hang is free, no card required. We also have an unlimited plan at $25/month, and a sliding scale is coming soon. Cost should never be a barrier." }
+  ];
+
+  // Hang cards
+  var hangGrid = document.getElementById("hangGrid");
+  events.forEach(function(e, i) {
+    var vibeClass = e.vibe === "Chill" ? "vibe-chill" : e.vibe === "Energetic" ? "vibe-energetic" : "vibe-social";
+    var card = document.createElement("div");
+    card.className = "hang-card fade-in";
+    card.style.transitionDelay = (i * 0.05) + "s";
+    card.innerHTML = '<div class="hang-top"><div class="hang-icon-wrap" style="background:' + e.bg + ';color:' + e.color + '">' + hangIcons[e.icon] + '</div><p class="hang-activity">' + e.activity + '</p></div><div class="hang-meta"><span>' + e.size + ' people</span><span class="hang-dot"></span><span class="' + vibeClass + '">' + e.vibe + '</span></div>';
+    hangGrid.appendChild(card);
+  });
+
+  // Testimonials — no italic, with stars
+  var testGrid = document.getElementById("testGrid");
+  testimonials.forEach(function(t, i) {
+    var card = document.createElement("div");
+    card.className = "test-card fade-in";
+    card.style.transitionDelay = (i * 0.06) + "s";
+    card.innerHTML = '<div class="test-stars">★★★★★</div><p class="test-quote">"' + t.text + '"</p><p class="test-author">— ' + t.name + ', ' + t.age + '</p>';
+    testGrid.appendChild(card);
+  });
+
+  // FAQ
+  var faqList = document.getElementById("faqList");
+  faqs.forEach(function(f) {
+    var item = document.createElement("div");
+    item.className = "faq-item";
+    item.innerHTML = '<button class="faq-question"><span>' + f.q + '</span><span class="faq-icon">+</span></button><div class="faq-answer"><p>' + f.a + '</p></div>';
+    item.querySelector(".faq-question").addEventListener("click", function() { item.classList.toggle("open"); });
+    faqList.appendChild(item);
+  });
+
+  // Nav + top bar scroll behavior
+  var topBar = document.getElementById("topBar");
+  var mainNav = document.getElementById("mainNav");
+  window.addEventListener("scroll", function() {
+    if (window.scrollY > 50) {
+      mainNav.classList.add("scrolled");
+      topBar.style.transform = "translateY(-100%)";
+    } else {
+      mainNav.classList.remove("scrolled");
+      topBar.style.transform = "translateY(0)";
+    }
+  }, { passive: true });
+
+  // Intersection Observer
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".fade-in").forEach(function(el) { observer.observe(el); });
+
+  // Email form
+  document.getElementById("emailBtn").addEventListener("click", handleSubmit);
+  document.getElementById("emailInput").addEventListener("keydown", function(e) { if (e.key === "Enter") handleSubmit(); });
+  function handleSubmit() {
+    if (document.getElementById("emailInput").value.indexOf("@") > -1) {
+      document.getElementById("emailForm").style.display = "none";
+      document.getElementById("successBox").classList.add("show");
+    }
+  }
+})();
+</script>
+</body>
+</html>

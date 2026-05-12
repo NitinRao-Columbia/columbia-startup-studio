@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>V6 Synthetic User Testing Report — Wardrobe Planner</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; line-height: 1.5; color: #333; }
+    h1 { color: #1976d2; border-bottom: 2px solid #1976d2; padding-bottom: 8px; }
+    h2 { margin-top: 28px; color: #333; }
+    .methodology { font-size: 0.9em; padding: 12px 16px; background: #f8f9fa; border-left: 4px solid #1976d2; margin: 16px 0; }
+    .metric-cards { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+    .metric-card { min-width: 140px; padding: 16px; border-radius: 8px; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .metric-card .value { font-size: 1.8em; font-weight: 700; }
+    .metric-card .label { font-size: 0.85em; color: #666; margin-top: 4px; }
+    .card-purple { background: #ede7f6; color: #512da8; }
+    .card-blue { background: #e3f2fd; color: #1565c0; }
+    .card-green { background: #e8f5e9; color: #2e7d32; }
+    .card-red { background: #ffebee; color: #c62828; }
+    table { border-collapse: collapse; width: 100%; margin: 12px 0; }
+    th, td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+    th { background: #f5f5f5; }
+    pre { white-space: pre-wrap; background: #f8f9fa; padding: 15px; border-radius: 8px; font-size: 0.85em; overflow-x: auto; }
+    .narrative { margin: 15px 0; }
+  </style>
+</head>
+<body>
+
+<h1>V6 Synthetic User Testing Report — Wardrobe Planner</h1>
+
+<div class="methodology">
+  <strong>⚠ Synthetic testing notice:</strong> This report uses synthetic personas generated and evaluated by AI to simulate user reactions to landing page copy. These are not real users. Results are useful for directional signal and rapid iteration but are not a substitute for real user testing.
+</div>
+
+<h2>Method</h2>
+<p>60 synthetic personas (ICP: Vibe Coder Victor, Resident Rachel, Recently Promoted Priya, Hybrid Office Owen, Light-Touch Styler Sam) evaluated the V6 landing page copy. Each rated resonance, intent, and conversion confidence on a 5-point scale, plus qualitative feedback and dealbreaker reasons.</p>
+
+<h2>Top-Line Metrics (V6)</h2>
+<div class="metric-cards">
+  <div class="metric-card card-purple"><div class="value">43%</div><div class="label">Resonance (Agree+)</div></div>
+  <div class="metric-card card-blue"><div class="value">32%</div><div class="label">Intent (Agree+)</div></div>
+  <div class="metric-card card-green"><div class="value">0%</div><div class="label">Conversion (Agree+)</div></div>
+  <div class="metric-card card-red"><div class="value">2%</div><div class="label">Dealbreakers (1/60)</div></div>
+</div>
+
+<h2>Cross-Version Summary</h2>
+<table>
+  <tr><th>Version</th><th>Resonance</th><th>Intent</th><th>Dealbreakers</th><th>Audience</th></tr>
+  <tr><td>V1</td><td>13%</td><td>12%</td><td>60%</td><td>5 buckets (Paul, Dana, Sophia, Rachel, Victor)</td></tr>
+  <tr><td>V2</td><td>23%</td><td>7%</td><td>67%</td><td>Same</td></tr>
+  <tr><td>V3</td><td>23%</td><td>12%</td><td>33%</td><td>Same</td></tr>
+  <tr><td>V4</td><td>23%</td><td>12%</td><td>35%</td><td>Same</td></tr>
+  <tr><td>V5</td><td>32%</td><td>20%</td><td>7%</td><td>ICP only (Victor, Rachel, Priya, Owen, Sam)</td></tr>
+  <tr><td><strong>V6</strong></td><td><strong>43%</strong></td><td><strong>32%</strong></td><td><strong>2%</strong></td><td>Same ICP</td></tr>
+</table>
+
+<h2>Key Findings</h2>
+<div class="narrative">
+  <ul>
+    <li><strong>Winning version:</strong> V6 is the final copy for submission. Best resonance and intent with ICP; dealbreakers down to 2%.</li>
+    <li><strong>What resonated:</strong> “You don’t need more clothes. You need outfits that actually go together”; concrete examples (e.g. 2pm meeting / 7pm drinks / 42°); visible $1.99; “What it looks like” sample output.</li>
+    <li><strong>Remaining gap:</strong> Conversion confidence remains 0% — personas understand the offer and many would try it, but don’t yet believe it will work for their closet/context.</li>
+    <li><strong>Recommendation:</strong> Ship V6 for landing and early traffic; iterate next on proof it works (e.g. before/after, week-1 results) to improve conversion confidence.</li>
+  </ul>
+</div>
+
+<h2>Per-Segment (V6)</h2>
+<p>Victor and Rachel lead: Victor 50% resonance, 44% intent, 0% dealbreakers; Rachel 53% resonance, 33% intent, 7% dealbreakers. Priya dealbreakers 0%. Full per-bucket metrics and interactive charts: <code>v6/charts_v6.html</code>.</p>
+<p><em>Full narrative and change log: <code>rounds_summary.md</code> and <code>findings.md</code>.</em></p>
+
+<h2>Appendix: Copy Evaluated (V6)</h2>
+<p>The full V6 copy is in <code>v6/v6_copy.md</code>. For the complete tested copy and per-version results, see the v1–v6 folders in this directory.</p>
+
+</body>
+</html>

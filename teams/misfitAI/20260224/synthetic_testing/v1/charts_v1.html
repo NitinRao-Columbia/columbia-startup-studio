@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head>
+<title>V1 Evaluation Charts</title>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head><body>
+<h1>V1 Evaluation Charts</h1>
+<h2>Score Distributions</h2>
+<div id="chart_1" style="width:100%;height:400px;margin-bottom:30px;"></div>
+<script>Plotly.newPlot("chart_1", [{"name": "Strongly Disagree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [1, 0, 0, 1, 0, 0], "type": "bar", "marker": {"color": "#d32f2f"}}, {"name": "Disagree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [18, 8, 2, 1, 7, 0], "type": "bar", "marker": {"color": "#ff7043"}}, {"name": "Neutral", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [33, 4, 7, 9, 4, 9], "type": "bar", "marker": {"color": "#bdbdbd"}}, {"name": "Agree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [8, 0, 3, 1, 1, 3], "type": "bar", "marker": {"color": "#66bb6a"}}, {"name": "Strongly Agree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [0, 0, 0, 0, 0, 0], "type": "bar", "marker": {"color": "#2e7d32"}}], {
+  title: "V1 Resonance",
+  barmode: "stack",
+  yaxis: {title: "Count"},
+  legend: {orientation: "h", y: -0.2},
+  margin: {b: 100}
+});</script>
+
+<div id="chart_2" style="width:100%;height:400px;margin-bottom:30px;"></div>
+<script>Plotly.newPlot("chart_2", [{"name": "Strongly Disagree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [1, 0, 0, 1, 0, 0], "type": "bar", "marker": {"color": "#d32f2f"}}, {"name": "Disagree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [25, 10, 3, 2, 9, 1], "type": "bar", "marker": {"color": "#ff7043"}}, {"name": "Neutral", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [27, 2, 6, 9, 3, 7], "type": "bar", "marker": {"color": "#bdbdbd"}}, {"name": "Agree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [7, 0, 3, 0, 0, 4], "type": "bar", "marker": {"color": "#66bb6a"}}, {"name": "Strongly Agree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [0, 0, 0, 0, 0, 0], "type": "bar", "marker": {"color": "#2e7d32"}}], {
+  title: "V1 Intent",
+  barmode: "stack",
+  yaxis: {title: "Count"},
+  legend: {orientation: "h", y: -0.2},
+  margin: {b: 100}
+});</script>
+
+<div id="chart_3" style="width:100%;height:400px;margin-bottom:30px;"></div>
+<script>Plotly.newPlot("chart_3", [{"name": "Strongly Disagree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [1, 0, 0, 1, 0, 0], "type": "bar", "marker": {"color": "#d32f2f"}}, {"name": "Disagree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [51, 12, 9, 10, 12, 8], "type": "bar", "marker": {"color": "#ff7043"}}, {"name": "Neutral", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [8, 0, 3, 1, 0, 4], "type": "bar", "marker": {"color": "#bdbdbd"}}, {"name": "Agree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [0, 0, 0, 0, 0, 0], "type": "bar", "marker": {"color": "#66bb6a"}}, {"name": "Strongly Agree", "x": ["Overall", "Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], "y": [0, 0, 0, 0, 0, 0], "type": "bar", "marker": {"color": "#2e7d32"}}], {
+  title: "V1 Conversion Confidence",
+  barmode: "stack",
+  yaxis: {title: "Count"},
+  legend: {orientation: "h", y: -0.2},
+  margin: {b: 100}
+});</script>
+
+<div id="chart_4" style="width:100%;height:350px;margin-bottom:30px;"></div>
+<script>Plotly.newPlot("chart_4", [{
+  x: ["Too Expensive", "Fair", "Good Deal"], y: [1, 59, 0],
+  type: "bar", marker: {color: ["#d32f2f", "#f57c00", "#2e7d32"]}
+}], {title: "V1 Price Perception", yaxis: {title: "Count"}});</script>
+
+<div id="chart_5" style="width:100%;height:350px;margin-bottom:30px;"></div>
+<script>Plotly.newPlot("chart_5", [{
+  x: ["Wrong", "Partial", "Nailed It"], y: [0, 3, 57],
+  type: "bar", marker: {color: ["#d32f2f", "#f57c00", "#2e7d32"]}
+}], {title: "V1 Clarity Accuracy", yaxis: {title: "Count"}});</script>
+
+<div id="chart_6" style="width:100%;height:350px;margin-bottom:30px;"></div>
+<script>Plotly.newPlot("chart_6", [{
+  x: ["Design Student Dana", "Presenter Paul", "Resident Rachel", "Socialite Sophia", "Vibe Coder Victor"], y: [83, 42, 58, 75, 42],
+  type: "bar", marker: {color: "#d32f2f"}
+}], {
+  title: "V1 Dealbreaker Rate by Segment",
+  yaxis: {title: "%", range: [0, 100]},
+  margin: {b: 120, l: 60}
+});</script>
+
+</body></html>

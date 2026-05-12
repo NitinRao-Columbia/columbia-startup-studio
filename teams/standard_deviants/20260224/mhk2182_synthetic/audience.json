@@ -1,0 +1,964 @@
+
+[
+  {
+    "person_id": 1,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Coquali lets you upload transcripts, code responses, and see patterns instantly — in one collaborative workspace.",
+    "objections": [
+      "What makes this different from existing qual tools (Dovetail, Airtable, Notion templates)?",
+      "How hard is it to learn compared to spreadsheets?",
+      "Do you support overlapping codes and consistent codebooks across teammates?"
+    ],
+    "what_to_change": "Add one concrete differentiator and a quick example of how it handles overlapping themes and team consistency (e.g., shared codebook + automatic conflict warnings)."
+  },
+  {
+    "person_id": 2,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Stop using spreadsheets for qualitative analysis",
+    "objections": [
+      "I need to know if it supports thesis-level workflows (exports, citations, audit trail).",
+      "Is it affordable for a grad student?",
+      "How fast is 'instantly'—does it actually surface patterns?"
+    ],
+    "what_to_change": "Add pricing expectations (even 'student-friendly') and mention exports/audit trail (e.g., coded quotes export to doc/CSV)."
+  },
+  {
+    "person_id": 3,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 4,
+    "dealbreaker": false,
+    "strongest_line": "Share insights with your team",
+    "objections": [
+      "What collaboration features exist (comments, permissions, versioning)?",
+      "How do stakeholders see themes—dashboards, highlights, exports?",
+      "How does it integrate with our current stack?"
+    ],
+    "what_to_change": "Add 2–3 bullets on collaboration (shared codebook, roles/permissions, exports or shareable views) and one sentence on integrations."
+  },
+  {
+    "person_id": 4,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Tag responses and filter by theme",
+    "objections": [
+      "Will this actually save time vs. my current messy workflow?",
+      "What does it output that helps decisions (theme summaries, top quotes)?",
+      "How does it handle small, scrappy research rounds?"
+    ],
+    "what_to_change": "Add a 'PM outcome' section: 'In 30 minutes you get X themes + Y supporting quotes + shareable summary' to tie to decision-making."
+  },
+  {
+    "person_id": 5,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "in one collaborative workspace",
+    "objections": [
+      "How quickly can I set this up for a new client?",
+      "Do clients need accounts to view results?",
+      "Is this going to feel like heavy enterprise software?"
+    ],
+    "what_to_change": "Emphasize low setup: 'upload and start coding in minutes' plus a client-friendly sharing mode (link/export) and a lightweight promise."
+  },
+  {
+    "person_id": 6,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Build a codebook",
+    "objections": [
+      "How do you enforce consistency across teams (definitions, examples, governance)?",
+      "Does it support versioning and reuse of codebooks across projects?",
+      "Do you have permissions/roles?"
+    ],
+    "what_to_change": "Add explicit governance features: versioned codebook, definitions/examples per code, permissions, and cross-project reuse."
+  },
+  {
+    "person_id": 7,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "see patterns instantly",
+    "objections": [
+      "What does 'patterns' mean—frequency counts, clustering, theme maps?",
+      "How do I trace themes back to quotes?",
+      "Can I export to decks or reports easily?"
+    ],
+    "what_to_change": "Replace vague 'patterns instantly' with a specific output (theme map, top quotes per theme, traceability) and mention export formats."
+  },
+  {
+    "person_id": 8,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "I need to know this works across multiple projects and datasets.",
+      "How do you keep codes consistent across programs?",
+      "Is it priced for nonprofit/program evaluation budgets?"
+    ],
+    "what_to_change": "Add a line about multi-project organization and codebook reuse plus a note about affordable tiers/nonprofit/student pricing."
+  },
+  {
+    "person_id": 9,
+    "bucket": "bucket_1",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How is this more structured than a spreadsheet?",
+      "Do you provide metrics (counts, co-occurrence) to make it less subjective?",
+      "What reporting visuals are included?"
+    ],
+    "what_to_change": "Add a 'structured outputs' bullet: counts per theme, co-occurrence, and a simple visual (theme dashboard) to appeal to analytics-minded users."
+  },
+  {
+    "person_id": 10,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "in one collaborative workspace",
+    "objections": [
+      "How does the team collaborate—real-time, comments, assignments?",
+      "Does this integrate into our existing process (Figma, Jira, Slack)?",
+      "Can we reuse codebooks across research cycles?"
+    ],
+    "what_to_change": "Add collaboration specifics (comments, assignments, roles) and mention 1–2 integrations or export paths to existing tools."
+  },
+  {
+    "person_id": 11,
+    "bucket": "bucket_1",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 2,
+    "conversion_confidence": 2,
+    "dealbreaker": false,
+    "strongest_line": "Share insights with your team",
+    "objections": [
+      "This reads like generic marketing—what’s truly different?",
+      "I need to know about reliability, audit trails, and exports.",
+      "I don’t want lock-in or a proprietary workflow."
+    ],
+    "what_to_change": "Add a credibility section: traceability/audit trail, export options, and one concrete differentiator (e.g., codebook versioning + theme evidence view)."
+  },
+  {
+    "person_id": 12,
+    "bucket": "bucket_1",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How does this improve consistency across a team?",
+      "What governance controls exist (permissions, approvals, templates)?",
+      "What is the ROI vs. current tool stack?"
+    ],
+    "what_to_change": "Add an enterprise-ready governance bullet list (roles, approvals, templates) and a short ROI claim (time saved per study)."
+  },
+  {
+    "person_id": 13,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "How it works",
+    "objections": [
+      "I still don’t know what to click first—what’s the actual workflow?",
+      "Is it free or affordable for students?",
+      "Will it help me learn coding, not just do it?"
+    ],
+    "what_to_change": "Add a 'guided workflow' promise: step-by-step onboarding and a student tier/free trial callout."
+  },
+  {
+    "person_id": 14,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "see patterns instantly",
+    "objections": [
+      "Do you generate summaries or just help me tag?",
+      "How fast can I get a report-ready output?",
+      "What exports are supported?"
+    ],
+    "what_to_change": "Add 'report-ready outputs' (theme summary + key quotes + export) and make the speed claim concrete (e.g., 'in under an hour')."
+  },
+  {
+    "person_id": 15,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Share insights with your team",
+    "objections": [
+      "We need a consistent process across projects—how do templates work?",
+      "Can multiple researchers code the same transcript without conflicts?",
+      "How do we hand off findings?"
+    ],
+    "what_to_change": "Add features for consistency: templates, shared codebook, conflict resolution, and a 'handoff' export/share format."
+  },
+  {
+    "person_id": 16,
+    "bucket": "bucket_2",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 2,
+    "dealbreaker": true,
+    "strongest_line": "Upload your interviews / text data",
+    "objections": [
+      "This sounds like enterprise research tooling (too heavy).",
+      "No mention of how lightweight/quick it is.",
+      "Unclear if it works for scrappy founders/designers."
+    ],
+    "what_to_change": "Rewrite the hero to emphasize lightweight use: 'Upload transcripts, highlight quotes, get themes—no setup' and remove anything that feels academic/heavy."
+  },
+  {
+    "person_id": 17,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Stop using spreadsheets for qualitative analysis",
+    "objections": [
+      "What’s the fastest way from calls to positioning decisions?",
+      "How does it show what’s real vs. outliers?",
+      "Pricing/effort unknown."
+    ],
+    "what_to_change": "Add a founder-specific outcome: 'See repeated themes + frequency + example quotes' and include a simple pricing/free trial mention."
+  },
+  {
+    "person_id": 18,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "Is it flexible enough for different research styles?",
+      "Does collaboration feel smooth (permissions, comments, versioning)?",
+      "How do visuals work?"
+    ],
+    "what_to_change": "Add a line about flexibility + collaboration primitives and a simple description of the visuals (theme map, dashboard, evidence view)."
+  },
+  {
+    "person_id": 19,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "I need stakeholder-friendly outputs (reports, dashboards).",
+      "How do you ensure traceability?",
+      "What’s the setup and learning curve?"
+    ],
+    "what_to_change": "Add 'stakeholder outputs' and 'traceable themes' plus a quick onboarding promise (minutes, not days)."
+  },
+  {
+    "person_id": 20,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Build a codebook",
+    "objections": [
+      "I need rigor: definitions, examples, version history, audit trail.",
+      "I don’t want gimmicky auto-themes without control.",
+      "How does it support long-term research?"
+    ],
+    "what_to_change": "Add a 'rigor' section: code definitions/examples, version history, audit trail, and emphasize researcher control."
+  },
+  {
+    "person_id": 21,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Share insights with your team",
+    "objections": [
+      "We need version control for codebooks and findings.",
+      "How do we manage stakeholder access?",
+      "Any compliance/privacy support?"
+    ],
+    "what_to_change": "Add features: versioning, permissions, and a brief note on data privacy/security (even high-level)."
+  },
+  {
+    "person_id": 22,
+    "bucket": "bucket_2",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 2,
+    "dealbreaker": true,
+    "strongest_line": "Upload your interviews / text data",
+    "objections": [
+      "This still feels like extra overhead vs my current spreadsheet workflow.",
+      "No concrete speed/benefit proof.",
+      "Unclear what I get out at the end."
+    ],
+    "what_to_change": "Make the payoff explicit: 'Get a theme summary + top quotes + shareable report in X minutes' and emphasize minimal setup."
+  },
+  {
+    "person_id": 23,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How do we standardize across the team (training, templates)?",
+      "Does it support review/approval of codes?",
+      "Does reporting get easier?"
+    ],
+    "what_to_change": "Add team features: templates, reviews/approvals, onboarding, and reporting outputs."
+  },
+  {
+    "person_id": 24,
+    "bucket": "bucket_2",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "Need auditability and standardization across programs.",
+      "Need stable exports for reports.",
+      "Pricing/contracting concerns."
+    ],
+    "what_to_change": "Add auditability/traceability and reporting exports; mention enterprise/nonprofit-friendly pricing or procurement readiness."
+  },
+  {
+    "person_id": 25,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "see patterns instantly",
+    "objections": [
+      "Will it tell me what customers keep repeating in a simple way?",
+      "How hard is it to learn?",
+      "Is there a free trial?"
+    ],
+    "what_to_change": "Add a student-founder oriented blurb: 'Top 5 recurring themes + quote evidence' and a free trial/student tier CTA."
+  },
+  {
+    "person_id": 26,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "How it works",
+    "objections": [
+      "I want guidance on what good codes look like.",
+      "How do you reduce subjectivity?",
+      "What’s the final output?"
+    ],
+    "what_to_change": "Add a 'guided coding' angle: starter codebooks, examples, and a final output description (theme summary + evidence)."
+  },
+  {
+    "person_id": 27,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "in one collaborative workspace",
+    "objections": [
+      "I need speed—how much time does this save?",
+      "Do I have to move data between tools?",
+      "How do I share results quickly?"
+    ],
+    "what_to_change": "Add a concrete time-saved claim and emphasize end-to-end workflow plus a shareable results view/export."
+  },
+  {
+    "person_id": 28,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Tag responses and filter by theme",
+    "objections": [
+      "I need themes I can cite in reports—how do exports work?",
+      "How do you keep a stable codebook?",
+      "Does it support multiple data types (survey + interviews)?"
+    ],
+    "what_to_change": "Mention exports/citations and multi-source support (interviews + surveys) plus codebook stability/versioning."
+  },
+  {
+    "person_id": 29,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How does it handle onboarding rotating assistants?",
+      "Can we lock code definitions so they don’t drift?",
+      "Do we get an audit trail?"
+    ],
+    "what_to_change": "Add features: locked definitions, onboarding mode, and audit trail; position it as semester-proof consistency."
+  },
+  {
+    "person_id": 30,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Upload your interviews / text data",
+    "objections": [
+      "I need the simplest workflow possible.",
+      "How do I get from tags to actionable insights?",
+      "Is it going to be another tool I don’t keep using?"
+    ],
+    "what_to_change": "Simplify copy: emphasize 'highlight → tag → themes → summary' and add a lightweight promise (no setup, quick wins)."
+  },
+  {
+    "person_id": 31,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "I need professional outputs for clients (exports, visuals).",
+      "How do you ensure credibility/traceability?",
+      "Pricing for consultants?"
+    ],
+    "what_to_change": "Add a consultant-facing section: client-ready exports, visuals, traceability, and easy workspace duplication per client."
+  },
+  {
+    "person_id": 32,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Stop using spreadsheets for qualitative analysis",
+    "objections": [
+      "I hate overhead—prove this is faster.",
+      "What do I get at the end (theme list, summary, evidence)?",
+      "Is it simple enough for non-researchers?"
+    ],
+    "what_to_change": "Add an 'in 15 minutes you get...' outcome and call out 'built for non-researchers too' with a simple workflow."
+  },
+  {
+    "person_id": 33,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Share insights with your team",
+    "objections": [
+      "How do we maintain alignment across researchers?",
+      "Do we get versioning and traceability?",
+      "Does it support reporting workflows?"
+    ],
+    "what_to_change": "Add process features: versioning, traceability, and reporting outputs; mention multi-researcher coding consistency."
+  },
+  {
+    "person_id": 34,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "see patterns instantly",
+    "objections": [
+      "What visuals do I get (charts, maps, counts)?",
+      "How do I justify themes to leadership?",
+      "Is it structured enough for someone new to qual?"
+    ],
+    "what_to_change": "Add a visual outputs line (theme dashboard, counts, evidence) and tie to leadership-ready reporting."
+  },
+  {
+    "person_id": 35,
+    "bucket": "bucket_3",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "in one collaborative workspace",
+    "objections": [
+      "Will teams actually adopt it?",
+      "How long does onboarding take?",
+      "Does it reduce tool sprawl meaningfully?"
+    ],
+    "what_to_change": "Add adoption hooks: quick onboarding, templates, and highlight 'replace Docs + Sheets + Notion' more explicitly with a migration promise."
+  },
+  {
+    "person_id": 36,
+    "bucket": "bucket_3",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 2,
+    "conversion_confidence": 2,
+    "dealbreaker": true,
+    "strongest_line": "Build a codebook",
+    "objections": [
+      "This feels vague—where is the rigor and traceability?",
+      "I need control and documentation, not marketing claims.",
+      "No mention of audit trail, exports, or methodology support."
+    ],
+    "what_to_change": "Add a rigor/traceability section: audit trail, code definitions/examples, exportable evidence tables, and emphasize researcher control over themes."
+  },
+  {
+    "person_id": 37,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "How it works",
+    "objections": [
+      "I still feel overwhelmed—do you guide me step-by-step?",
+      "Is it easy to upload transcripts and start?",
+      "Is it affordable for students?"
+    ],
+    "what_to_change": "Add a guided onboarding promise and a student-friendly pricing/free tier callout."
+  },
+  {
+    "person_id": 38,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How do multiple people stay aligned on codes?",
+      "Do we have definitions/examples per code?",
+      "Can we prevent messy changes?"
+    ],
+    "what_to_change": "Add shared codebook features: definitions/examples, permissions, and change history to prevent drift."
+  },
+  {
+    "person_id": 39,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Upload your interviews / text data",
+    "objections": [
+      "Please don’t make this feel academic.",
+      "How fast do I get themes?",
+      "Is there a simple share/export?"
+    ],
+    "what_to_change": "Make the tone more scrappy: emphasize quick wins, simple workflow, and shareable output without jargon."
+  },
+  {
+    "person_id": 40,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "How do I keep everything organized across studies?",
+      "What collaboration features exist?",
+      "Do you support codebook reuse?"
+    ],
+    "what_to_change": "Add multi-study organization and codebook reuse, plus collaboration specifics (roles, comments, versioning)."
+  },
+  {
+    "person_id": 41,
+    "bucket": "bucket_4",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 2,
+    "dealbreaker": true,
+    "strongest_line": "Tag responses and filter by theme",
+    "objections": [
+      "Still not convinced it’s faster than my current approach.",
+      "What’s the output I can take to a meeting?",
+      "No time to learn a new tool."
+    ],
+    "what_to_change": "Add a PM-focused output promise and reduce perceived learning curve with 'no setup + templates + instant summary'."
+  },
+  {
+    "person_id": 42,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Share insights with your team",
+    "objections": [
+      "What are the collaboration mechanics (comments, permissions, versioning)?",
+      "How do I trace themes back to evidence?",
+      "What visuals/exports exist?"
+    ],
+    "what_to_change": "Add explicit collaboration and traceability features plus a simple list of visuals/exports."
+  },
+  {
+    "person_id": 43,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "Need report-friendly outputs.",
+      "Need standardized coding for multiple programs.",
+      "Need to show evidence for themes."
+    ],
+    "what_to_change": "Add reporting exports and a 'theme evidence' view plus standardization across programs."
+  },
+  {
+    "person_id": 44,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Faster than Docs + Sheets + Notion",
+    "objections": [
+      "That’s a big claim—how exactly does it reduce tool sprawl?",
+      "Does it have permissions and onboarding?",
+      "What’s the adoption story for teams?"
+    ],
+    "what_to_change": "Add an ops-friendly paragraph: 'replace these tools' + onboarding time + permissions + templates to drive adoption."
+  },
+  {
+    "person_id": 45,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Stop using spreadsheets for qualitative analysis",
+    "objections": [
+      "Is it affordable for NGOs/nonprofits?",
+      "Does it support rigor without being expensive?",
+      "What data privacy options exist?"
+    ],
+    "what_to_change": "Add affordability messaging and a brief note on privacy; offer a nonprofit tier/free trial."
+  },
+  {
+    "person_id": 46,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "I need stakeholders to trust the findings—show me the receipts.",
+    "objections": [
+      "No explicit mention of traceability/audit trail on the page.",
+      "How do I link themes to quotes quickly?",
+      "How do I export/share evidence?"
+    ],
+    "what_to_change": "Add a 'traceability' section: click a theme to see all supporting quotes + export/share evidence tables."
+  },
+  {
+    "person_id": 47,
+    "bucket": "bucket_4",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "Need governance controls (approvals, permissions).",
+      "Need consistency across multiple researchers.",
+      "Need visibility into the underlying data."
+    ],
+    "what_to_change": "Add governance features: roles/permissions, approval workflows, audit trail, and evidence views."
+  },
+  {
+    "person_id": 48,
+    "bucket": "bucket_4",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 2,
+    "conversion_confidence": 2,
+    "dealbreaker": false,
+    "strongest_line": "Don’t oversell it—just show me it saves time and keeps things rigorous.",
+    "objections": [
+      "Copy feels generic and a bit hypey ('instantly').",
+      "No proof of time savings.",
+      "Needs clear exports and stability."
+    ],
+    "what_to_change": "Tone down hype (replace 'instantly'), add concrete time saved and mention stable exports and audit trail."
+  },
+  {
+    "person_id": 49,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "How it works",
+    "objections": [
+      "Is it simple enough for a student?",
+      "Is there a free/student tier?",
+      "Will it help me actually see patterns easily?"
+    ],
+    "what_to_change": "Add a student-friendly CTA (free tier) and a simple visual example of what 'patterns' looks like."
+  },
+  {
+    "person_id": 50,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How do we keep codebooks clean across projects?",
+      "Do we have version history and permissions?",
+      "How do we share outputs with the lab?"
+    ],
+    "what_to_change": "Add codebook versioning/permissions and a 'share outputs' section with lab-friendly exports."
+  },
+  {
+    "person_id": 51,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "see patterns instantly",
+    "objections": [
+      "I need to know what outputs I can share (theme dashboard, summaries).",
+      "I don’t want heavy setup.",
+      "How collaborative is it?"
+    ],
+    "what_to_change": "Add a short 'outputs' list and emphasize no setup + collaboration (shared codebook, comments, shareable view)."
+  },
+  {
+    "person_id": 52,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Tag responses and filter by theme",
+    "objections": [
+      "Prove it saves time vs notes/spreadsheets.",
+      "What’s the end deliverable for stakeholders?",
+      "How steep is the learning curve?"
+    ],
+    "what_to_change": "Add a PM-focused promise: 'theme summary + top quotes + shareable report' and emphasize quick onboarding."
+  },
+  {
+    "person_id": 53,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 4,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "I’m tired of guessing—tell me what customers actually keep saying.",
+    "objections": [
+      "How do you show frequency vs outliers?",
+      "Can I use this to write better landing page copy?",
+      "Pricing unknown."
+    ],
+    "what_to_change": "Add founder outcome: recurring themes + frequency + evidence quotes + export for positioning; mention free trial/pricing tier."
+  },
+  {
+    "person_id": 54,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Build a codebook",
+    "objections": [
+      "Need long-term stability and rigor (audit trail, versioning).",
+      "Need control over methodology.",
+      "Does it support large datasets?"
+    ],
+    "what_to_change": "Add research-rigor features (audit trail, versioning, stability) and mention scaling to lots of transcripts/notes."
+  },
+  {
+    "person_id": 55,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Clear codebook tracking",
+    "objections": [
+      "How does it connect insights to decisions?",
+      "How do we make insights easy to find later?",
+      "Need traceability."
+    ],
+    "what_to_change": "Add a 'from code → theme → decision' workflow and highlight searchable insights + evidence links."
+  },
+  {
+    "person_id": 56,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Patterns across interviews without chaos",
+    "objections": [
+      "Need standardized coding across initiatives.",
+      "Need reporting-ready outputs.",
+      "Need collaboration support."
+    ],
+    "what_to_change": "Add standardization + reporting outputs + collaboration specifics (roles, templates, audit trail)."
+  },
+  {
+    "person_id": 57,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "traceability from themes back to quotes",
+    "objections": [
+      "Not enough explicit proof of traceability on the page.",
+      "Need a fast way to audit themes.",
+      "Need shareable outputs."
+    ],
+    "what_to_change": "Add explicit traceability messaging and a shareable evidence dashboard/report."
+  },
+  {
+    "person_id": 58,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "single workspace where teams can collaborate",
+    "objections": [
+      "Need governance and standardization across teams.",
+      "Need tool consolidation proof.",
+      "Need adoption and onboarding plan."
+    ],
+    "what_to_change": "Add governance (roles, approvals), templates, onboarding speed, and tool-replacement story to reduce sprawl."
+  },
+  {
+    "person_id": 59,
+    "bucket": "bucket_5",
+    "resonance": 4,
+    "clarity": 4,
+    "intent": 3,
+    "conversion_confidence": 3,
+    "dealbreaker": false,
+    "strongest_line": "Faster than Docs + Sheets + Notion",
+    "objections": [
+      "Prove onboarding is easy.",
+      "Need admin controls and permissions.",
+      "Need measurable time savings."
+    ],
+    "what_to_change": "Add onboarding time, permissions, and measurable time savings claims; include templates and migration guidance."
+  },
+  {
+    "person_id": 60,
+    "bucket": "bucket_5",
+    "resonance": 3,
+    "clarity": 4,
+    "intent": 2,
+    "conversion_confidence": 2,
+    "dealbreaker": false,
+    "strongest_line": "Stop using spreadsheets for qualitative analysis",
+    "objections": [
+      "Copy feels a little generic and hypey.",
+      "No concrete proof of rigor or exports.",
+      "I want stability and simple outputs."
+    ],
+    "what_to_change": "Tone down hype, add rigor/exports/audit trail, and provide a clear example output to show it’s practical and stable."
+  }
+]
+

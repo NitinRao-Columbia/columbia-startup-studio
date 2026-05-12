@@ -2,13 +2,12 @@
 
 ## Course Information
 - **Course Title:** Startup Studio: AI-Accelerated Building & Validation
-- **Course Number:** TBD
+- **Course Number:** COMS4995-011
 - **Semester:** Spring 2026
 - **Credits:** 3
 - **Department:** Columbia University - Computer Science
 
 ## Instructors
-- **Lydia Chilton** - Assistant Professor of Computer Science
 - **Ken St. Clair** -  Adjunct Assistant Professor of Computer Science
 
 ## Course Summary
@@ -40,39 +39,20 @@ By the end of the course, students will:
 - **Senior standing** in Computer Science or related field, or instructor permission
 - **Prior experience in software development** is recommended
 
-## Required Materials
-
-### Books
-- **Lencioni** - *The Five Dysfunctions of a Team*
-- **Norman** - *The Design of Everyday Things*  
-- **Duarte** - *Resonate: Present Visual Stories that Transform Audiences*
-- **Portigal** - *Interviewing Users: How to Uncover Compelling Insights*
-- **Ries** - *The Lean Startup*
-- **Gothelf** - *Lean UX*
-- **Knapp** - *Sprint*
-- **Ellis & Brown** - *Hacking Growth*
-
-### Certifications/Online Resources (Required)
-- **Meta Blueprint:** Fundamentals of Digital Marketing
-- **Google Analytics** for Beginners
-
-### Optional Readings/Resources
-- **IDEO Design Kit** - *The Art of the Interview* (online resource)
-- **Sequoia Capital** Pitch Deck Outline
 
 ## Grading Breakdown
 
 | Component | Weight |
 |-----------|--------|
-| Final Project / Demo Day | 40% |
-| Class Participation | 25% |
-| Homework / Milestone Submissions | 20% |
+| Demo Day | 30% |
+| Milestone Submissions | 30% |
+| Peer Reviews | 20% |
 | Reflections / Journals | 10% |
-| Peer & Instructor Reviews | 5% |
+| Class Participation | 10% |
 
 ## Grading Rubric Overview
 
-### Final Project / Demo Day (40%)
+### Demo Day (30%)
 
 | Criteria | Excellent (A) | Good (B) | Satisfactory (C) | Poor (D/F) |
 |----------|---------------|----------|------------------|-------------|
@@ -81,19 +61,17 @@ By the end of the course, students will:
 | **Presentation** | Clear, persuasive, well-structured pitch | Adequate presentation, minor gaps | Disorganized or unclear | Unclear or missing |
 | **Iteration** | Demonstrated learning + multiple iterations | Some iteration | Minimal iteration | No iteration |
 
-### Class Participation (25%)
-
-| Criteria | Excellent | Good | Satisfactory | Poor |
-|----------|-----------|------|--------------|------|
-| **Attendance** | Consistent, active presence | Occasional absences | Frequent absences | Chronic absences |
-| **Engagement** | Regular, constructive contributions | Participates when prompted | Rare participation | Disengaged |
-| **Teamwork** | Strong collaboration, leadership | Reliable team member | Passive participant | Detracts from team progress |
-
-### Homework / Milestone Submissions (20%)
+### Milestone Submissions (30%)
 
 | Criteria | Full Credit | Partial Credit |
 |----------|-------------|----------------|
 | **Quality & Timeliness** | On time, high quality, shows learning | Late, incomplete, or poor quality |
+
+### Peer Reviews (20%)
+
+| Criteria | High Marks | Low Marks |
+|----------|------------|-----------|
+| **Team Contribution** | Strong team role, positive peer feedback | Minimal contribution, peer concerns |
 
 ### Reflections / Journals (10%)
 
@@ -101,11 +79,12 @@ By the end of the course, students will:
 |----------|-------------|----------------|
 | **Depth & Learning** | Thoughtful, demonstrates reflection on process | Superficial or missing |
 
-### Peer & Instructor Reviews (5%)
+### Class Participation (10%)
 
-| Criteria | High Marks | Low Marks |
-|----------|------------|-----------|
-| **Team Contribution** | Strong team role, positive peer feedback | Minimal contribution, peer concerns |
+| Criteria | Excellent | Good | Satisfactory | Poor |
+|----------|-----------|------|--------------|------|
+| **Attendance** | Consistent, active presence | Occasional absences | Frequent absences | Chronic absences |
+| **Engagement** | Regular, constructive contributions | Participates when prompted | Rare participation | Disengaged |
 
 ## Intellectual Property & Public Disclosure Policy
 

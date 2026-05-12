@@ -1,0 +1,54 @@
+{
+  "buckets": [
+    "duct_tape_analyst",
+    "ai_loop_prisoner",
+    "skeptical_quant_methodologist",
+    "social_science_thesis_dreader",
+    "budget_gatekeeper",
+    "ai_weary_old_school_analyst"
+  ],
+  "per_bucket": 10,
+  "females_per_bucket": 6,
+  "males_per_bucket": 4,
+  "age_bands": [[24, 30], [31, 37], [38, 44], [45, 51], [52, 58]],
+  "females_per_age_band": "bucket-specific",
+  "female_allocations": [
+    {"bucket": "duct_tape_analyst", "age_band": [24, 30], "count": 1},
+    {"bucket": "duct_tape_analyst", "age_band": [31, 37], "count": 2},
+    {"bucket": "duct_tape_analyst", "age_band": [38, 44], "count": 2},
+    {"bucket": "duct_tape_analyst", "age_band": [45, 51], "count": 1},
+
+    {"bucket": "ai_loop_prisoner", "age_band": [24, 30], "count": 2},
+    {"bucket": "ai_loop_prisoner", "age_band": [31, 37], "count": 2},
+    {"bucket": "ai_loop_prisoner", "age_band": [38, 44], "count": 1},
+    {"bucket": "ai_loop_prisoner", "age_band": [45, 51], "count": 1},
+
+    {"bucket": "skeptical_quant_methodologist", "age_band": [31, 37], "count": 1},
+    {"bucket": "skeptical_quant_methodologist", "age_band": [38, 44], "count": 2},
+    {"bucket": "skeptical_quant_methodologist", "age_band": [45, 51], "count": 2},
+    {"bucket": "skeptical_quant_methodologist", "age_band": [52, 58], "count": 1},
+
+    {"bucket": "social_science_thesis_dreader", "age_band": [24, 30], "count": 2},
+    {"bucket": "social_science_thesis_dreader", "age_band": [31, 37], "count": 2},
+    {"bucket": "social_science_thesis_dreader", "age_band": [38, 44], "count": 1},
+    {"bucket": "social_science_thesis_dreader", "age_band": [45, 51], "count": 1},
+
+    {"bucket": "budget_gatekeeper", "age_band": [31, 37], "count": 1},
+    {"bucket": "budget_gatekeeper", "age_band": [38, 44], "count": 2},
+    {"bucket": "budget_gatekeeper", "age_band": [45, 51], "count": 2},
+    {"bucket": "budget_gatekeeper", "age_band": [52, 58], "count": 1},
+
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [31, 37], "count": 1},
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [38, 44], "count": 2},
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [45, 51], "count": 2},
+    {"bucket": "ai_weary_old_school_analyst", "age_band": [52, 58], "count": 1}
+  ],
+  "male_ages": {
+    "duct_tape_analyst": [33, 41, 47, 54],
+    "ai_loop_prisoner": [28, 35, 40, 46],
+    "skeptical_quant_methodologist": [36, 42, 49, 56],
+    "social_science_thesis_dreader": [27, 32, 39, 45],
+    "budget_gatekeeper": [34, 43, 50, 57],
+    "ai_weary_old_school_analyst": [37, 44, 51, 58]
+  }
+}
